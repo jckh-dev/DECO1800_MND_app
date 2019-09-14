@@ -1,0 +1,159 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+body {
+  margin: 40px;
+  max-height: 800px;
+}
+
+.content {
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  margin: 5px;
+}
+
+body {
+  margin: 40px;
+  font-family: 'Open Sans', 'sans-serif';
+  background-color: darkgray;
+}
+
+h1, p {
+  margin: 0 0 1em 0;
+}
+
+/*The wrapper element is the parent element controlling the core grid display. There are sub-classes underneath that specialise the grid display for each page as required. Please do not mess around with these as there is still some tweaking to do on these to finese the layout */
+
+.wrapper{
+  max-width: 940px;
+  display: grid;
+  min-height: 800px;
+  border-left: solid #08415c 10px;
+  border-top: solid #08415c 10px;
+  align-items: center;
+  justify-items: center;
+}
+
+.welcome {
+  background: url(images/storm-1209365_1280.jpg) no-repeat center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
+  grid-template-areas: "header header" 
+                       ".   ."
+                       ".   ."
+                       "nav   nav"
+                       ".   .";
+  
+}
+
+.journey {
+  background: white;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 2fr 2fr 2fr 1fr;
+  grid-template-areas: "nav1 header nav2" 
+                       "main  main  main"
+                       "main2 main2 main2"
+                       "footer  footer   footer";
+  
+}
+
+.game{
+  background: white;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr 2fr 1fr 1fr;
+  grid-template-areas: "nav1 header nav2" 
+                       "clue .      points"
+                       "higher higher higher"
+                       "qbox  qbox  qbox"
+                       "lower lower lower"
+                       "footer  footer   footer";
+  
+}
+
+/*FREQUENTLY USED ELEMENTS OR BUTTONS */
+.logo {
+  grid-area: header;
+  border-bottom:#3891a6 solid 5px;
+}
+
+.prev{
+  grid-area: nav1;
+}
+
+.next{
+  grid-area: nav2;
+}
+
+.footer{
+  grid-area: footer;
+}
+
+.fa-question{
+  grid-area: clue;
+}
+
+.points {
+  grid-area: points;
+}
+
+.quizbox {
+  grid-area: qbox;
+  border:#3891a6 solid;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+/*ONCE OFF BUTTONS*/
+#higher{
+  grid-area: higher;
+}
+
+#lower{
+  grid-area: lower;
+}
+
+#start_journey {
+  grid-area: nav;
+}
+
+#playgame {
+  grid-area:main;
+}
+
+#browsecontent {
+  grid-area: main2;
+}
+
+/* CSS FOR BUTTON ANIMATIONS */
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  /* height:100px;
+  width: 200px;
+  display: inline-block; */
+  padding: 10px 10px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border:#3891a6 solid;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;   
+  font-weight: bolder;
+ }
+
+.button:hover {background-color: #535753}
+ 
+.button:active {
+   background-color: #535753;
+   box-shadow: 0 5px rgb(179, 179, 179);
+   transform: translateY(4px);
+ }
