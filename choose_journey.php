@@ -1,3 +1,17 @@
+<?php
+  session_start(); // start $_SESSION
+  // guided tour vars
+  $game = [
+    "Bushfire",
+    "Tornado",
+    "Flood",
+    "Transport",
+    "Cyclone",
+    "Shipwreck"
+  ];
+  $game = json_encode($game);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +31,14 @@
             <a href="welcome.html"><img src="images/logo.png" alt="NDM" style="width:150px;height:100px;"></a>
           </header>
             
-          <aside id="playgame"><button class="button"><a href="game.html">PLAY THE GAME</a></button></aside>
+          <aside id="playgame">
+            <form id="start" action="game.php" method="POST">
+              <input type="hidden" name="game" value='<?php echo $game; ?>'>
+              <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
+              <button type="submit" class="button">PLAY THE GAME</button>
+            </form>
+            
+          </aside>
 
           <aside id="browsecontent"><button class="button"><a href="content.html">BROWSE SOME CONTENT</a></button></aside>
 

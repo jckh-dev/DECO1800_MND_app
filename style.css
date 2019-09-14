@@ -41,7 +41,9 @@ h1, p {
   grid-template-areas: "header  header" 
                        ".       ."
                        ".       ."
+                       ".       ."
                        "nav     nav"
+                       "login   login"
                        ;
   
 }
@@ -117,8 +119,8 @@ a {
                        ".       .       .       ."
                        ".       .       .       ."
                        ".       .       .       ."
-                       ".       .       .       ."
                        "nav     nav     nav     nav"
+                       "login   login   login   login"
                        ;
   
 }
@@ -227,5 +229,11 @@ header {
   grid-area: main2;
 }
 
+/*James' Edits*/
+#login {
+  grid-area: login;
+}
 
-
+.input {
+  text-align: center;
+ }
