@@ -27,50 +27,94 @@ h1, p {
 
 /*The wrapper element is the parent element controlling the core grid display. There are sub-classes underneath that specialise the grid display for each page as required. Please do not mess around with these as there is still some tweaking to do on these to finese the layout */
 
-.wrapper{
-  max-width: 940px;
+.grid{
   display: grid;
-  min-height: 800px;
+  min-height: 500px;
+  grid-template-columns: 1fr 1fr;
   border-left: solid #08415c 10px;
   border-top: solid #08415c 10px;
+  border-radius: 15px;
   align-items: center;
   justify-items: center;
 }
 
 .welcome {
   background: url(images/storm-1209365_1280.jpg) no-repeat center;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
-  grid-template-areas: "header header" 
-                       ".   ."
-                       ".   ."
-                       "nav   nav"
-                       ".   .";
+  grid-template-areas: "header  header" 
+                       ".       ."
+                       ".       ."
+                       "nav     nav"
+                       ;
   
 }
 
 .journey {
   background: white;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 2fr 2fr 2fr 1fr;
-  grid-template-areas: "nav1 header nav2" 
-                       "main  main  main"
-                       "main2 main2 main2"
-                       "footer  footer   footer";
+  grid-template-areas: "nav1   header header nav2"
+                      ".       .      .      ." 
+                       "main   main   main   main"
+                       "main2  main2  main2  main2"
+                       "footer footer footer footer";
   
 }
 
 .game{
   background: white;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 2fr 1fr 1fr 2fr 1fr 1fr;
-  grid-template-areas: "nav1 header nav2" 
-                       "clue .      points"
-                       "higher higher higher"
-                       "qbox  qbox  qbox"
-                       "lower lower lower"
-                       "footer  footer   footer";
+  grid-template-areas: "nav1   header header nav2" 
+                       "clue   clue   clue   points"
+                       "higher higher higher higher"
+                       "qbox   qbox   qbox   qbox"
+                       "lower  lower  lower  lower"
+                       "footer footer footer footer";
   
+}
+
+
+@media (min-width: 640px) {
+.grid{
+  max-width: 940px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 2fr 1fr 1fr;
+  min-height: 800px;
+  border-left: solid #08415c 10px;
+  border-top: solid #08415c 10px;
+  border-radius: 15px;
+  align-items: center;
+  justify-items: center;
+}
+
+.welcome {
+  background: url(images/storm-1209365_1280.jpg) no-repeat center;
+  grid-template-areas: "header  header  header  header" 
+                       ".       .       .       ."
+                       ".       .       .       ."
+                       "nav     nav     nav     nav"
+                       ;
+  
+}
+
+.journey {
+  background: white;
+  grid-template-areas: "nav1   header header nav2"
+                      ".       .      .      ." 
+                       "main   main   main   main"
+                       "main2  main2  main2  main2"
+                       "footer footer footer footer";
+  
+}
+
+.game{
+  background: white;
+  grid-template-areas: "nav1   header header nav2" 
+                       "clue   clue   clue   points"
+                       "higher higher higher higher"
+                       "qbox   qbox   qbox   qbox"
+                       "lower  lower  lower  lower"
+                       "footer footer footer footer";
+  
+}
+
 }
 
 /*FREQUENTLY USED ELEMENTS OR BUTTONS */
@@ -107,8 +151,10 @@ h1, p {
 }
 
 /*ONCE OFF BUTTONS*/
-#higher{
+.higher{
   grid-area: higher;
+  padding: 20px;
+  border: solid black;
 }
 
 #lower{
