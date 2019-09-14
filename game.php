@@ -168,7 +168,11 @@
     <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
     </form>
     
-    <button class="button"><i class="fas fa-question"><br>CLUE</i></button>
+    <form id="start" action="clue.php" method="POST">
+      <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
+      <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
+      <button type="submit" class="button"><i class="fas fa-question"><br>CLUE</i></button>
+    </form>
     
     <aside class="points"><button class="button"><?php echo $_SESSION['scoreTemp']; ?><br>POINTS</button></aside> <!-- point button misalligned? -->
 

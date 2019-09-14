@@ -37,7 +37,6 @@
             $largestID++;
             $sql = "INSERT INTO scores VALUES ('$largestID','$userID','$newScore')";
             $result = $db->query($sql);
-            echo "Created scoreID" . $largestID . "<br>";
         } else { //error or empty
             $sql = "INSERT INTO scores VALUES ('1','$userID','$newScore')";
             $result = $db->query($sql);
