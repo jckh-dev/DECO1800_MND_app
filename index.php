@@ -76,6 +76,7 @@
     <a href="choose_journey.html"></a><img src="images/logo.png" alt="" style="width:150px;height:100px;"></a>
   </header>
   
+  <aside id="scoreboard"><a href="scoreboard.php"><button class="button">Leaderboard</button></a></aside>
   <aside id="start_journey"><a href="choose_journey.php"><button class="button">Start Guided Tour</button></a></aside>
   <aside id="login">
     <form id="login" action="index.php" method="POST">
