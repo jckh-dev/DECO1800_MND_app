@@ -68,6 +68,34 @@ h1, p {
   
 }
 
+/* CSS FOR BUTTON ANIMATIONS */
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  padding: 10px 10px;
+  font-size: 0.8em;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: black;
+  background-color:white;
+  border:#3891a6 solid;
+  border-radius: 15px;
+  box-shadow: 0 2px #999;   
+  font-weight: bolder;
+ }
+
+.button:hover {background-color: #535753}
+ 
+.button:active {
+   background-color: #535753;
+   box-shadow: 0 1px rgb(179, 179, 179);
+   transform: translateY(4px);
+ }
+
 
 @media (min-width: 640px) {
 .grid{
@@ -108,13 +136,39 @@ h1, p {
 .game{
   background: white;
   grid-template-areas: "nav1   header header nav2" 
-                       "clue   clue   clue   points"
-                       "higher higher higher higher"
+                       "clue   clue   points points"
+                       ".      higher higher ."
                        "qbox   qbox   qbox   qbox"
-                       "lower  lower  lower  lower"
+                       ".      lower  lower  ."
                        "footer footer footer footer";
   
 }
+
+/* CSS FOR BUTTON ANIMATIONS */
+
+.button {
+  height:100px;
+  width: 200px;
+  padding: 10px 10px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border:#3891a6 solid;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;   
+  font-weight: bolder;
+ }
+
+.button:hover {background-color: #535753}
+ 
+.button:active {
+   background-color: #535753;
+   box-shadow: 0 10px rgb(179, 179, 179);
+   transform: translateY(4px);
+ }
 
 }
 
@@ -173,33 +227,5 @@ header {
   grid-area: main2;
 }
 
-/* CSS FOR BUTTON ANIMATIONS */
 
-a {
-  text-decoration: none;
-}
 
-.button {
-  /* height:100px;
-  width: 200px;
-  display: inline-block; */
-  padding: 10px 10px;
-  font-size: 1em;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-  border:#3891a6 solid;
-  border-radius: 15px;
-  box-shadow: 0 5px #999;   
-  font-weight: bolder;
- }
-
-.button:hover {background-color: #535753}
- 
-.button:active {
-   background-color: #535753;
-   box-shadow: 0 5px rgb(179, 179, 179);
-   transform: translateY(4px);
- }
