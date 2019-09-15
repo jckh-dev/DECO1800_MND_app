@@ -41,9 +41,7 @@ h1, p {
   grid-template-areas: "header  header" 
                        ".       ."
                        ".       ."
-                       "score   score"
                        "nav     nav"
-                       "login   login"
                        ;
   
 }
@@ -119,9 +117,8 @@ a {
                        ".       .       .       ."
                        ".       .       .       ."
                        ".       .       .       ."
-                       "score   score   score   score"
+                       ".       .       .       ."
                        "nav     nav     nav     nav"
-                       "login   login   login   login"
                        ;
   
 }
@@ -230,15 +227,5 @@ header {
   grid-area: main2;
 }
 
-/*James' Edits*/
-#login {
-  grid-area: login;
-}
 
-#scoreboard {
-  grid-area: score;
-}
 
-.input {
-  text-align: center;
- }
