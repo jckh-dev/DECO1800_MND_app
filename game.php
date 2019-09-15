@@ -179,6 +179,7 @@
     <aside class="higher"><button id="answerButtonHigh" type="submit" onclick="answer('high')" class="button">HIGHER</button></aside>
 
     <article class="quizbox">
+      <div class = "center">
       <h1>Current Topic: <?php echo $oldGame[0]; ?></h1>
       <h1>Next Topics:
       <?php 
@@ -196,7 +197,9 @@
       <h1>Higher or lower than: <?php echo $info[0]["randNum"] ?></h1>
       <h1>Actual answer: <h1 id="displayAnswer">?</h1></h1> <!-- display actual -->
       <h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
+      </div>
     </article>
+    
 
     
     <aside id="lower"><button id="answerButtonLow" type="submit" onclick="answer('low')" class="button">LOWER</button></aside>

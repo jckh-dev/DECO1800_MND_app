@@ -58,6 +58,35 @@ h1, p {
   
 }
 
+.leaderboard {
+  background: white;
+  grid-template-areas: "header header"
+                       "qbox   qbox" 
+                       "qbox   qbox"
+                       "qbox   qbox"
+                       "footer footer";
+  
+}
+
+.clue {
+  background: white;
+  grid-template-areas: "header header"
+                       "qbox   qbox" 
+                       "qbox   qbox"
+                       "qbox   qbox"
+                       "footer footer";
+  
+}
+
+.end {
+  background: white;
+  grid-template-areas: "header header"
+                       "qbox   qbox" 
+                       "qbox   qbox"
+                       "qbox   qbox"
+                       "footer footer";
+}
+
 .game{
   background: white;
   grid-template-areas: "header header"
@@ -135,6 +164,37 @@ a {
                        "footer footer footer footer";
   
 }
+
+.leaderboard {
+  background: white;
+  grid-template-areas: "header header header header"
+                       "qbox   qbox   qbox   qbox" 
+                       "qbox   qbox   qbox   qbox"
+                       "qbox   qbox   qbox   qbox"
+                       "footer footer footer footer";
+  
+}
+
+.clue {
+  background: white;
+  grid-template-areas: "header header header header"
+                       "qbox   qbox   qbox   qbox" 
+                       "qbox   qbox   qbox   qbox"
+                       "qbox   qbox   qbox   qbox"
+                       "footer footer footer footer";
+  
+}
+
+.end {
+  background: white;
+  grid-template-areas: "header header header header"
+                       "qbox   qbox   qbox   qbox" 
+                       "qbox   qbox   qbox   qbox"
+                       "qbox   qbox   qbox   qbox"
+                       "footer footer footer footer";
+  
+}
+
 
 .game{
   background: white;
@@ -239,6 +299,6 @@ header {
   grid-area: score;
 }
 
-.input {
+.center {
   text-align: center;
- }
+}

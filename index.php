@@ -79,9 +79,11 @@
   <aside id="scoreboard"><a href="scoreboard.php"><button class="button">Leaderboard</button></a></aside>
   <aside id="start_journey"><a href="choose_journey.php"><button class="button">Start Guided Tour</button></a></aside>
   <aside id="login">
+      <div class = "center">
     <form id="login" action="index.php" method="POST">
       <button class="button" type='submit'>ID Login</button><br> <!-- button isn't centered when small -->
       <div class="input"><input type="text"  name="userID" placeholder="Enter your ID" required></div>
+      </div>
     </form>
   </aside>
 

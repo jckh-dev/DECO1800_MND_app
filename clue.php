@@ -56,35 +56,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ending</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
 </head>
-
 <body>
 
-    <div id="Clue-page">
+    <div class="grid end">
+        <header>   
+        <a href="welcome.html"><img src="images/logo.png" alt="NDM" style="width:150px;height:100px;"></a>
+        </header>
 
-    <h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
-    <h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
-    <h1>Number to compare: <?php echo $info[0]["randNum"]; ?> </h1>
-    <?php if ($clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
-    <h1>Insert your code to get a clue (should be 3 digits): </h1>
-    <form id="start" action="clue.php" method="POST">
-        <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-        <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-        <input type="text" name="clueCode" placeholder="Enter clue code" required>
-        <button type="submit" class="button">Enter Code</button>
-    </form>
-    <?php else: // if the hard coded code/s are correct?>
-    <br>
-    <h1> Description Clue (numbers removed) </h1>
-    <p> <?php if ($description) {echo $description;} ?> </p>
-    <?php endif  // end of else if statement?>
-    <form id="start" action="game.php" method="POST">
-        <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-        <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-        <button type="submit" class="button">Go back to game</button>
-    </form>
+        <article class="quizbox">
+        <div class="center">
+            <h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
+            <h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
+            <h1>Number to compare: <?php echo $info[0]["randNum"]; ?> </h1>
+            <?php if ($clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
+            <h1>Insert your code to get a clue (should be 3 digits): </h1>
+            <form id="start" action="clue.php" method="POST">
+                <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
+                <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
+                <input type="text" name="clueCode" placeholder="Enter clue code" required>
+                <button type="submit" class="button">Enter Code</button>
+            </form>
+            <?php else: // if the hard coded code/s are correct?>
+            <br>
+            <h1> Description Clue (numbers removed) </h1>
+            <p> <?php if ($description) {echo $description;} ?> </p>
+            <?php endif  // end of else if statement?>
+            <form id="start" action="game.php" method="POST">
+                <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
+                <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
+                <button type="submit" class="button">Go back to game</button>
+            </form>
+        </div>
+        </article>
 
+        <footer class="footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
     </div>
 
 </body>
