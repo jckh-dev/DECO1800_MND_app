@@ -33,10 +33,11 @@
 
     $clueCodeValid = true; // if valid, false.
     $revealDesc = false;
+    $revealMap = false;
     $description = false;
     if (isset($_POST['clueCode'])) {
         $clueCode = $_POST['clueCode'];
-        if ($clueCode == 123) {
+        if ($clueCode == 123) { // desc clue
             $revealDesc = true;
             $clueCodeValid = false;
             $questionID = $info[0]["ID"];
@@ -48,6 +49,9 @@
                 $description = $record->description;
                 $description = preg_replace('/\d/', '', $description); // regex replace 0-9 (\d) with nothing.
             }
+        } elseif ($clueCode == 456) { // map clue
+            $clueCodeValid = false;
+            $revealMap = true;
         }
     }
 
@@ -61,6 +65,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ending</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="leaflet.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
 </head>
 <body>
@@ -72,6 +77,7 @@
 
         <article class="quizbox">
         <div class="center">
+            <script> var map = false; </script>
             <h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
             <h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
             <h1>Number to compare: <?php echo $info[0]["randNum"]; ?> </h1>
@@ -83,10 +89,17 @@
                 <input type="text" name="clueCode" placeholder="Enter clue code" required>
                 <button type="submit" class="button">Enter Code</button>
             </form>
-            <?php else: // if the hard coded code/s are correct?>
+            <?php elseif ($revealDesc): // if reveal desc 123?>
             <br>
             <h1> Description Clue (numbers removed) </h1>
             <p> <?php if ($description) {echo $description;} ?> </p>
+            <?php elseif ($revealMap): // if 333 (map)?>
+                <script> 
+                var map = true; 
+                var id = <?php echo $info[0]["ID"] ?>; 
+                </script>
+
+                <article id="map"></article>
             <?php endif  // end of else if statement?>
             <form id="start" action="game.php" method="POST">
                 <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
@@ -99,5 +112,8 @@
         <footer class="footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
     </div>
 
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/game_ajax.js"></script>
 </body>
 </html>

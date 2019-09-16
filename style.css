@@ -142,6 +142,8 @@ a {
   justify-items: center;
 }
 
+/* GOES East satellite image of Hurricane Florence [Image] (2018). 
+Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-natural-disasters/ */
 .welcome {
   background: url(images/storm-1209365_1280.jpg) no-repeat center;
   grid-template-areas: "header  header  header  header" 
@@ -301,4 +303,11 @@ header {
 
 .center {
   text-align: center;
+}
+
+#map {
+	width: 70vw;
+	height: 30vh;
+	background-color: white;
+	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
 }

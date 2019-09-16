@@ -4,10 +4,7 @@
   $game = [
     "Bushfire",
     "Tornado",
-    "Flood",
-    "Transport",
-    "Cyclone",
-    "Shipwreck"
+    "Flood"
   ];
   $game = json_encode($game);
 ?>
