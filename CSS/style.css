@@ -1,9 +1,134 @@
-*, *:before, *:after {
+/* *, *:before, *:after {
     box-sizing: border-box;
+  } */
+
+body{
+    min-height: 99vh;
+    border-left: solid #08415c 10px;
+    border-top: solid #08415c 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-gap: 1vh;
+    grid-template-areas:"header"
+                        "points"
+                        "higher"
+                        "quiz"
+                        "lower"
+                        "footer"
+    ;
+    grid-template-rows: 0.6fr 0.4fr 0.25fr 1fr 0.25fr 0.25fr;
+}
+
+/* header will have nested grid to have left and right navigation arrows either side of logo in center */
+.box{
+    background-color: #444;
+    color: #fff;
+    margin: 5px;
+    align-content: center;
+    border-radius: 5px;
   }
 
+.header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
-.content {
+/* points class will have nested grid - left side clue, right side points */
+.points{
+    grid-area: points;
+}
+
+.higher{
+    grid-area: higher;
+}
+
+/* quiz class will have nested grid - need to flesh this out with the team... */
+.quiz{
+    grid-area: quiz;
+}
+
+.lower{
+    grid-area: lower;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+.backarrow{
+    height: 2em;
+    width: 2em;
+}
+
+/* May need to make adjustments to the logo size to shrink or enlarge as needed, may be a viewport adjustment */
+/* .homelogo{
+    position: absolute;
+} */
+
+.nextarrow{
+    height: 2em;
+    width: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .content {
   color: #fff;
   border-radius: 5px;
   padding: 20px;
@@ -20,9 +145,9 @@ body {
 
 h1, p {
   margin: 0 0 1em 0;
-}
+} */
 
-/*The wrapper element is the parent element controlling the core grid display. There are sub-classes underneath that specialise the grid display for each page as required. Please do not mess around with these as there is still some tweaking to do on these to finese the layout */
+/* The wrapper element is the parent element controlling the core grid display. There are sub-classes underneath that specialise the grid display for each page as required. Please do not mess around with these as there is still some tweaking to do on these to finese the layout
 
 .grid{
   display: grid;
@@ -128,7 +253,7 @@ a {
  }
 
 
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
 .grid{
   max-width: 940px;
   display: grid;
@@ -142,8 +267,8 @@ a {
   justify-items: center;
 }
 
-/* GOES East satellite image of Hurricane Florence [Image] (2018). 
-Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-natural-disasters/ */
+GOES East satellite image of Hurricane Florence [Image] (2018). 
+Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-natural-disasters/
 .welcome {
   background: url(images/storm-1209365_1280.jpg) no-repeat center;
   grid-template-areas: "header  header  header  header" 
@@ -207,10 +332,10 @@ Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-n
                        ".      lower  lower  ."
                        "footer footer footer footer";
   
-}
+} */
 
 /* CSS FOR BUTTON ANIMATIONS */
-
+/* 
 .button {
   height:100px;
   width: 200px;
@@ -235,10 +360,10 @@ Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-n
    transform: translateY(4px);
  }
 
-}
+} */
 
 /*FREQUENTLY USED ELEMENTS OR BUTTONS */
-header {
+/* header {
   grid-area: header;
   border-bottom:#3891a6 solid 5px;
 }
@@ -269,10 +394,10 @@ header {
   border-radius: 15px;
   margin: 5px;
   
-}
+} */
 
 /*ONCE OFF BUTTONS*/
-.higher{
+/* .higher{
   grid-area: higher;
 }
 
@@ -290,7 +415,7 @@ header {
 
 #browsecontent {
   grid-area: main2;
-}
+} */
 
 /*James' Edits*/
 #login {
