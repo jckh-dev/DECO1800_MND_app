@@ -1,8 +1,8 @@
-/* *, *:before, *:after {
+*, *:before, *:after {
     box-sizing: border-box;
-  } */
+  }
 
-body{
+.gamepage{
     min-height: 99vh;
     border-left: solid #08415c 10px;
     border-top: solid #08415c 10px;
@@ -19,22 +19,92 @@ body{
     grid-template-rows: 0.6fr 0.4fr 0.25fr 1fr 0.25fr 0.25fr;
 }
 
-/* header will have nested grid to have left and right navigation arrows either side of logo in center */
-.box{
-    background-color: #444;
-    color: #fff;
+.indexpage{
+    min-height: 99vh;
+    border-left: solid #08415c 10px;
+    border-top: solid #08415c 10px;
+    border-radius: 10px;
+    display: grid;
+    
+    grid-template-rows: 0.6fr 0.4fr 1fr 1fr 1fr 0.25fr;
+    grid-template-areas:"header"
+                        "textbox"
+                        "tour"
+                        "topic"
+                        "scoreboard"
+                        "login"
+    ;
+    
+}
+
+
+.box {
+    /* background-color: lightgray; */
+    color: black;
     margin: 5px;
-    align-content: center;
     border-radius: 5px;
+    text-align: center;
   }
 
-.header{
+.logoheader {
+    grid-area: header;
+    padding-top: 4%;
+    /* justify-content: space-around;
+    align-items: center; */
+}
+
+/* NAV HEADER LAYOUT */
+
+.navheader{
     grid-area: header;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
+.footer{
+    grid-area: footer;
+}
+
+.backarrow{
+    height: 2em;
+    width: 2em;
+}
+
+.nextarrow{
+    height: 2em;
+    width: 2em;
+}
+/* May need to make adjustments to the logo size to shrink or enlarge as needed, may be a viewport adjustment */
+/* .homelogo{
+    position: absolute;
+} */
+
+/* CHOOSE JOURNEY LAYOUT */
+
+.textbox {
+  grid-area: textbox;
+}
+
+.tour{
+  grid-area: tour;
+}
+
+.login {
+  grid-area: login;
+}
+
+.scoreboard {
+  grid-area: scoreboard;
+}
+
+.topic{
+  grid-area: topic;
+}
+
+
+
+/* GAME PAGE LAYOUT */
 /* points class will have nested grid - left side clue, right side points */
 .points{
     grid-area: points;
@@ -53,32 +123,51 @@ body{
     grid-area: lower;
 }
 
-.footer{
-    grid-area: footer;
+
+
+/* BUTTON CSS */
+
+a {
+  text-decoration: none;
 }
 
-.backarrow{
-    height: 2em;
-    width: 2em;
+.button {
+  width: 230px;
+  height: 75px;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: black;
+  background-color:white;
+  border:#3891a6 solid;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;   
+  font-weight: bolder;
+ }
+
+.button:hover {background-color: #535753}
+ 
+.button:active {
+   background-color: #535753;
+   box-shadow: 0 1px rgb(179, 179, 179);
+   transform: translateY(4px);
+ }
+
+
+/*James' Edits*/
+
+
+.center {
+  text-align: center;
 }
 
-/* May need to make adjustments to the logo size to shrink or enlarge as needed, may be a viewport adjustment */
-/* .homelogo{
-    position: absolute;
-} */
-
-.nextarrow{
-    height: 2em;
-    width: 2em;
+#map {
+	width: 70vw;
+	height: 30vh;
+	background-color: white;
+	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -226,31 +315,6 @@ h1, p {
 
 /* CSS FOR BUTTON ANIMATIONS */
 
-a {
-  text-decoration: none;
-}
-
-.button {
-  padding: 10px 10px;
-  font-size: 0.8em;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-  color: black;
-  background-color:white;
-  border:#3891a6 solid;
-  border-radius: 15px;
-  box-shadow: 0 2px #999;   
-  font-weight: bolder;
- }
-
-.button:hover {background-color: #535753}
- 
-.button:active {
-   background-color: #535753;
-   box-shadow: 0 1px rgb(179, 179, 179);
-   transform: translateY(4px);
- }
 
 
 /* @media (min-width: 640px) {
@@ -416,23 +480,3 @@ Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-n
 #browsecontent {
   grid-area: main2;
 } */
-
-/*James' Edits*/
-#login {
-  grid-area: login;
-}
-
-#scoreboard {
-  grid-area: score;
-}
-
-.center {
-  text-align: center;
-}
-
-#map {
-	width: 70vw;
-	height: 30vh;
-	background-color: white;
-	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
-}

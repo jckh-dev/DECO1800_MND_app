@@ -68,19 +68,33 @@
     <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
 </head>
-<body>
+<body class="indexpage">
 
-  <header>
-    <a href="choose_journey.html"></a><img src="images/logo.png" alt="" style="width:150px;height:100px;"></a>
+  <header class="box logoheader">
+    <a href="choose_journey.html"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
   </header>
   
-  <aside id="scoreboard"><a href="scoreboard.php"><button class="button">Leaderboard</button></a></aside>
-  <aside id="start_journey"><a href="choose_journey.php"><button class="button">Start Guided Tour</button></a></aside>
-  <aside id="login">
+  <aside class="box textbox">
+      <h1>CHOOSE YOUR <br>JOURNEY</h1> 
+  </aside>
+
+  <aside class="box tour">
+      <a href="choose_journey.php"><button class="button">Start Guided Tour</button></a>
+  </aside>
+
+  <aside class="box topic">
+      <a href=""><button class="button">View Topics</button></a>
+  </aside>
+
+  <aside class="box scoreboard">
+      <a href="scoreboard.php"><button class="button">Leaderboard</button></a>
+  </aside>
+
+  <aside class="box login">
       <div class = "center">
-    <form id="login" action="index.php" method="POST">
-      <button class="button" type='submit'>ID Login</button><br> <!-- button isn't centered when small -->
-      <div class="input"><input type="text"  name="userID" placeholder="Enter your ID" required></div>
+        <form id="login" action="index.php" method="POST">
+            <button class="button" type='submit'>ID Login</button><br> <!-- button isn't centered when small -->
+        <div class="input"><input type="text"  name="userID" placeholder="Enter your ID" required></div>
       </div>
     </form>
   </aside>
