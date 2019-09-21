@@ -1,9 +1,15 @@
 *, *:before, *:after {
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
   }
 
 h1, h2{
   margin: 0;
+  color: #08415c;
+}
+
+.cluepage > h1{
+  margin-bottom: 2%;
 }
 
 body{
@@ -12,35 +18,31 @@ body{
     border-radius: 10px;
     min-height: 99vh;
     display: grid;
+    
 }
 
 .box {
     /* background-color: lightgray; */
     text-align: center;
-}
-
-.logoheader {
-    grid-area: header;
     margin-left: 8%;
     margin-right: 8%;
+    margin-bottom: 3%;
+}
+
+/* logo only header */
+.header{
+    grid-area: header;
     padding-top: 5%;
     padding-bottom: 5%;
     border-bottom: #08415c solid 0.3em;
     align-self: baseline;
 }
 
-/* NAV HEADER LAYOUT */
-.navheader{
-    grid-area: header;
+/* logo w/nav buttons */
+.navhd{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 8%;
-    margin-right: 8%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    border-bottom: #08415c solid 0.3em;
-    align-self: baseline;
 }
 
 .backarrow{
@@ -52,21 +54,16 @@ body{
     height: 2em;
     width: 2em;
 }
-/* May need to make adjustments to the logo size to shrink or enlarge as needed, may be a viewport adjustment:
- .homelogo{
-    position: absolute;
-} */
 
 /* Footer placeholder */
 .footer{
     grid-area: footer;
     align-self: end;
-    padding-bottom: 2%;
+    padding-bottom: 3%;
 }
 
-/* INDEX.PHP LAYOUT */
+/* index page template LAYOUT */
 .indexpage{
-    
     grid-template-areas:"header"
                         "box1"
                         "box2"
@@ -76,18 +73,27 @@ body{
     ;
 }
 
-.login {
-  grid-area: footer;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  padding-bottom: 2%;
+.endingpg{
+  grid-template-rows: 0.6fr 0.4fr 1fr 0.25fr;
 }
 
-/* Choose Journey Layout */
+.box1{
+  grid-area:box1;
+}
 
-/* GAME PAGE LAYOUT */
-/* points class will have nested grid - left side clue, right side points */
+.box2{
+  grid-area:box2;
+}
+
+.box3{
+  grid-area:box3;
+}
+
+.box4{
+  grid-area:box4;
+}
+
+/* game/clue page template */
 .gamepage{
     grid-template-rows: 0.6fr 0.4fr 0.25fr 1.5fr 0.25fr 0.25fr;
     grid-template-areas:"header"
@@ -99,106 +105,142 @@ body{
     ;
 }
 
+.cluepage{
+    grid-template-rows: 0.6fr 0.4fr 2fr 0.25fr;
+    grid-template-areas:"header"
+                        "points"
+                        "quiz"
+                        "footer"
+    ;
+}
+
+.login {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 3%;
+}
+
 .points{
     grid-area: points;
     display: flex;
     justify-content: space-between;
-    margin-left: 8%;
-    margin-right: 8%;
     padding-top: 3%;
 }
 
 .higher{
     grid-area: higher;
     height: 2.2em;
-    margin-left: 8%;
-    margin-right: 8%;
     align-self: center;
 }
 
 .lower{
     grid-area: lower;
     height: 2.2em;
-    margin-left: 8%;
-    margin-right: 8%;
     align-self: center;
 }
+
 /* quiz class will have nested grid - need to flesh this out with the team... */
-.quizbox{
-    grid-area: quiz;
+.infobox{
     background-color: #bfe3fa;
-    margin-left: 8%;
-    margin-right: 8%;
     font-size: 0.7em;
     text-align: left;
     align-self: center;
+    padding: 3%;
 }
 
+.gamepage > .infobox{
+    grid-area: quiz;
+}
+.indexpage > .infobox{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.cluepage > .infobox{
+  grid-area: quiz;
+  text-align: center;
+  align-self: stretch;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
 
-/* BUTTON CSS */
+.endingpg > .infobox{
+  text-align: center;
+  align-self: stretch;
+  align-content: center;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  margin-top: 2%;
+  margin-bottom: 0;
+}
+
+/* formating for input fields */
 .input {
-  width: 230px;
-  outline: none;
   border:#3891a6 solid;
   border-radius: 15px;
+  align-content: center;
+  text-align: center;
+  margin: 3%;
 }
+
+/* all the various buttons CSS */
 
 a {
   text-decoration: none;
 }
 
+button{
+  cursor: pointer;
+  text-align: center;
+  background-color:white;
+  border-radius: 15px;
+  font-size: 1.2em;
+  font-weight: bolder;
+  border:#3891a6 solid;
+  box-shadow: 2px 3px darkgray;
+}
+
 .button {
   width: 230px;
   height: 75px;
-  font-size: 1.2em;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
   color: black;
-  background-color:white;
-  border:#3891a6 solid;
-  border-radius: 15px;
-  box-shadow: 0 5px #999;   
-  font-weight: bolder;
  }
 
- .clptbutton {
+ .nextbtn{
+  width: 7em;
+  padding: 5%;
+  color: #08415c;
+ }
+
+ .cluepointbtn {
   width: 75px;
   height: 50px;
   padding: 0.5%;
   font-size: 1em;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-  background-color:white;
   border: none;
+  box-shadow: none;
   color: #08415c;
-  font-weight: bolder;
  }
 
  .hilobtn{
    width: 100%;
    height: 100%;
-   background-color: white;
-   font-weight: bolder;
-   font-size: 1.1em;
    border: darkgrey solid;
-   border-radius: 15px;
+   box-shadow: none;
  }
 
  .idbutton {
   width: 230px;
   height: 50px;
-  font-size: 1em;
   cursor: pointer;
-  text-align: center;
-  outline: none;
   color: black;
-  background-color:white;
-  border:#3891a6 solid;
-  border-radius: 15px;
-  box-shadow: 0 5px #999;   
-  font-weight: bolder;
+}
+
+.beginbtn{
+  width: 400px;
+  border: none;
+  box-shadow: none;
 }
 
 .button:hover {background-color: #535753}
@@ -212,14 +254,44 @@ a {
 /*James' Edits*/
 #map {
 	width: 70vw;
-	height: 30vh;
+  height: 50vh;
+  margin-top: 5%;
+  margin-bottom:5%;
 	background-color: white;
 	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
 }
 
+.welcomepg {
+  background-image: url("images/storm-1209365_1280.jpg");
+  grid-template-areas: "." 
+                       "."
+                       "."
+                       "."
+                       "logo"
+                       "begin"
+                       ;
+  
+}
 
+.logo{
+  grid-area: logo;
+  width: 150px;
+  height: 100px;
+  padding-left: 20%;
+  padding-right: none;
+  padding-top: 30%;
+  padding-bottom: none;
+  margin-bottom: none;
+}
 
-
+.begin{
+  width: 300px;
+  height: 40px;
+  text-align: left;
+  margin-top:5%;
+  padding-left: 20%;
+  grid-area: begin;
+}
 
 
 
