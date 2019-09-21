@@ -75,7 +75,7 @@
   </header>
   
   <aside class="box textbox">
-      <h1>CHOOSE YOUR <br>JOURNEY</h1> 
+      <h1>CHOOSE YOUR <br>JOURNEY</h1>
   </aside>
 
   <aside class="box tour">
@@ -91,12 +91,10 @@
   </aside>
 
   <aside class="box login">
-      <div class = "center">
         <form id="login" action="index.php" method="POST">
-            <button class="button" type='submit'>ID Login</button><br> <!-- button isn't centered when small -->
-        <div class="input"><input type="text"  name="userID" placeholder="Enter your ID" required></div>
-      </div>
-    </form>
+            <div class="input"><input type="text" name="userID" placeholder="Enter ID" required></div>
+            <button class="idbutton" type='submit'>Login</button>
+        </form>
   </aside>
 
 </body>
