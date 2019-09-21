@@ -68,25 +68,22 @@
     <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
 </head>
+
 <body class="indexpage">
 
   <header class="box logoheader">
     <a href="choose_journey.html"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
   </header>
   
-  <aside class="box textbox">
+  <aside class="box">
       <h1>CHOOSE YOUR <br>JOURNEY</h1>
   </aside>
 
-  <aside class="box tour">
+  <aside class="box">
       <a href="choose_journey.php"><button class="button">Start Guided Tour</button></a>
   </aside>
 
-  <aside class="box topic">
-      <a href=""><button class="button">View Topics</button></a>
-  </aside>
-
-  <aside class="box scoreboard">
+  <aside class="box">
       <a href="scoreboard.php"><button class="button">Leaderboard</button></a>
   </aside>
 

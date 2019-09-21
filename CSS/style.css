@@ -2,45 +2,22 @@
     box-sizing: border-box;
   }
 
-.gamepage{
-    min-height: 99vh;
-    border-left: solid #08415c 10px;
-    border-top: solid #08415c 10px;
-    border-radius: 10px;
-    display: grid;
-    grid-gap: 1vh;
-    grid-template-rows: 0.6fr 0.4fr 0.25fr 1fr 0.25fr 0.25fr;
-    grid-template-areas:"header"
-                        "points"
-                        "higher"
-                        "quiz"
-                        "lower"
-                        "footer"
-    ;
-    
+h1, h2{
+  margin: 0;
 }
 
-.indexpage{
-    min-height: 99vh;
+body{
     border-left: solid #08415c 10px;
     border-top: solid #08415c 10px;
     border-radius: 10px;
+    min-height: 99vh;
     display: grid;
-    /* grid-template-rows: 0.6fr 0.4fr 0.5fr 0.5fr 0.5fr 0.25fr; */
-    grid-template-areas:"header"
-                        "textbox"
-                        "tour"
-                        "topic"
-                        "scoreboard"
-                        "login"
-    ;
 }
 
 .box {
     /* background-color: lightgray; */
     text-align: center;
-    align-self: center;
-  }
+}
 
 .logoheader {
     grid-area: header;
@@ -49,6 +26,7 @@
     padding-top: 5%;
     padding-bottom: 5%;
     border-bottom: #08415c solid 0.3em;
+    align-self: baseline;
 }
 
 /* NAV HEADER LAYOUT */
@@ -57,10 +35,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-.footer{
-    grid-area: footer;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-bottom: #08415c solid 0.3em;
+    align-self: baseline;
 }
 
 .backarrow{
@@ -72,58 +52,90 @@
     height: 2em;
     width: 2em;
 }
-/* May need to make adjustments to the logo size to shrink or enlarge as needed, may be a viewport adjustment */
-/* .homelogo{
+/* May need to make adjustments to the logo size to shrink or enlarge as needed, may be a viewport adjustment:
+ .homelogo{
     position: absolute;
 } */
 
-/* CHOOSE JOURNEY LAYOUT */
-
-.textbox {
-  grid-area: textbox;
-  align-self: baseline;
+/* Footer placeholder */
+.footer{
+    grid-area: footer;
+    align-self: end;
+    padding-bottom: 2%;
 }
 
-.tour{
-  grid-area: tour;
+/* INDEX.PHP LAYOUT */
+.indexpage{
+    
+    grid-template-areas:"header"
+                        "box1"
+                        "box2"
+                        "box3"
+                        "box4"
+                        "footer"
+    ;
 }
 
-.topic{
-  grid-area: topic;
-}
-
-.scoreboard {
-  grid-area: scoreboard;
-}
 .login {
-  grid-area: login;
+  grid-area: footer;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
+  padding-bottom: 2%;
 }
+
+/* Choose Journey Layout */
 
 /* GAME PAGE LAYOUT */
 /* points class will have nested grid - left side clue, right side points */
+.gamepage{
+    grid-template-rows: 0.6fr 0.4fr 0.25fr 1.5fr 0.25fr 0.25fr;
+    grid-template-areas:"header"
+                        "points"
+                        "higher"
+                        "quiz"
+                        "lower"
+                        "footer"
+    ;
+}
+
 .points{
     grid-area: points;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding-top: 3%;
 }
 
 .higher{
     grid-area: higher;
-}
-
-/* quiz class will have nested grid - need to flesh this out with the team... */
-.quiz{
-    grid-area: quiz;
+    height: 2.2em;
+    margin-left: 8%;
+    margin-right: 8%;
+    align-self: center;
 }
 
 .lower{
     grid-area: lower;
+    height: 2.2em;
+    margin-left: 8%;
+    margin-right: 8%;
+    align-self: center;
+}
+/* quiz class will have nested grid - need to flesh this out with the team... */
+.quizbox{
+    grid-area: quiz;
+    background-color: #bfe3fa;
+    margin-left: 8%;
+    margin-right: 8%;
+    font-size: 0.7em;
+    text-align: left;
+    align-self: center;
 }
 
 
-
-/* BUTTON CSS FRONT PAGE*/
+/* BUTTON CSS */
 .input {
   width: 230px;
   outline: none;
@@ -150,6 +162,30 @@ a {
   font-weight: bolder;
  }
 
+ .clptbutton {
+  width: 75px;
+  height: 50px;
+  padding: 0.5%;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  background-color:white;
+  border: none;
+  color: #08415c;
+  font-weight: bolder;
+ }
+
+ .hilobtn{
+   width: 100%;
+   height: 100%;
+   background-color: white;
+   font-weight: bolder;
+   font-size: 1.1em;
+   border: darkgrey solid;
+   border-radius: 15px;
+ }
+
  .idbutton {
   width: 230px;
   height: 50px;
@@ -172,7 +208,6 @@ a {
    box-shadow: 0 1px rgb(179, 179, 179);
    transform: translateY(4px);
  }
-
 
 /*James' Edits*/
 #map {

@@ -21,27 +21,32 @@
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
 </head>
 
-<body>
-    <div class="grid journey">
-      
-          <header>
-            <a href="welcome.html"><img src="images/logo.png" alt="NDM" style="width:150px;height:100px;"></a>
-          </header>
+<body class="indexpage">    
+
+  <header class="box navheader">
+    <a href="index.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
+    <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
+    <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
+  </header>
+
+  <aside class="box">
+      <h1>WHERE WOULD YOU <BR>LIKE TO START?</h1>
+  </aside>
             
-          <aside id="playgame">
-            <form id="start" action="game.php" method="POST">
-              <input type="hidden" name="game" value='<?php echo $game; ?>'>
-              <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
-              <button type="submit" class="button">PLAY THE GAME</button>
-            </form>
-            
-          </aside>
+  <aside class="box">
+    <form id="start" action="game.php" method="POST">
+      <input type="hidden" name="game" value='<?php echo $game; ?>'>
+      <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
+      <button type="submit" class="button">PLAY THE GAME</button>
+    </form>
+  </aside>
 
-          <aside id="browsecontent"><button class="button"><a href="content.html">BROWSE SOME CONTENT</a></button></aside>
+  <aside class="box">
+    <a href="content.html"><button class="button">BROWSE SOME CONTENT</button></a>
+  </aside>
 
-        <footer class="footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
+  <footer class="box footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
 
-      </div>
 </body>
 
 </html>
