@@ -70,32 +70,28 @@
         <button class="cluepointbtn"><i class="fas fa-home"></i><br>HOME</button>
         <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
     </aside>
-
-    <article class="box infobox txtbox">
-        
+<article class="box infobox">
+     
         <?php if (!isset($_POST['insert'])): ?> <!-- if not pressed insert yet show this etc. -->
         <h1>Insert your score into the leaderboard!</h1>
         <h1>Your scored: <?php if (isset($_SESSION['scoreTemp'])) {echo $_SESSION['scoreTemp'];} ?></h1>
     
-
-    <aside class="box txtbox">
-            <form id="start" action="ending.php" method="POST">
-            <input type="hidden" name="insert" value=1>
-            <?php if ($nameRequest): ?> <!-- if account has no name-->
-            <input type="text" class="input" name="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
-            <?php endif ?>
-            <button type="submit" class="button">INSERT HIGH SCORE!</button>
-            </form> 
-        
+        <form id="start" action="ending.php" method="POST">
+        <input type="hidden" name="insert" value=1>
+        <?php if ($nameRequest): ?> <!-- if account has no name-->
+        <input type="text" class="input" name="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
+        <?php endif ?>
+        <button type="submit" class="button">INSERT HIGH SCORE!</button>
+        </form> 
         
         <?php else: ?> <!-- if pressed insert -->
         
-        
-        <h1> Well Done!</h1>
+        <h1>CONGRATULATIONS!</h1>
+        <p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent</p>
         <?php if (isset($_COOKIE["User"])): ?>
         <h1>If you want to try again,</h1>
-        <p>your ID for login is:
-        <?php echo $_COOKIE["User"]; ?></p>
+        <h3>your ID for login is:
+        <?php echo $_COOKIE["User"]; ?></h3>
         <?php endif ?>
         
         <aside class = "txtbox">

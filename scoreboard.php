@@ -38,9 +38,9 @@
         <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
     </aside>
 
-    <aside class="box txtbox">
-        <h1>Want to come back?</h1> 
-        <p>Your ID for login is: 
+    <aside class="box">
+        <h1>Don't forget your ID!</h1> 
+        <p>Use this number to track your progress: 
         <?php echo $_COOKIE["User"];?></p>
     </aside>
     

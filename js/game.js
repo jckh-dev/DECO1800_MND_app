@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 function answer(answer) {
 	//bellow is where the button is, this will be appended to #next (the form)
-	$("<button id='nextButton' type='submit' class='nextbtn next'>NEXT QUESTION<i class='fas fa-step-forward'></i></button>").appendTo("#next");
+	$("<button id='nextButton' type='submit' class='nextbtn next'>NEXT QUESTION</button>").appendTo("#next");
 	$("#displayAnswer").text(numberAnswer); // numberAnswer (echo 2), displayed on id of displayAnswer etc.
 	$("#answerButtonHigh").attr('onclick', ''); // makes action do nothing for answer buttons
 	$("#answerButtonLow").attr('onclick', '');
@@ -22,3 +22,6 @@ function answer(answer) {
 		$("#next").attr('action', 'ending.php');
 	}
 }
+
+
+// <i class='fas fa-step-forward'></i> <<<<< icon for next question
