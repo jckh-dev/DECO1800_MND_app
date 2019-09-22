@@ -65,27 +65,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Front Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
+
 <body>
 
-<div class="grid welcome">
+<div class="wrapper">
 
-  <header>
-    <a href="choose_journey.html"></a><img src="images/logo.png" alt="" style="width:150px;height:100px;"></a>
+<header class="box header navhd">
+    <a href="index.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
+    <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
+    <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
   </header>
   
-  <aside id="scoreboard"><a href="scoreboard.php"><button class="button">Leaderboard</button></a></aside>
-  <aside id="start_journey"><a href="choose_journey.php"><button class="button">Start Guided Tour</button></a></aside>
-  <aside id="login">
-      <div class = "center">
-    <form id="login" action="index.php" method="POST">
-      <button class="button" type='submit'>ID Login</button><br> <!-- button isn't centered when small -->
-      <div class="input"><input type="text"  name="userID" placeholder="Enter your ID" required></div>
-      </div>
-    </form>
+  <aside class="box txtbox">
+      <h1>CHOOSE YOUR <br>JOURNEY</h1>
   </aside>
+
+<div class="btnbox">
+  
+<aside class="box" id="start_journey"><a href="choose_journey.php"><button class="button">Start Guided Tour</button></a>
+</aside>
+
+    <aside class="box">
+    <a href="content.html"><button class="button">Browse Some Content</button></a>
+  </aside>
+
+  <aside class="box">
+    <a href=""><button class="button">Look At A Map</button></a>
+  </aside>
+
+  <aside class="box">
+      <a href="scoreboard.php"><button class="button">Leaderboard</button></a>
+  </aside>
+
+  <aside class="box">
+        <form id="login" action="index.php" method="POST">
+            <input type="text" class="input"name="userID" placeholder="Enter ID" required>
+            <button class="idbutton" type='submit'>Login</button>
+        </form>
+  </aside>
+    </div>
+
+  <footer class="box footer">PLACEHOLDER FOR BREADCRUMB</footer>
 
 </div>
 

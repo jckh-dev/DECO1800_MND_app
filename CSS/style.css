@@ -1,9 +1,285 @@
 *, *:before, *:after {
     box-sizing: border-box;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
   }
 
+  h1, h2{
+  color: #08415c;
+  margin: 3%;
+}
 
-.content {
+h3{
+  color: #08415c;
+}
+.wrapper{
+  min-height: 100vh;
+  border-left: solid #08415c 10px;
+  border-top: solid #08415c 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.4fr 0.1fr;
+  grid-gap: 0px;
+}
+
+.box {
+    /* background-color: lightgray; */
+    text-align: center;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.btnbox{
+  display: grid;
+  margin-left: 8%;
+  margin-right: 8%;
+  grid-gap: 2vh;
+  margin-top: 3%;
+}
+
+/* Front splash page CSS */
+.welcomepg {
+  min-height: 100vh;
+  min-width: 100wh;
+  border-left: solid #08415c 10px;
+  border-top: solid #08415c 10px;
+  border-radius: 10px;
+  position: relative;
+  background-image: url("/images/storm.jpg");
+}
+
+.logo{
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  right: 5%;
+  bottom: 20%;
+}
+
+.begin{
+  position: absolute;
+  width: 300px;
+  height: 40px;
+  right: 5%;
+  bottom:10%;
+  text-align: right;
+  font-weight: bolder;
+}
+
+.continue{
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+/* logo only header */
+.header{
+    padding-top: 5%;
+    padding-bottom: 3%;
+    border-bottom: #08415c solid 0.3em;
+}
+
+/* logo w/nav buttons */
+.navhd{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.backarrow{
+    height: 2em;
+    width: 2em;
+}
+.nextarrow{
+    height: 2em;
+    width: 2em;
+}
+
+/* Footer placeholder */
+.footer{
+    align-self: end;
+    padding: 3%;
+}
+
+/* Specific boxes */
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 3%;
+}
+
+.points{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 0 5% 0;
+}
+
+.highlowbox{
+    height: 2.2em;
+    align-self: center;
+    margin: 3% 8% 3% 8%;
+}
+
+.infobox{
+    background-color: #bfe3fa;
+    font-size: 0.8em;
+}
+
+.txtbox{
+  margin-top: 5%;
+  margin-bottom: 4%;
+}
+
+.endingpg > .infobox{
+  text-align: center;
+  padding: 5% 5% 10% 5%;
+}
+
+.endingpg > .txtbox{
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+
+.cluepage > .infobox{
+  padding: 5% 5% 10% 5%;
+}
+
+
+/* formating for input fields */
+.input {
+  border:#3891a6 solid;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 1%;
+  width: 80%;
+  height: 40px;
+}
+
+/* all the various buttons CSS */
+
+a {
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
+  text-align: center;
+  background-color:white;
+  border-radius: 15px;
+  font-size: 1.2em;
+  font-weight: bolder;
+  border:#3891a6 solid;
+  box-shadow: 2px 3px darkgray;
+}
+
+.button {
+  width: 230px;
+  height: 75px;
+  color: black;
+ }
+
+ .nextbtn{
+  width: 7em;
+  font-size:1em;
+  color: #08415c;
+ }
+
+ .cluepointbtn {
+  width: 70px;
+  height: 40px;
+  font-size: 1em;
+  border: none;
+  box-shadow: none;
+  color: #08415c;
+  align-self: start;
+ }
+
+ .hilobtn{
+   width: 100%;
+   height: 100%;
+   border: darkgrey solid;
+   box-shadow: none;
+ }
+
+ .idbutton {
+  width: 230px;
+  height: 50px;
+  cursor: pointer;
+  color: black;
+}
+
+.beginbtn{
+  width: 400px;
+  border: none;
+  box-shadow: none;
+}
+
+.button:hover {background-color: #535753}
+ 
+.button:active {
+   background-color: #535753;
+   box-shadow: 0 1px rgb(179, 179, 179);
+   transform: translateY(4px);
+ }
+
+/*James' Edits*/
+#map {
+	width: 70vw;
+  height: 40vh;
+  margin-top: 5%;
+  margin-bottom:5%;
+	background-color: white;
+	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .content {
   color: #fff;
   border-radius: 5px;
   padding: 20px;
@@ -20,9 +296,9 @@ body {
 
 h1, p {
   margin: 0 0 1em 0;
-}
+} */
 
-/*The wrapper element is the parent element controlling the core grid display. There are sub-classes underneath that specialise the grid display for each page as required. Please do not mess around with these as there is still some tweaking to do on these to finese the layout */
+/* The wrapper element is the parent element controlling the core grid display. There are sub-classes underneath that specialise the grid display for each page as required. Please do not mess around with these as there is still some tweaking to do on these to finese the layout
 
 .grid{
   display: grid;
@@ -101,34 +377,9 @@ h1, p {
 
 /* CSS FOR BUTTON ANIMATIONS */
 
-a {
-  text-decoration: none;
-}
-
-.button {
-  padding: 10px 10px;
-  font-size: 0.8em;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-  color: black;
-  background-color:white;
-  border:#3891a6 solid;
-  border-radius: 15px;
-  box-shadow: 0 2px #999;   
-  font-weight: bolder;
- }
-
-.button:hover {background-color: #535753}
- 
-.button:active {
-   background-color: #535753;
-   box-shadow: 0 1px rgb(179, 179, 179);
-   transform: translateY(4px);
- }
 
 
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
 .grid{
   max-width: 940px;
   display: grid;
@@ -142,8 +393,8 @@ a {
   justify-items: center;
 }
 
-/* GOES East satellite image of Hurricane Florence [Image] (2018). 
-Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-natural-disasters/ */
+GOES East satellite image of Hurricane Florence [Image] (2018). 
+Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-natural-disasters/
 .welcome {
   background: url(images/storm-1209365_1280.jpg) no-repeat center;
   grid-template-areas: "header  header  header  header" 
@@ -207,10 +458,10 @@ Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-n
                        ".      lower  lower  ."
                        "footer footer footer footer";
   
-}
+} */
 
 /* CSS FOR BUTTON ANIMATIONS */
-
+/* 
 .button {
   height:100px;
   width: 200px;
@@ -235,10 +486,10 @@ Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-n
    transform: translateY(4px);
  }
 
-}
+} */
 
 /*FREQUENTLY USED ELEMENTS OR BUTTONS */
-header {
+/* header {
   grid-area: header;
   border-bottom:#3891a6 solid 5px;
 }
@@ -269,10 +520,10 @@ header {
   border-radius: 15px;
   margin: 5px;
   
-}
+} */
 
 /*ONCE OFF BUTTONS*/
-.higher{
+/* .higher{
   grid-area: higher;
 }
 
@@ -290,24 +541,4 @@ header {
 
 #browsecontent {
   grid-area: main2;
-}
-
-/*James' Edits*/
-#login {
-  grid-area: login;
-}
-
-#scoreboard {
-  grid-area: score;
-}
-
-.center {
-  text-align: center;
-}
-
-#map {
-	width: 70vw;
-	height: 30vh;
-	background-color: white;
-	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
-}
+} */

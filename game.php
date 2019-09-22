@@ -151,38 +151,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Higher Or Lower</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
-<body>
 
-  <div class="grid game">
-    <header>   
-      <a href="welcome.html"><img src="images/logo.png" alt="NDM" style="width:150px;height:100px;"></a>
+<body>
+    <div class="wrapper">
+
+    <header class="box header navhd">
+        <a href="choosejourney.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
+        <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
+        <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
     </header>
 
-    <a href="index.php"><button class="button prev"><i class="fas fa-step-backward"></i>HOME</button></a> <!-- i'll have to implement "back" later-->
-    <!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
-    <form id="next" action="game.php" method="POST">
-    <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>
-    <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
-    </form>
+    <aside class="box points">
+        <form id="start" action="clue.php" method="POST">
+            <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
+            <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
+            <button class="cluepointbtn" type="submit"><i class="fas fa-question"></i><br>CLUES</button>
+        </form>
+        <!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
+        <form id="next" action="game.php" method="POST">
+            <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>
+            <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
+        </form>
+        <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
+    </aside>
     
-    <form id="start" action="clue.php" method="POST">
-      <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-      <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-      <button type="submit" class="button"><i class="fas fa-question"><br>CLUE</i></button>
-    </form>
-    
-    <aside class="points"><button class="button"><?php echo $_SESSION['scoreTemp']; ?><br>POINTS</button></aside> <!-- point button misalligned? -->
+    <aside class="box highlowbox">
+        <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
+    </aside>
 
-    <aside class="higher"><button id="answerButtonHigh" type="submit" onclick="answer('high')" class="button">HIGHER</button></aside>
-
-    <article class="quizbox">
-      <div class = "center">
-      <h1>Current Topic: <?php echo $oldGame[0]; ?></h1>
+    <article class="box infobox">
+      
+      <h1>Natural Disaster Classification:</h1> 
+      <h2><?php echo $oldGame[0]; ?></h2>
+      
       <h1>Next Topics:
-      <?php 
+      <!-- <?php 
         if (isset($_POST["game"]) || isset($_POST["oldGame"])) {
             for ($i = 1; $i < sizeof($oldGame); $i++) {
                 echo $oldGame[$i] . ", ";    
@@ -191,28 +198,23 @@
             echo "Nothing Left.";
         }
       ?>
-      </h1>
-      <h1>Title: <?php echo $info[0]["title"]; ?></h1>
-      <h1>Statistic: <?php echo $info[0]["statistic"]; ?></h1>
-      <h1>Higher or lower than: <?php echo $info[0]["randNum"] ?></h1>
-      <h1>Actual answer: <h1 id="displayAnswer">?</h1></h1> <!-- display actual -->
+      </h1> -->
+      
+      <!-- need to start working this over so it spits out something a little more user friendly, closer to the design mockups -->
+      <h1>Name Of Disaster: <?php echo $info[0]["title"]; ?></h1>
+      <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
+      <h2>Higher or lower than: </h2> <p><?php echo $info[0]["randNum"] ?></p>
+      <h2>Actual answer: </h2><p id="displayAnswer">?</p> <!-- display actual -->
       <h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
-      </div>
+      
     </article>
     
-
+    <aside class="box highlowbox">
+        <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower <i class="fas fa-chevron-circle-down"></i></button>
+    </aside>
     
-    <aside id="lower"><button id="answerButtonLow" type="submit" onclick="answer('low')" class="button">LOWER</button></aside>
-    
-  
-    <footer class="footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
-  
-  </div>
-
+    <footer class="box footer">PLACEHOLDER FOR BREADCRUMB</footer>
 </div>
-
-</div>
-
 <!-- jquery -->
 <script src="js/jquery-3.4.1.min.js"></script>
 

@@ -17,31 +17,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Choose Your Journey</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
 
-<body>
-    <div class="grid journey">
-      
-          <header>
-            <a href="welcome.html"><img src="images/logo.png" alt="NDM" style="width:150px;height:100px;"></a>
-          </header>
+<body class="indexpage">    
+
+  <header class="box header navhd">
+    <a href="index.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
+    <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
+    <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
+  </header>
+
+  <aside class="box">
+      <h1>WHERE WOULD YOU <BR>LIKE TO START?</h1>
+  </aside>
             
-          <aside id="playgame">
-            <form id="start" action="game.php" method="POST">
-              <input type="hidden" name="game" value='<?php echo $game; ?>'>
-              <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
-              <button type="submit" class="button">PLAY THE GAME</button>
-            </form>
-            
-          </aside>
+  <aside class="box">
+    <form id="start" action="game.php" method="POST">
+      <input type="hidden" name="game" value='<?php echo $game; ?>'>
+      <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
+      <button type="submit" class="button">PLAY THE GAME</button>
+    </form>
+  </aside>
 
-          <aside id="browsecontent"><button class="button"><a href="content.html">BROWSE SOME CONTENT</a></button></aside>
+  <footer class="box footer">PLACEHOLDER FOR BREADCRUMB</footer>
 
-        <footer class="footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
-
-      </div>
 </body>
 
 </html>
