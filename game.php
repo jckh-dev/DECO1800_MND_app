@@ -153,39 +153,43 @@
     <title>Higher Or Lower</title>
     <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
-<body class="gamepage">
 
-  <header class="box navheader">
-    <a href="choosejourney.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
-    <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
-    <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
-  </header>
+<body>
+    <div class="wrapper">
 
-    <!-- <a href="index.php"><button class="button prev"><i class="fas fa-step-backward"></i>HOME</button></a> i'll have to implement "back" later -->
-    <!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
-    <form id="next" action="game.php" method="POST">
-    <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>
-    <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
-    </form>
-    
+    <header class="box header navhd">
+        <a href="choosejourney.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
+        <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
+        <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
+    </header>
+
     <aside class="box points">
         <form id="start" action="clue.php" method="POST">
-        <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-        <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-        <button class="clptbutton" type="submit"><i class="fas fa-question"></i><br>CLUES</button>
+            <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
+            <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
+            <button class="cluepointbtn" type="submit"><i class="fas fa-question"></i><br>CLUES</button>
         </form>
-        <button class="clptbutton"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
+        <!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
+        <form id="next" action="game.php" method="POST">
+            <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>
+            <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
+        </form>
+        <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
     </aside>
     
-    <aside class="box higher"><button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >HIGHER</button></aside>
+    <aside class="box highlowbox">
+        <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
+    </aside>
 
-    <article class="box quizbox">
+    <article class="box infobox">
       
       <h1>Natural Disaster Classification:</h1> 
       <h2><?php echo $oldGame[0]; ?></h2>
-      <!-- <h1>Next Topics:
-      <?php 
+      
+      <h1>Next Topics:
+      <!-- <?php 
         if (isset($_POST["game"]) || isset($_POST["oldGame"])) {
             for ($i = 1; $i < sizeof($oldGame); $i++) {
                 echo $oldGame[$i] . ", ";    
@@ -195,6 +199,8 @@
         }
       ?>
       </h1> -->
+      
+      <!-- need to start working this over so it spits out something a little more user friendly, closer to the design mockups -->
       <h1>Name Of Disaster: <?php echo $info[0]["title"]; ?></h1>
       <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
       <h2>Higher or lower than: </h2> <p><?php echo $info[0]["randNum"] ?></p>
@@ -203,18 +209,12 @@
       
     </article>
     
-    <aside class="box lower">
-        <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">LOWER</button>
+    <aside class="box highlowbox">
+        <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower <i class="fas fa-chevron-circle-down"></i></button>
     </aside>
     
-    <footer class="box footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
-  
-  </div>
-
+    <footer class="box footer">PLACEHOLDER FOR BREADCRUMB</footer>
 </div>
-
-
-
 <!-- jquery -->
 <script src="js/jquery-3.4.1.min.js"></script>
 

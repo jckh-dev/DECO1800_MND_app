@@ -1,24 +1,23 @@
 *, *:before, *:after {
     box-sizing: border-box;
+    margin: 0;
     font-family: 'Raleway', sans-serif;
   }
 
-h1, h2{
-  margin: 0;
+  h1, h2{
   color: #08415c;
+  margin: 5%;
 }
 
-.cluepage > h1{
-  margin-bottom: 2%;
-}
-
-body{
-    border-left: solid #08415c 10px;
-    border-top: solid #08415c 10px;
-    border-radius: 10px;
-    min-height: 99vh;
-    display: grid;
-    
+.wrapper{
+  min-height: 100vh;
+  width: 100wh;
+  border-left: solid #08415c 10px;
+  border-top: solid #08415c 10px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: repeat(minmax(50px, max-content));
+  grid-template-columns: 1fr;
 }
 
 .box {
@@ -26,12 +25,47 @@ body{
     text-align: center;
     margin-left: 8%;
     margin-right: 8%;
-    margin-bottom: 3%;
+}
+
+.btnbox{
+  display: grid;
+  margin-left: 8%;
+  margin-right: 8%;
+  grid-gap: 2vh;
+  margin-top: 3%;
+}
+
+/* Front splash page CSS */
+.welcomepg {
+  min-height: 100vh;
+  min-width: 100wh;
+  border-left: solid #08415c 10px;
+  border-top: solid #08415c 10px;
+  border-radius: 10px;
+  position: relative;
+  background-image: url("/images/storm.jpg");
+}
+
+.logo{
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  right: 5%;
+  bottom: 20%;
+}
+
+.begin{
+  position: absolute;
+  width: 300px;
+  height: 40px;
+  right: 5%;
+  bottom:10%;
+  text-align: right;
+  font-weight: bolder;
 }
 
 /* logo only header */
 .header{
-    grid-area: header;
     padding-top: 5%;
     padding-bottom: 5%;
     border-bottom: #08415c solid 0.3em;
@@ -44,12 +78,10 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-
 .backarrow{
     height: 2em;
     width: 2em;
 }
-
 .nextarrow{
     height: 2em;
     width: 2em;
@@ -57,65 +89,11 @@ body{
 
 /* Footer placeholder */
 .footer{
-    grid-area: footer;
     align-self: end;
-    padding-bottom: 3%;
 }
 
-/* index page template LAYOUT */
-.indexpage{
-    grid-template-areas:"header"
-                        "box1"
-                        "box2"
-                        "box3"
-                        "box4"
-                        "footer"
-    ;
-}
-
-.endingpg{
-  grid-template-rows: 0.6fr 0.4fr 1fr 0.25fr;
-}
-
-.box1{
-  grid-area:box1;
-}
-
-.box2{
-  grid-area:box2;
-}
-
-.box3{
-  grid-area:box3;
-}
-
-.box4{
-  grid-area:box4;
-}
-
-/* game/clue page template */
-.gamepage{
-    grid-template-rows: 0.6fr 0.4fr 0.25fr 1.5fr 0.25fr 0.25fr;
-    grid-template-areas:"header"
-                        "points"
-                        "higher"
-                        "quiz"
-                        "lower"
-                        "footer"
-    ;
-}
-
-.cluepage{
-    grid-template-rows: 0.6fr 0.4fr 2fr 0.25fr;
-    grid-template-areas:"header"
-                        "points"
-                        "quiz"
-                        "footer"
-    ;
-}
-
+/* Specific boxes */
 .login {
-  grid-area: footer;
   display: flex;
   justify-content: center;
   align-items: end;
@@ -123,65 +101,56 @@ body{
 }
 
 .points{
-    grid-area: points;
     display: flex;
     justify-content: space-between;
-    padding-top: 3%;
+    padding-bottom: 5%;
 }
 
-.higher{
-    grid-area: higher;
+.highlowbox{
     height: 2.2em;
     align-self: center;
 }
 
-.lower{
-    grid-area: lower;
-    height: 2.2em;
-    align-self: center;
+
+
+.infobox{
+    background-color: #bfe3fa;
+    padding: 5%;
 }
 
 /* quiz class will have nested grid - need to flesh this out with the team... */
-.infobox{
-    background-color: #bfe3fa;
-    font-size: 0.7em;
-    text-align: left;
-    align-self: center;
-    padding: 3%;
+
+.gamepg > .infobox {
+
 }
 
-.gamepage > .infobox{
-    grid-area: quiz;
-}
-.indexpage > .infobox{
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-.cluepage > .infobox{
-  grid-area: quiz;
-  text-align: center;
-  align-self: stretch;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+.scorepg > .infobox{
+
 }
 
 .endingpg > .infobox{
   text-align: center;
-  align-self: stretch;
-  align-content: center;
-  padding-top: 15%;
-  padding-bottom: 15%;
-  margin-top: 2%;
-  margin-bottom: 0;
+  padding: 20% 5% 20% 5%;
+}
+
+.endingpg > .txtbox{
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+
+.txtbox{
+  margin-top: 5%;
+  margin-bottom: 4%;
 }
 
 /* formating for input fields */
 .input {
   border:#3891a6 solid;
   border-radius: 15px;
-  align-content: center;
   text-align: center;
-  margin: 3%;
+  margin-bottom: 1%;
+  width: 80%;
+  height: 50%;
 }
 
 /* all the various buttons CSS */
@@ -261,37 +230,7 @@ button{
 	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
 }
 
-.welcomepg {
-  background-image: url("images/storm-1209365_1280.jpg");
-  grid-template-areas: "." 
-                       "."
-                       "."
-                       "."
-                       "logo"
-                       "begin"
-                       ;
-  
-}
 
-.logo{
-  grid-area: logo;
-  width: 150px;
-  height: 100px;
-  padding-left: 20%;
-  padding-right: none;
-  padding-top: 30%;
-  padding-bottom: none;
-  margin-bottom: none;
-}
-
-.begin{
-  width: 300px;
-  height: 40px;
-  text-align: left;
-  margin-top:5%;
-  padding-left: 20%;
-  grid-area: begin;
-}
 
 
 

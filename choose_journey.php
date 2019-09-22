@@ -19,11 +19,12 @@
     <title>Choose Your Journey</title>
     <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
 
 <body class="indexpage">    
 
-  <header class="box navheader">
+  <header class="box header navhd">
     <a href="index.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
     <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
     <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
@@ -41,11 +42,7 @@
     </form>
   </aside>
 
-  <aside class="box">
-    <a href="content.html"><button class="button">BROWSE SOME CONTENT</button></a>
-  </aside>
-
-  <footer class="box footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
+  <footer class="box footer">PLACEHOLDER FOR BREADCRUMB</footer>
 
 </body>
 

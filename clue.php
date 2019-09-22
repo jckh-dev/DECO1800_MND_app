@@ -67,28 +67,44 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/leaflet.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
-<body>
+<body class="cluepage">
 
-    <div class="grid end">
-        <header>   
-        <a href="welcome.html"><img src="images/logo.png" alt="NDM" style="width:150px;height:100px;"></a>
+        <header class="box header navhd">
+            <a href="choosejourney.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
+            <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
+            <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
         </header>
 
-        <article class="quizbox">
-        <div class="center">
+        <aside class="box points">
+            <form id="start" action="game.php" method="POST">
+                <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
+                <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
+                <button type="submit" class="cluepointbtn"><i class="fas fa-gamepad"></i><br>
+                Back To Game</button>
+            </form>
+            <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
+        </aside>
+
+        <article class="box infobox">
+            <h1>TIME FOR A CLUE</h1>
             <script> var map = false; </script>
             <h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
             <h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
             <h1>Number to compare: <?php echo $info[0]["randNum"]; ?> </h1>
+            
             <?php if ($clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
-            <h1>Insert your code to get a clue (should be 3 digits): </h1>
+            
+            <h1>Insert your code to get a clue (should be 3 digits):</h1>
+            
             <form id="start" action="clue.php" method="POST">
                 <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
                 <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-                <input type="text" name="clueCode" placeholder="Enter clue code" required>
-                <button type="submit" class="button">Enter Code</button>
+                <input type="text" class="input" name="clueCode" placeholder="Enter clue code" required width="70" height="50">
+                <button type="submit" class="idbutton">Enter Code</button>
             </form>
+
             <?php elseif ($revealDesc): // if reveal desc 123?>
             <br>
             <h1> Description Clue (numbers removed) </h1>
@@ -98,19 +114,14 @@
                 var map = true; 
                 var id = <?php echo $info[0]["ID"] ?>; 
                 </script>
-
                 <article id="map"></article>
             <?php endif  // end of else if statement?>
-            <form id="start" action="game.php" method="POST">
-                <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-                <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-                <button type="submit" class="button">Go back to game</button>
-            </form>
-        </div>
+            
         </article>
+        
 
         <footer class="footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
-    </div>
+    
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/leaflet.js"></script>

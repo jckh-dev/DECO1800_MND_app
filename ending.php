@@ -53,44 +53,66 @@
     <title>Ending</title>
     <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
+    <div class="wrapper endingpg">
 
-    <div class="grid end">
-        <header>   
-        <a href="welcome.html"><img src="images/logo.png" alt="NDM" style="width:150px;height:100px;"></a>
-        </header>
+    <header class="box header navhd">
+        <a href="choosejourney.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
+        <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
+        <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
+    </header>
 
-        <article class="quizbox">
-        <div class="center">
-        <?php if (isset($_COOKIE["User"])): ?>
-        <h1>Want to come back? Your ID for login is: <?php echo $_COOKIE["User"]; ?></h1>
-        <?php endif ?>
+    <aside class="box points">
+        <button class="cluepointbtn"><i class="fas fa-question"></i><br>GAME</button>
+        <button class="cluepointbtn"><i class="fas fa-home"></i><br>HOME</button>
+        <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
+    </aside>
 
+    <article class="box infobox txtbox">
+        
         <?php if (!isset($_POST['insert'])): ?> <!-- if not pressed insert yet show this etc. -->
         <h1>Insert your score into the leaderboard!</h1>
-        <h1>Your score: <?php if (isset($_SESSION['scoreTemp'])) {echo $_SESSION['scoreTemp'];} ?></h1>
-        <form id="start" action="ending.php" method="POST">
+        <h1>Your scored: <?php if (isset($_SESSION['scoreTemp'])) {echo $_SESSION['scoreTemp'];} ?></h1>
+    
+
+    <aside class="box txtbox">
+            <form id="start" action="ending.php" method="POST">
             <input type="hidden" name="insert" value=1>
             <?php if ($nameRequest): ?> <!-- if account has no name-->
-            <input type="text" name="newName" placeholder="Enter your name" required>
+            <input type="text" class="input" name="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
             <?php endif ?>
-            <button type="submit" class="button">Insert</button>
-        </form>
+            <button type="submit" class="button">INSERT HIGH SCORE!</button>
+            </form> 
+        
+        
         <?php else: ?> <!-- if pressed insert -->
-        <p> Done! </p>
-        <form id="start" action="scoreboard.php" method="POST">
-            <button type="submit" class="button">Leaderboard</button>
-        </form>
-        <form id="start" action="index.php" method="POST">
-            <button type="submit" class="button">Home</button>
-        </form>
+        
+        
+        <h1> Well Done!</h1>
+        <?php if (isset($_COOKIE["User"])): ?>
+        <h1>If you want to try again,</h1>
+        <p>your ID for login is:
+        <?php echo $_COOKIE["User"]; ?></p>
         <?php endif ?>
-        </div>
-        </article>
+        
+        <aside class = "txtbox">
+            <form id="start" action="scoreboard.php" method="POST">
+            <button type="submit" class="button">Leaderboard</button>
+            </form>
+        </aside>
 
-        <footer class="footer">PLACEHOLDER FOR BREADCRUMB LINKS</footer>
-    </div>
+        <aside class = "txtbox">
+            <form id="start" class = "box" action="index.php" method="POST">
+            <button type="submit" class="button">Home</button>
+            </form>
+        </aside>
+    <?php endif ?>
+    </article> 
+    <footer class="box footer">PLACEHOLDER FOR BREADCRUMB</footer>
+
+</div>
 </body>
 </html>
