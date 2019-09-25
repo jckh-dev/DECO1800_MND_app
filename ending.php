@@ -44,26 +44,15 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ending</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
-</head>
+<?php
+include('includes/head.php');
+?>
 
-<body>
     <div class="wrapper endingpg">
 
-    <header class="box header navhd">
-        <a href="choosejourney.php"><img src="images/back arrow.png" alt="Go Back" class="backarrow"/></a>
-        <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
-        <a href=""><img src="images/next arrow.png" alt="Next" class="nextarrow"/></a>
-    </header>
+<?php
+include('includes/header.php');
+?>
 
     <aside class="box points">
         <button class="cluepointbtn"><i class="fas fa-question"></i><br>GAME</button>
@@ -107,8 +96,7 @@
         </aside>
     <?php endif ?>
     </article> 
-    <footer class="box footer">PLACEHOLDER FOR BREADCRUMB</footer>
-
-</div>
-</body>
-</html>
+    
+<?php
+include('includes/footer.php');
+?>
