@@ -65,7 +65,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Front Page</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/6471a92edb.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
 </head>
@@ -86,18 +86,18 @@
 
 <div class="btnbox">
   
-<aside class="box" id="start_journey"><a href="choose_journey.php"><button class="button">Start Guided Tour</button></a>
+<aside id="start_journey"><a href="choose_journey.php"><button class="button">Start Guided Tour</button></a>
 </aside>
 
-    <aside class="box">
-    <a href="content.html"><button class="button">Browse Some Content</button></a>
+    <aside>
+    <a href="game.php"><button class="button">Random Play</button></a>
   </aside>
 
-  <aside class="box">
+  <aside>
     <a href=""><button class="button">Look At A Map</button></a>
   </aside>
 
-  <aside class="box">
+  <aside>
       <a href="scoreboard.php"><button class="button">Leaderboard</button></a>
   </aside>
 
@@ -107,7 +107,7 @@
             <button class="idbutton" type='submit'>Login</button>
         </form>
   </aside>
-    </div>
+  </div>
 
   <footer class="box footer">PLACEHOLDER FOR BREADCRUMB</footer>
 
