@@ -79,6 +79,7 @@ h3{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 5%;
 }
 
 .continue{
@@ -209,13 +210,14 @@ button{
  }
 
  .cluepointbtn {
-  width: 70px;
+  width: 65px;
   height: 40px;
   font-size: 1em;
   border: none;
   box-shadow: none;
   color: #08415c;
   align-self: start;
+  padding: 0px;
  }
 
  .hilobtn{
