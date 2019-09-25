@@ -1,61 +1,5 @@
 <?php
-    session_start(); // start $_SESSION
-    include("db.php"); // db connect
-
-    if (!isset($_COOKIE["User"])) {
-        $sql = "SELECT userID from users ORDER BY userID DESC LIMIT 1";
-        $result = $db->query($sql);
-        if ($result) { //success
-            $row = $result->fetch_assoc();
-            $largestID = $row["userID"];
-            $largestID++;
-            $sql = "INSERT INTO users (userID) VALUES ('$largestID')";
-            $result = $db->query($sql);
-            setcookie("User", $largestID, time() + (60*60*1000), "/"); // 1 hour
-            echo "Created User" . $largestID . "<br>";
-            $_COOKIE["User"] = $largestID;
-        } else { //error or empty
-            $sql = "INSERT INTO users (userID) VALUES ('1')";
-            $result = $db->query($sql);
-        } 
-    }
-
-    if (isset($_POST['register'])) {
-        $sql = "SELECT userID from users ORDER BY userID DESC LIMIT 1";
-        $result = $db->query($sql);
-        if ($result) { //success
-            $row = $result->fetch_assoc();
-            $largestID = $row["userID"];
-            $largestID++;
-            $sql = "INSERT INTO users (userID) VALUES ('$largestID')";
-            $result = $db->query($sql);
-            setcookie("User", $largestID, time() + (60*60*1000), "/"); // 1 hour
-            echo "Created User" . $largestID . "<br>";
-            $_COOKIE["User"] = $largestID;
-        } else { //error or empty
-            $sql = "INSERT INTO users (userID) VALUES ('1')";
-            $result = $db->query($sql);
-        } 
-    }
-
-    $loginTest = false;
-    if (isset($_POST['userID'])) {
-        $loginUserID = $_POST['userID'];
-        $sql = "SELECT userID from users WHERE userID = '$loginUserID'";
-        $result = $db->query($sql);
-        if ($result) { // it exists
-            $row = $result->fetch_assoc();
-            $UserID = $row["userID"];
-            if($UserID) {
-                setcookie("User", $UserID, time() + (60*60*1000), "/"); // 1 hour
-                $_COOKIE["User"] = $UserID;
-            } else {
-                $loginTest = true; // failure
-            }
-        } else {
-            $loginTest = true; // failure
-        }
-    }
+include('includes/indexlogic.php');
 ?>
 
 <?php
@@ -74,11 +18,20 @@ include('includes/header.php');
 
 <div class="btnbox">
 
-<aside id="start_journey"><a href="choose_journey.php"><button class="button">Start Guided Tour</button></a>
+<aside>    
+<form id="start" action="game.php" method="POST">
+      <input type="hidden" name="game" value='<?php echo $game; ?>'>
+      <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
+      <button type="submit" class="button">Start Guided Tour</button>
+    </form>
 </aside>
 
 <aside>
-<a href="game.php"><button class="button">Random Play</button></a>
+<form id="start" action="game.php" method="POST">
+      <input type="hidden" name="game" value='<?php echo $game; ?>'>
+      <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
+      <button type="submit" class="button">Random Play</button>
+</form>
 </aside>
 
 <aside>
@@ -95,6 +48,7 @@ include('includes/header.php');
 <button class="idbutton" type='submit'>Login</button>
 </form>
 </aside>
+
 </div>
 
 <?php
