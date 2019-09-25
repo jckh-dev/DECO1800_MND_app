@@ -1,3 +1,3 @@
 <header class="box header">
-    <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150"/></a>
+    <a href="journey.php"><img src="images/logo.png" alt="Back to page" class="homelogo" height="80" width="130"/></a>
 </header>

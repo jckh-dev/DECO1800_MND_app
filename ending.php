@@ -20,7 +20,7 @@ include('includes/header.php');
       <button type="submit" class="cluepointbtn"><i class="fas fa-gamepad"></i><br>NEW GAME</button>
     </form>
 
-    <a href="index.php"><button class="cluepointbtn"><i class="fas fa-home"></i><br>HOME</button></a>
+    <a href="journey.php"><button class="cluepointbtn"><i class="fas fa-home"></i><br>HOME</button></a>
 
     <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
 

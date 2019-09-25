@@ -30,7 +30,7 @@ include('includes/head.php');
 </aside>
 
 <aside class="continue">
-    <a href="index.php"><h1>Continue <i class="fas fa-chevron-circle-right"></i></h1>
+    <a href="journey.php"><h1>Continue <i class="fas fa-chevron-circle-right"></i></h1>
     </a>
 </aside>
 </aside>
