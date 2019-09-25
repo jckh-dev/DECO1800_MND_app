@@ -1,23 +1,43 @@
-<footer class="footer">
+<footer class="ftr">
 
 <ul class="breadcrumb">
 
-<li><a href ="index.php"><button class="footerbtn"><i class="fas fa-door-open"></i><br>Welcome</button></a></li>
-<li><a href ="journey.php"><button class="footerbtn"><i class="fas fa-home"></i><br>Home</button></a></li>
-<li><form id="start" action="game.php" method="POST">
-      <input type="hidden" name="game" value='<?php echo $game; ?>'>
-      <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
-      <button type="submit" class="footerbtn"><i class="fas fa-gamepad"></i><br>Game</button>
-    </form>
+<li><a href="index.php">
+  <span class="fas fa-door-open"></span>
+  <span class="text">Welcome</span>
+</a>
 </li>
-<li><a href ="map.php"><button class="footerbtn"><i class="fas fa-map-marked-alt"></i><br>Map</button></a></li>
-<li><a href ="scoreboard.php"><button class="footerbtn"><i class="fas fa-bullhorn"></i><br>Leader Board</button></a></li>
-<li><a href ="ending.php"><button class="footerbtn"><i class="fas fa-crown"></i><br>End</button></a></li>
 
+<li>
+    <a href="journey.php">
+      <span class="fas fa-home"></span>
+      <span class="text">Home</span>
+    </a>
+</li>
+
+<li>
+    <a href="game.php">
+      <span class="fas fa-gamepad"></span>
+      <span class="text">Game</span>
+    </a>
+</li>
+
+<li>
+    <a href="map.php">
+      <span class="fas fa-map-marked-alt"></span>
+      <span class="text">Map</span>
+    </a>
+</li>
+
+<li>
+    <a href="scoreboard.php">
+      <span class="fas fa-bullhorn"></span>
+      <span class="text">Leaderboard</span>
+    </a>
+</li>
 </ul>
 
 </footer>
-
 </div>
 </body>
 </html>

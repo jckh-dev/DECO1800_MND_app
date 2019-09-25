@@ -6,7 +6,6 @@
 
 h1, h2{
 color: #08415c;
-margin: 3%;
 }
 
 h3{
@@ -53,20 +52,16 @@ h3{
 
 .logo{
   position: absolute;
-  width: 150px;
-  height: 100px;
-  right: 7%;
+  right: 5%;
   bottom: 15%;
 }
 
 .begin{
   position: absolute;
-  width: 300px;
-  height: 40px;
+  width: 241px;
   right: 5%;
   bottom:10%;
   text-align: right;
-  font-weight: bolder;
 }
 
 /* welcomemsg page CSS */
@@ -103,40 +98,47 @@ h3{
 }
 
 /* Footer CSS */
-.footer{
-    align-self: end;
+.ftr{
     padding-top: 3%;
+    align-self: end;
 }
-
- .footerbtn {
-  width: 50px;
-  height: 40px;
-  border: none;
- }
 
 ul.breadcrumb{
   display: flex;
   justify-content: space-evenly;
-  padding: 0px;
-}
-
-ul.breadcrumb li{
+  align-items: end;
+  padding: 2% 0 2% 0;
   list-style: none;
   font-size: 0.5em;
+  background-color: lightgray;
 }
 
-ul.breadcrumb li a:hover{
-  color:#6ec9dd ;
-  text-decoration: underline;
+ul.breadcrumb li a {
+  color:#08415c;
 }
 
 /* The light blue boxes that hold text information */
 .infobox{
-    background-color: #bfe3fa;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #d5ebf8;
     font-size: 0.8em;
     border-radius: 5px;
+    text-align: center;
+    padding: 5% 5% 5% 5%;
+    margin-left: 8%;
+    margin-right: 8%;
 }
 
+.endingpg > .infobox{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.cluepage > .infobox{
+  margin-top: 9%;
+}
 /* Specific boxes */
 .login {
   display: flex;
@@ -160,20 +162,6 @@ ul.breadcrumb li a:hover{
 .txtbox{
   margin-top: 5%;
   margin-bottom: 4%;
-}
-
-.endingpg > .infobox{
-  text-align: center;
-  padding: 5% 5% 10% 5%;
-}
-
-.endingpg > .txtbox{
-  margin-top: 8%;
-  margin-bottom: 8%;
-}
-
-.cluepage > .infobox{
-  padding: 5% 5% 10% 5%;
 }
 
 /* formating for input fields */
@@ -216,17 +204,12 @@ button{
  }
 
  .cluepointbtn {
-  width: 65px;
-  height: 40px;
   font-size: 1em;
   border: none;
-  box-shadow: none;
   color: #08415c;
   align-self: start;
   padding: 0px;
  }
-
-
 
  .hilobtn{
    width: 100%;
@@ -248,14 +231,6 @@ button{
   box-shadow: none;
 }
 
-.button:hover {background-color: #535753}
- 
-.button:active {
-   background-color: #535753;
-   box-shadow: 0 1px rgb(179, 179, 179);
-   transform: translateY(4px);
- }
-
 /*James' Edits*/
 #map {
 	width: 70vw;
@@ -265,313 +240,3 @@ button{
 	background-color: white;
 	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .content {
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
-  margin: 5px;
-}
-
-body {
-  margin: 40px;
-  font-family: 'Open Sans', 'sans-serif';
-  background-color: darkgray;
-  max-height: 800px;
-}
-
-h1, p {
-  margin: 0 0 1em 0;
-} */
-
-/* The wrapper element is the parent element controlling the core grid display. There are sub-classes underneath that specialise the grid display for each page as required. Please do not mess around with these as there is still some tweaking to do on these to finese the layout
-
-.grid{
-  display: grid;
-  min-height: 500px;
-  grid-template-columns: 1fr 1fr;
-  border-left: solid #08415c 10px;
-  border-top: solid #08415c 10px;
-  border-radius: 15px;
-  align-items: center;
-  justify-items: center;
-  font-size: 0.6em;
-}
-
-.welcome {
-  background: url(images/storm-1209365_1280.jpg) no-repeat center;
-  grid-template-areas: "header  header" 
-                       ".       ."
-                       ".       ."
-                       "score   score"
-                       "nav     nav"
-                       "login   login"
-                       ;
-  
-}
-
-.journey {
-  background: white;
-  grid-template-areas: "header header"
-                      ".       ." 
-                       "main   main"
-                       "main2  main2"
-                       "footer footer";
-  
-}
-
-.leaderboard {
-  background: white;
-  grid-template-areas: "header header"
-                       "qbox   qbox" 
-                       "qbox   qbox"
-                       "qbox   qbox"
-                       "footer footer";
-  
-}
-
-.clue {
-  background: white;
-  grid-template-areas: "header header"
-                       "qbox   qbox" 
-                       "qbox   qbox"
-                       "qbox   qbox"
-                       "footer footer";
-  
-}
-
-.end {
-  background: white;
-  grid-template-areas: "header header"
-                       "qbox   qbox" 
-                       "qbox   qbox"
-                       "qbox   qbox"
-                       "footer footer";
-}
-
-.game{
-  background: white;
-  grid-template-areas: "header header"
-                       "nav1   nav2"
-                       "clue   points"
-                       "higher higher"
-                       "qbox   qbox"
-                       "lower  lower"
-                       "footer footer";
-  
-}
-
-/* CSS FOR BUTTON ANIMATIONS */
-
-
-
-/* @media (min-width: 640px) {
-.grid{
-  max-width: 940px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 2fr 1fr 1fr;
-  min-height: 800px;
-  border-left: solid #08415c 10px;
-  border-top: solid #08415c 10px;
-  border-radius: 15px;
-  align-items: center;
-  justify-items: center;
-}
-
-GOES East satellite image of Hurricane Florence [Image] (2018). 
-Retrieved from https://thesoufancenter.org/intelbrief-national-insecurity-amid-natural-disasters/
-.welcome {
-  background: url(images/storm-1209365_1280.jpg) no-repeat center;
-  grid-template-areas: "header  header  header  header" 
-                       ".       .       .       ."
-                       ".       .       .       ."
-                       ".       .       .       ."
-                       "score   score   score   score"
-                       "nav     nav     nav     nav"
-                       "login   login   login   login"
-                       ;
-  
-}
-
-.journey {
-  background: white;
-  grid-template-areas: "nav1   header header nav2"
-                      ".       .      .      ." 
-                       "main   main   main   main"
-                       "main2  main2  main2  main2"
-                       "footer footer footer footer";
-  
-}
-
-.leaderboard {
-  background: white;
-  grid-template-areas: "header header header header"
-                       "qbox   qbox   qbox   qbox" 
-                       "qbox   qbox   qbox   qbox"
-                       "qbox   qbox   qbox   qbox"
-                       "footer footer footer footer";
-  
-}
-
-.clue {
-  background: white;
-  grid-template-areas: "header header header header"
-                       "qbox   qbox   qbox   qbox" 
-                       "qbox   qbox   qbox   qbox"
-                       "qbox   qbox   qbox   qbox"
-                       "footer footer footer footer";
-  
-}
-
-.end {
-  background: white;
-  grid-template-areas: "header header header header"
-                       "qbox   qbox   qbox   qbox" 
-                       "qbox   qbox   qbox   qbox"
-                       "qbox   qbox   qbox   qbox"
-                       "footer footer footer footer";
-  
-}
-
-
-.game{
-  background: white;
-  grid-template-areas: "nav1   header header nav2" 
-                       "clue   clue   points points"
-                       ".      higher higher ."
-                       "qbox   qbox   qbox   qbox"
-                       ".      lower  lower  ."
-                       "footer footer footer footer";
-  
-} */
-
-/* CSS FOR BUTTON ANIMATIONS */
-/* 
-.button {
-  height:100px;
-  width: 200px;
-  padding: 10px 10px;
-  font-size: 1em;
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-  border:#3891a6 solid;
-  border-radius: 15px;
-  box-shadow: 0 7px #999;   
-  font-weight: bolder;
- }
-
-.button:hover {background-color: #535753}
- 
-.button:active {
-   background-color: #535753;
-   box-shadow: 0 10px rgb(179, 179, 179);
-   transform: translateY(4px);
- }
-
-} */
-
-/*FREQUENTLY USED ELEMENTS OR BUTTONS */
-/* header {
-  grid-area: header;
-  border-bottom:#3891a6 solid 5px;
-}
-
-.prev{
-  grid-area: nav1;
-}
-
-.next{
-  grid-area: nav2;
-}
-
-.footer{
-  grid-area: footer;
-}
-
-.fa-question{
-  grid-area: clue;
-}
-
-.points {
-  grid-area: points;
-}
-
-.quizbox {
-  grid-area: qbox;
-  border:#3891a6 solid;
-  border-radius: 15px;
-  margin: 5px;
-  
-} */
-
-/*ONCE OFF BUTTONS*/
-/* .higher{
-  grid-area: higher;
-}
-
-#lower{
-  grid-area: lower;
-}
-
-#start_journey {
-  grid-area: nav;
-}
-
-#playgame {
-  grid-area:main;
-}
-
-#browsecontent {
-  grid-area: main2;
-} */

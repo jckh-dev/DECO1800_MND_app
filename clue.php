@@ -25,12 +25,8 @@ Back To Game</button>
 
 </aside>
 
-<aside class="box">
+<article class="infobox">
 <h1>TIME FOR A CLUE!</h1>
-</aside>
-
-<article class="box infobox">
-
 <script> var map = false; </script>
 <h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
 <h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>

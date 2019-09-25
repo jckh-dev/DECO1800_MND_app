@@ -34,7 +34,7 @@ include('includes/header.php');
     <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
 </aside>
 
-<article class="box infobox">
+<article class="infobox">
 
     <h1>Natural Disaster Classification:</h1>
 

@@ -5,7 +5,7 @@ include('includes/head.php');
     <div class="welcomepg">
             
     <aside class="logo">
-        <img src="images/logo.png" alt="Museum Of Natural Disasters" class="homelogo" height="100" width="150"/>
+        <img src="images/logo.png" alt="Museum Of Natural Disasters" class="homelogo" height="80" width="130"/>
     </aside>
 
     <aside class="begin">

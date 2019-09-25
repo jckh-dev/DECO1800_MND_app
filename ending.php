@@ -26,7 +26,7 @@ include('includes/header.php');
 
 </aside>
 
-<article class="box infobox">
+<article class="infobox">
 
     <?php if (!isset($_POST['insert'])): ?> <!-- if not pressed insert yet show this etc. -->
     <h1>Insert your score into the leaderboard!</h1>
@@ -57,7 +57,7 @@ include('includes/header.php');
     </aside>
 
     <aside class = "txtbox">
-        <form id="start" class = "box" action="index.php" method="POST">
+        <form id="start" action="index.php" method="POST">
         <button type="submit" class="button">Home</button>
         </form>
     </aside>
