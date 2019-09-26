@@ -87,6 +87,26 @@ h3{
   margin: 0;
   width: 150px;
   text-align: left;
+  cursor: pointer;
+}
+
+#demoinfo{
+  display: none;
+  position: absolute;
+  top: 20%;
+  height: 65vh;
+  width:80vw;
+  z-index: 1;
+  padding: 5%;
+  background: #6ec9dd;
+}
+
+#demoinfo button{
+  margin-top: 20%;
+}
+
+.demoactive{
+  background-color: darkgray;
 }
 
 /* header CSS */
@@ -103,18 +123,45 @@ h3{
     align-self: end;
 }
 
-ul.breadcrumb{
+.breadcrumb{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: end;
   padding: 2% 0 2% 0;
   list-style: none;
   font-size: 0.5em;
-  background-color: lightgray;
+  font-weight: normal;
 }
 
-ul.breadcrumb li a {
-  color:#08415c;
+.breadcrumb li a {
+  display: block; 
+  width: 75px;
+  line-height: 3em;
+  background-color: lightgray;
+  text-align: center;
+  text-decoration: none;
+  color: #08415c;
+  margin: 5%;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.breadcrumb li a:hover, .pagination li a.active {
+  color: lightgray;
+  background-color: #08415c;
+}
+.breadcrumb li:first-child a {
+  border-radius: 5px 0 0 5px;
+}
+.breadcrumb li:last-child a {
+  border-radius: 0 5px 5px 0;
+}
+
+.breadcrumb button{
+  border: none;
+  background: none;
+  font-size: inherit;
+  color: inherit;
 }
 
 /* The light blue boxes that hold text information */
@@ -139,6 +186,8 @@ ul.breadcrumb li a {
 .cluepage > .infobox{
   margin-top: 9%;
 }
+
+
 /* Specific boxes */
 .login {
   display: flex;
@@ -240,3 +289,4 @@ button{
 	background-color: white;
 	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
 }
+
