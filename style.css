@@ -1,8 +1,22 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  font-family: 'Raleway', sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+}
 
 h1, h2{
 color: #08415c;
@@ -111,57 +125,61 @@ h3{
 
 /* header CSS */
 .header{
+    align-self: start;
     padding-top: 5%;
     padding-bottom: 5%;
     border-bottom: #08415c solid 0.3em;
-    margin-bottom: 5%;
 }
 
 /* Footer CSS */
-.ftr{
-    padding-top: 3%;
+.pagination
+  {
+    display: flex;
+    justify-content: center;
     align-self: end;
 }
+.pagination-container {
+  margin-top: 5%;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: darkgrey;
+  display: inline-flex;
+  justify-content: space-around;
+  position: relative;
+  overflow: hidden;
+}
+.pagination-hover-overlay {
+  background-color: #e60023;
+  width: 50px;
+  height: 35px;
+  border-radius: 5px;
+  position: absolute;
+  /* top: 50%; */
+  /* transform: translateY(-50%);
+  transition-duration: 0.5s;
+  left: 60px; */
+  opacity: 0;
+}
 
-.breadcrumb{
+.pagination-page-number {
+  border-radius: 5px;
+  color: #212121;
+  width: 50px;
+  height: 30px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: end;
-  padding: 2% 0 2% 0;
-  list-style: none;
-  font-size: 0.5em;
-  font-weight: normal;
+  transition-duration: 0.5s;
+  position: relative;
+  z-index: 2;
+  font-weight: 700;
+  font-size: 10px;
 }
-
-.breadcrumb li a {
-  display: block; 
-  width: 75px;
-  line-height: 3em;
-  background-color: lightgray;
-  text-align: center;
-  text-decoration: none;
-  color: #08415c;
-  margin: 5%;
-  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
+.pagination-page-number:hover {
+  color: #fff;
 }
-
-.breadcrumb li a:hover, .pagination li a.active {
-  color: lightgray;
-  background-color: #08415c;
-}
-.breadcrumb li:first-child a {
-  border-radius: 5px 0 0 5px;
-}
-.breadcrumb li:last-child a {
-  border-radius: 0 5px 5px 0;
-}
-
-.breadcrumb button{
-  border: none;
-  background: none;
-  font-size: inherit;
-  color: inherit;
+.pagination-page-number.active {
+  color: #fff;
 }
 
 /* The light blue boxes that hold text information */
@@ -178,15 +196,9 @@ h3{
     margin-right: 8%;
 }
 
-.endingpg > .infobox{
-  margin-top: 10%;
-  margin-bottom: 10%;
-}
-
 .cluepage > .infobox{
   margin-top: 9%;
 }
-
 
 /* Specific boxes */
 .login {
@@ -197,9 +209,11 @@ h3{
 }
 
 .points{
+    align-self: start;
     display: flex;
     justify-content: space-between;
     padding-bottom: 5%;
+    padding-top: 5%;
 }
 
 .highlowbox{
@@ -225,7 +239,8 @@ h3{
 
 /* all the various buttons CSS */
 
-a {
+a,
+a:hover {
   text-decoration: none;
 }
 
@@ -289,4 +304,3 @@ button{
 	background-color: white;
 	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
 }
-

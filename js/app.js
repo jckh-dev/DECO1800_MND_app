@@ -1,15 +1,11 @@
-let demo = document.querySelector(".demo"),
-    demoinfo = document.querySelector("#demoinfo"),
-    democlose = document.querySelector("#democlose");
+var demo = document.querySelector(".demo");
+var demoinfo = document.querySelector("#demoinfo");
+var democlose = document.querySelector("#democlose");
 
-$(document).ready(function () {
-
-demo.addEventListener('click', function(){
+demo.addEventListener('click', function () {
     $(demoinfo).show("blind");
 })
 
-democlose.addEventListener('click', function(){
+democlose.addEventListener('click', function () {
     $(demoinfo).hide("blind");
-})
-
 })

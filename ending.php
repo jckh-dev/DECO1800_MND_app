@@ -6,7 +6,7 @@ include('includes/endinglogic.php');
 include('includes/head.php');
 ?>
 
-<div class="wrapper endingpg">
+<div class="wrapper ending">
 
 <?php
 include('includes/header.php');
