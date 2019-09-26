@@ -6,7 +6,7 @@ include('includes/endinglogic.php');
 include('includes/head.php');
 ?>
 
-<div class="wrapper endingpg">
+<div class="wrapper">
 
 <?php
 include('includes/header.php');
@@ -25,6 +25,10 @@ include('includes/header.php');
     <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
 
 </aside>
+
+</section>
+
+<section class="gridwrap2">
 
 <article class="infobox">
 

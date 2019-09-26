@@ -4,15 +4,19 @@ include('includes/head.php');
 
 <div class="wrapper">
 
-<header class="box header">
-    <a href="index.php"><img src="images/logo.png" alt="Go Home" class="homelogo" height="100" width="150" /></a>
-</header>
+<?php
+include('includes/header.php');
+?>
 
-<aside class="box">
+<aside class="box txtbox">
     <h1>WELCOME</h1><br>
 </aside>
 
-<article class="box welcomemsg">
+</section>
+
+<section class="gridwrap2">
+
+<article class="box">
     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
     aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
@@ -32,10 +36,11 @@ include('includes/head.php');
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
     <button id="democlose" class="button">Close Demo Box</button>
-    
 
 </article>
+</section>
 
+<section class="gridwraper3">
 
 <aside class="box welcomebtns">
 <aside class="demo">
@@ -47,9 +52,10 @@ include('includes/head.php');
     </a>
 </aside>
 </aside>
-
+</section>
 </div>
+
 <script src="js/app.js"></script>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js\jquery-ui.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js\jquery-ui.min.js"></script>
 </body>

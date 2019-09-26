@@ -13,7 +13,6 @@ include('includes/header.php');
 ?>
 
 <aside class="box points">
-
 <form id="start" action="game.php" method="POST">
 <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
 <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
@@ -22,8 +21,11 @@ Back To Game</button>
 </form>
 
 <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
-
 </aside>
+
+</section>
+
+<section class="gridwrap2">
 
 <article class="infobox">
 <h1>TIME FOR A CLUE!</h1>
@@ -57,10 +59,8 @@ var id = <?php echo $info[0]["ID"] ?>;
 <?php endif  // end of else if statement?>
 </article>
 
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/leaflet.js"></script>
 <script src="js/game_ajax.js"></script>
-
+<script src="js/leaflet.js"></script>
 <?php
 include('includes/footer.php');
 ?>

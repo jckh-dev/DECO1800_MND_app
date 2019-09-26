@@ -1,26 +1,22 @@
-<footer class="ftr">
+</section>
 
-<ul class="breadcrumb">
+<section class="gridwrap3">
 
-<li><a href="index.php"class="fas fa-door-open">  Welcome</a></li>
-
-<li><a href="journey.php" class="fas fa-home">  Home</a></li>
-
-<!-- Doesn't keep the current game running -- resets it -->
-<li><a>
-<form id="start" action="game.php" method="POST">
-      <input type="hidden" name="game" value='<?php echo $game; ?>'>
-      <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
-      <button type="submit" class="fas fa-gamepad">  Game</button></form></a>
-</li>
-
-<li><a href="map.php" class="fas fa-map-marked-alt">  Map</a></li>
-
-<li><a href="scoreboard.php" class="fas fa-bullhorn">  Leaderboard</a></li>
-
-</ul>
-
+<footer class="pagination">
+  <div class="pagination-container">
+      <div class="pagination-hover-overlay"></div>
+          <a href="index.php" class="pagination-page-number">Welcome</a>
+          <a href="journey.php" class="pagination-page-number">Home</a>
+          <a href="game.php" class="pagination-page-number">Game</a>
+          <a href="map.php" class="pagination-page-number">Map</a>
+          <a href="scoreboard.php" class="pagination-page-number">Scores</a>
+          <a href="ending.php" class="pagination-page-number">Finish</a> 
+  </div>
 </footer>
+</section>
 </div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/function.js"></script>
 </body>
 </html>

@@ -30,12 +30,17 @@ include('includes/header.php');
 
 </aside>
 
+</section>
+
+<section class="gridwrap2">
+
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
 </aside>
 
 <article class="infobox">
-
+    <h1>THE HIGHER OR LOWER GAME</h1>
+    
     <h1>Natural Disaster Classification:</h1>
 
     <h2><?php echo $oldGame[0]; ?></h2>
