@@ -27,7 +27,11 @@ GAME</button>
 <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
 </aside>
 
-<article class="infobox txtbox">
+</section>
+
+<section class="gridwrap2">
+
+<article class="infobox">
 
 <h1>Leaderboard</h1>
 <!-- 10 scores max can be changed in the sql query above -->

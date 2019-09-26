@@ -1,3 +1,7 @@
+</section>
+
+<section class="gridwrap3">
+
 <footer class="pagination">
   <div class="pagination-container">
       <div class="pagination-hover-overlay"></div>
@@ -9,7 +13,7 @@
           <a href="ending.php" class="pagination-page-number">Finish</a> 
   </div>
 </footer>
-
+</section>
 </div>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>

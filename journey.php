@@ -12,13 +12,14 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-<aside class="box txtbox">
+<aside class="box">
 <h1>CHOOSE YOUR <br>JOURNEY</h1>
 </aside>
 
-<div class="btnbox">
+</section>
+<section class="gridwrap2">
 
-<aside>    
+<aside> 
 <form id="start" action="game.php" method="POST">
       <input type="hidden" name="game" value='<?php echo $game; ?>'>
       <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
@@ -42,14 +43,12 @@ include('includes/header.php');
 <a href="scoreboard.php"><button class="button">Leaderboard</button></a>
 </aside>
 
-<aside class="box">
+<aside>
 <form id="login" action="index.php" method="POST">
 <input type="text" class="input"name="userID" placeholder="Enter ID" required>
 <button class="idbutton" type='submit'>Login</button>
 </form>
 </aside>
-
-</div>
 
 <?php
 include('includes/footer.php');

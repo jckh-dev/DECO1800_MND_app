@@ -16,6 +16,10 @@ include('includes/header.php');
 <h1>USE THE MAP TO EXPLORE <br>AUSTRALIAS NATURAL DISASTERS</h1>
 </aside>
 
+</section>
+
+<section class="gridwrap2">
+    
 <article class="infobox">
 <?php if ($clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
 
@@ -42,7 +46,6 @@ var id = <?php echo $info[0]["ID"] ?>;
 <?php endif  // end of else if statement?>
 </article>
 
-<script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/leaflet.js"></script>
 <script src="js/game_ajax.js"></script>
 
