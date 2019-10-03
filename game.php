@@ -67,7 +67,7 @@ include('includes/header.php');
 <article class="box quizanswer">
 <h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
 <h2>Was it higher or lower than <?php echo $info[0]["randNum"] ?> ?</h2>
-<h2>You answered "HIGHER/LOWER PHP CALL" which is "CORRECT/INCORRECT PHP CALL"</h2>
+<h2 id="displayAnswer3">You answered "HIGHER/LOWER" which is "CORRECT/INCORRECT"</h2>
 <h2>Actual answer: </h2>
 <p id="displayAnswer">?</p> <!-- display actual -->
 <!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
@@ -92,6 +92,7 @@ include('includes/header.php');
 var correctAnswer = '<?php echo $info[0]["correct"]; ?>'; // echo 1 (return high/low string)
 var numberAnswer = '<?php echo $info[0]["statisticNum"]; ?>'; // echo 2 (returns number of hidden disaster)
 var endGame = '<?php echo $endGame; ?>' // echo 3 (returns if game should end (true = end))
+var score = <?php echo $_SESSION['scoreTemp'] ?> // echo 4 (returns score for local update)
 </script>
 <script src="js/game.js"></script>
 
