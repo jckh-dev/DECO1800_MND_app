@@ -20,7 +20,7 @@ body{
   min-height: 100vh;
   border-left: solid #08415c 13px;
   border-top: solid #08415c 13px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 html {
@@ -100,10 +100,6 @@ h3{
 }
 
 /* welcomemsg page CSS */
-/* .welcomemsg{
-  padding-top: 5%;
-  padding-bottom: 10%;
-} */
 
 .welcomebtns{
     display: flex;
@@ -128,20 +124,12 @@ h3{
 #demoinfo{
   display: none;
   position: absolute;
-  top: 20%;
-  height: 65vh;
-  width:80vw;
+  top: 15%;
+  overflow-y: scroll;
   z-index: 1;
-  padding: 5%;
+  padding: 3%;
   background: #6ec9dd;
-}
-
-#demoinfo button{
-  margin-top: 10%;
-}
-
-.demoactive{
-  background-color: darkgray;
+  margin: 4%;
 }
 
 /* header CSS */
@@ -309,4 +297,22 @@ button{
   margin-bottom:5%;
 	background-color: white;
 	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
+}
+
+/* Quiz Answer Box CSS */
+
+.quizanswer{
+  display: none;
+  /* transition: 0.5s linear; */
+  background-color: white;
+}
+
+.qzright{
+  /* display: block; */
+  background-color: rgb(220, 255, 220);
+}
+
+.qzwrong{
+  /* display: block; */
+  background-color: rgb(255, 220, 220);
 }
