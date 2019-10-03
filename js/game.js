@@ -6,14 +6,31 @@ function answer(answer) {
 	//bellow is where the button is, this will be appended to #next (the form)
 	$("<button id='nextButton' type='submit' class='nextbtn next'>NEXT QUESTION</button>").appendTo("#next");
 	$("#displayAnswer").text(numberAnswer); // numberAnswer (echo 2), displayed on id of displayAnswer etc.
-	$("#answerButtonHigh").attr('onclick', ''); // makes action do nothing for answer buttons
-	$("#answerButtonLow").attr('onclick', '');
-	 
+
+	// makes action do nothing for answer buttons
+
+	
+
+	// $("#answerButtonHigh").attr('onclick', ''); 
+	// $("#answerButtonLow").attr('onclick', '');
+
 	if (answer == correctAnswer) { // correctAnswer (echo 1)
-		$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
+		$(".hilobtn").hide("highlight", { color: 'green' });
+		$("#quizquestion").hide("highlight", { color: 'green' }, function(){
+			$(".quizanswer").toggleClass('qzright', function () {
+				$(this).show("fade");
+			});
+			$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
+		})
 	} else {
-		$("#nextButtonValue").remove(); // remove value from post
-		$("#displayAnswer2").text("Incorrect");
+		$(".hilobtn").hide("highlight", { color: 'red' });
+		$("#quizquestion").hide("highlight", {color: 'red' }, function () {
+			$(".quizanswer").toggleClass('qzwrong', function(){
+				$(this).show("fade");
+			});
+			$("#nextButtonValue").remove(); // remove value from post
+			$("#displayAnswer2").text("Incorrect");
+		})
 	}
 	if (endGame) { // endGame (echo 3) (When game ends, changes the button to point to ending.php)
 		$("#nextButtonValue").remove();
@@ -25,3 +42,4 @@ function answer(answer) {
 
 
 // <i class='fas fa-step-forward'></i> <<<<< icon for next question
+

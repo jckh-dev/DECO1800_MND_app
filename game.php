@@ -20,12 +20,6 @@ include('includes/header.php');
     <button class="cluepointbtn" type="submit"><i class="fas fa-question"></i><br>CLUES</button>
 </form>
 
-<!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
-<form id="next" action="game.php" method="POST">
-    <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>
-    <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
-</form>
-
 <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
 
 </aside>
@@ -38,7 +32,7 @@ include('includes/header.php');
     <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
 </aside>
 
-<article class="infobox">
+<article class="infobox" id="quizquestion">
     <h1>THE HIGHER OR LOWER GAME</h1>
     
     <h1>Natural Disaster Classification:</h1>
@@ -62,10 +56,29 @@ include('includes/header.php');
     <h1>Name Of Disaster: <?php echo $info[0]["title"]; ?></h1>
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
     <h2>Higher or lower than: </h2> <p><?php echo $info[0]["randNum"] ?></p>
-    <h2>Actual answer: </h2><p id="displayAnswer">?</p> <!-- display actual -->
-    <h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
+    
+    <!-- display actual -->
+    <!-- <h2>Actual answer: </h2><p id="displayAnswer">?</p> -->
+    <!-- display correct/incorrect -->
+    <!-- <h1 id="displayAnswer2" class="text-light"></h1>  -->
 
 </article>
+
+<article class="box quizanswer">
+<h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
+<h2>Was it higher or lower than <?php echo $info[0]["randNum"] ?> ?</h2>
+<h2>You answered "HIGHER/LOWER PHP CALL" which is "CORRECT/INCORRECT PHP CALL"</h2>
+<h2>Actual answer: </h2>
+<p id="displayAnswer">?</p> <!-- display actual -->
+<!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
+<form id="next" action="game.php" method="POST">
+    <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>
+    <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
+</form>
+
+</article>
+
+
 
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower <i class="fas fa-chevron-circle-down"></i></button>
