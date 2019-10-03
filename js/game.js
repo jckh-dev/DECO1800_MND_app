@@ -1,4 +1,13 @@
 // creates 'next' button(prevents it from appearing when loaded), depending on answer makes appropriate POST
+var cluebtn = document.querySelector(".cluebtn");
+var quizclue = document.querySelector(".quizclue");
+
+cluebtn.addEventListener('click', function () {
+	$(quizclue).toggle("blind");
+	// if .hilobtn css === display: none: <<Implement this logic
+	$(".hilobtn").toggle("fade");
+})
+
 $(document).ready(function(){
 	//nothing yet
 });
@@ -7,13 +16,6 @@ function answer(answer) {
 	$("<button id='nextButton' type='submit' class='nextbtn next'>NEXT QUESTION</button>").appendTo("#next");
 	$("#displayAnswer").text(numberAnswer); // numberAnswer (echo 2), displayed on id of displayAnswer etc.
 
-	// makes action do nothing for answer buttons
-
-	
-
-	// $("#answerButtonHigh").attr('onclick', ''); 
-	// $("#answerButtonLow").attr('onclick', '');
-
 	if (answer == correctAnswer) { // correctAnswer (echo 1)
 		$(".hilobtn").hide("highlight", { color: 'green' });
 		$("#quizquestion").hide("highlight", { color: 'green' }, function(){
@@ -21,7 +23,7 @@ function answer(answer) {
 				$(this).show("fade");
 			});
 			$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
-		})
+		});
 	} else {
 		$(".hilobtn").hide("highlight", { color: 'red' });
 		$("#quizquestion").hide("highlight", {color: 'red' }, function () {
@@ -30,14 +32,28 @@ function answer(answer) {
 			});
 			$("#nextButtonValue").remove(); // remove value from post
 			$("#displayAnswer2").text("Incorrect");
-		})
+		});
 	}
+
+	// IDEAS FOR IMPLEMENTATION:
+					// once in 'endgame' state, make a change to the nextbutton id and then call seperate functionality to the standard next button? 
+					// When 'You have finished' is clicked, it needs to hide the current article class 'quizanswer' and show the hidden 'quizend' article class which will contain what is currently in ending.php
+
+
 	if (endGame) { // endGame (echo 3) (When game ends, changes the button to point to ending.php)
-		$("#nextButtonValue").remove();
-		$("#nextButtonGame").remove();
+		$(".hilobtn").hide("highlight", { color: 'lightblue' });
 		$("#nextButton").text("You Have Finished!");
-		$("#next").attr('action', 'ending.php');
-	}
+		$("#quizquestion").hide("highlight", { color: 'lightblue' }, function () {
+			$(".quizend").toggleClass('qzend', function () {
+				$(".quizend").show("fade");
+			});
+		});
+
+		// $("#nextButtonValue").remove();
+		// $("#nextButtonGame").remove();
+		// 
+		// $("#next").attr('action', 'ending.php');
+}
 }
 
 
