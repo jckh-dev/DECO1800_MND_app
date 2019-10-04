@@ -57,3 +57,24 @@ function () {
     color: "#fff" });
  
 });
+
+// breadcrumb insert/delete james
+var pathname = window.location.pathname.split("/");
+var last = pathname[pathname.length - 1];
+if (last == "journey.php") {
+  $(".pagination-container").append('<a href="index.php" class="pagination-page-number">Welcome</a>');
+  $(".pagination-container").append('<a href="" class="pagination-page-number">Home</a>');
+} else if (last == "game.php") {
+  $(".pagination-container").append('<a href="index.php" class="pagination-page-number">Welcome</a>');
+  $(".pagination-container").append('<a href="journey.php" class="pagination-page-number">Home</a>');
+  $(".pagination-container").append('<a href="" class="pagination-page-number">Game</a>');
+} else if (last == "scoreboard.php") {
+  $(".pagination-container").append('<a href="index.php" class="pagination-page-number">Welcome</a>');
+  $(".pagination-container").append('<a href="journey.php" class="pagination-page-number">Home</a>');
+  $(".pagination-container").append('<a href="" class="pagination-page-number">Leaderboard</a>');
+} else if (last == "ending.php") {
+  $(".pagination-container").append('<a href="index.php" class="pagination-page-number">Welcome</a>');
+  $(".pagination-container").append('<a href="journey.php" class="pagination-page-number">Home</a>');
+  $(".pagination-container").append('<a href="" class="pagination-page-number">Game</a>');
+  $(".pagination-container").append('<a href="" class="pagination-page-number">Finish</a>');
+}
