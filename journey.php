@@ -21,7 +21,7 @@ include('includes/header.php');
 
 <aside> 
 <form id="start" action="game.php" method="POST">
-      <input type="hidden" name="game" value='<?php echo $game; ?>'>
+      <input type="hidden" name="game" value='<?php echo $tourGame; ?>'>
       <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
       <button type="submit" class="button">Start Guided Tour</button>
     </form>
@@ -29,8 +29,8 @@ include('includes/header.php');
 
 <aside>
 <form id="start" action="game.php" method="POST">
-      <input type="hidden" name="game" value='<?php echo $game; ?>'>
-      <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
+      <input type="hidden" name="game" value='<?php echo $randomGame; ?>'>
+      <input type="hidden" name="init" value=1>
       <button type="submit" class="button">Random Play</button>
 </form>
 </aside>
