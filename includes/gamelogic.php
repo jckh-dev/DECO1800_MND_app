@@ -99,14 +99,19 @@
         
         // rand number to compare
         if ($info[0]["statisticNum"]) {
-            $lowest = floor($info[0]["statisticNum"] / 2);
-            $highest = floor($info[0]["statisticNum"] * 2);
-            $randNum = rand($lowest, $highest);
+            $stat = $info[0]["statisticNum"];
+            $possible[0] = floor($stat / 2);
+            $possible[1] = floor($stat / 4);
+            $possible[2] = floor($stat * 4);
+            $possible[3] = floor($stat * 2);
+            $possibleKey = array_rand($possible, 1);
+            $randNum = $possible[$possibleKey];
 
             // ensure that it makes sense for some disasters
             if ($randNum == 0) {
                 $randNum = 2;
             }
+
             $info[0]["randNum"] = $randNum;
         }
 
