@@ -1,5 +1,5 @@
 <?php
-include('includes/cluelogic.php');
+include('includes/maplogic.php');
 ?>
 
 <?php
@@ -21,35 +21,38 @@ include('includes/header.php');
 <section class="gridwrap2">
     
 <article class="infobox">
-<?php if ($clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
 
-<h1>Insert your code to get a clue:</h1>
+<h1>Map w/ Options</h1>
 
-<form id="start" action="clue.php" method="POST">
-<input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-<input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-<input type="text" class="input" name="clueCode" placeholder="Enter clue code" required width="70" height="50">
-<button type="submit" class="idbutton">Enter Code</button>
+<form id="start">
+    <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
+    <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
+    <h1>Regions</h1> <br>
+    
+    <input type="checkbox" value="New South Wales" id="NSW"> New South Wales <br>
+    <input type="checkbox" value="Northern Territory" id="NT"> Northern Territory <br>
+    <input type="checkbox" value="Queensland" id="QLD"> Queensland <br>
+    <input type="checkbox" value="South Australia" id="SA"> South Australia <br>
+    <input type="checkbox" value="Tasmania" id="TAS"> Tasmania <br>
+    <input type="checkbox" value="Victoria" id="VIC"> Victoria <br>
+    <input type="checkbox" value="Western Australia" id="WA"> Western Australia <br>
+
+    <br>
+
+    <h1>Name/Type (Optional)</h1> <br> 
+    Search for multiple by seperating with a comma, e.g. (Cyclone,Flood)
+    <input type="text" class="input" id="DisasterName" placeholder="Enter disaster types or names" width="70" height="50">
 </form>
+<!-- don't put button in form, it will redirect the page when pressed -->
+<button class="idbutton" onclick="insertRecords()">Search</button>
 
+<div id="mapLocation"><article id="map"></article></div>
 
-<?php elseif ($revealDesc): // if reveal desc 123?>
-<br>
-<h1> Description Clue (numbers removed) </h1>
-<p> <?php if ($description) {echo $description;} ?> </p>
-<?php elseif ($revealMap): // if 333 (map)?>
-<script> 
-var map = true; 
-var id = <?php echo $info[0]["ID"] ?>; 
-</script>
-<article id="map"></article>
-<?php endif  // end of else if statement?>
 </article>
+
+<?php
+include('includes/footer.php');
+?>
 
 <script src="js/leaflet.js"></script>
 <script src="js/game_ajax.js"></script>
-
-<?php
-
-include('includes/footer.php');
-?>

@@ -34,7 +34,7 @@ Back To Game</button>
 <h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
 <h1>Number to compare: <?php echo $info[0]["randNum"]; ?> </h1>
 
-<?php if ($clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
+<?php if (!$clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
 
 <h1>Insert your code to get a clue:</h1>
 
@@ -50,17 +50,11 @@ Back To Game</button>
 <br>
 <h1> Description Clue (numbers removed) </h1>
 <p> <?php if ($description) {echo $description;} ?> </p>
-<?php elseif ($revealMap): // if 333 (map)?>
-<script> 
-var map = true; 
-var id = <?php echo $info[0]["ID"] ?>; 
-</script>
-<article id="map"></article>
 <?php endif  // end of else if statement?>
 </article>
 
-<script src="js/game_ajax.js"></script>
-<script src="js/leaflet.js"></script>
 <?php
 include('includes/footer.php');
 ?>
+<script src="js/game_ajax.js"></script>
+<script src="js/leaflet.js"></script>
