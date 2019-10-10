@@ -141,14 +141,20 @@ h3{
 }
 
 /* Footer CSS */
-.pagination
+.breadcrumb
   {
-    display: flex;
-    justify-content: center;
-    align-self: end;
+  display: inline-flex;
+  justify-content: space-around;
+  align-self: end;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: darkgrey;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.5s;
 }
 
-.pagination-container {
+/* .brdcrm-container {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: darkgrey;
@@ -156,19 +162,8 @@ h3{
   justify-content: space-around;
   position: relative;
   overflow: hidden;
-}
-.pagination-hover-overlay {
-  background-color: #e60023;
-  opacity: 0;
-  width: 50px;
-  height: 30px;
-  border-radius: 5px;
-  position: absolute;
-  /* top: 50%;
-  transform: translateY(-50%);
-  transition-duration: 0.5s;
-  left: 30px; */
-}
+} */
+
 .pagination-page-number {
   border-radius: 5px;
   color: #212121;
@@ -177,17 +172,16 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-duration: 0.5s;
-  position: relative;
-  z-index: 2;
+  /* transition-duration: 0.5s; */
+  /* position: relative; */
+  /* z-index: 2; */
   font-weight: 700;
   font-size: 10px;
 }
-.pagination-page-number:hover {
-  color: #fff;
-}
-.pagination-page-number.active {
-  color: #fff;
+
+.footer-active{
+  background-color: red;
+  color: grey;
 }
 
 /* The light blue boxes that hold text information */
