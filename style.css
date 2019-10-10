@@ -249,7 +249,6 @@ button{
 }
 
 .button {
-  
   width: 230px;
   height: 75px;
   color: black;
@@ -331,9 +330,39 @@ button{
 .qzwrong{
   background-color: rgb(255, 220, 220);
 }
-
 .qzend{
   background-color: #d5ebf8;
 }
+
+/* GUIDED TOUR CSS */
+.tourgraph{
+  width: 80vw;
+  height: 40vh;
+  margin-top: 5%;
+  margin-bottom:5%;
+}
+
+#bushfires{
+  display: none;
+}
+
+#floods{
+  display: none;
+}
+
+#cyclones{
+  display: none;
+}
+
+#storms{
+  display: none;
+}
+
+#majorevents{
+  display: none;
+}
+
+
+
 
 
