@@ -271,7 +271,7 @@ button{
  .hilobtn{
    width: 100%;
    height: 100%;
-   border: darkgrey solid;
+   border: lightgrey solid;
    box-shadow: none;
  }
 
@@ -306,18 +306,32 @@ button{
 
 .quizanswer{
   display: none;
-  /* transition: 0.5s linear; */
-  background-color: white;
+}
+
+.quizend{
+  display: none;
+  min-height: 42%;
+}
+
+.quizclue{
+  background-color: lightseagreen;
+  display: none;
+  position: absolute; 
+  /* top: 40%; */
+  min-height: 65%;
+  overflow-y: scroll;
+  /* z-index: 1; */
 }
 
 .qzright{
-  /* display: block; */
   background-color: rgb(220, 255, 220);
 }
 
 .qzwrong{
-  /* display: block; */
   background-color: rgb(255, 220, 220);
+}
+.qzend{
+  background-color: #d5ebf8;
 }
 
 /* GUIDED TOUR CSS */
@@ -347,3 +361,8 @@ button{
 #majorevents{
   display: none;
 }
+
+
+
+
+
