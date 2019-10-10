@@ -13,7 +13,7 @@ include('includes/header.php');
 ?>
 
 <aside class="box txtbox">
-<h1>USE THE MAP TO EXPLORE <br>AUSTRALIAS NATURAL DISASTERS</h1>
+<h1>LOOK UP A NATURAL DISASTER</h1>
 </aside>
 
 </section>
@@ -22,12 +22,15 @@ include('includes/header.php');
     
 <article class="infobox">
 
-<h1>Map w/ Options</h1>
+<h1>Use the map to explore the history of natural disaster events that have occured in Australia.</h1>
+
+<p>Search via state, name, timeframe or disaster type. Hit the search button once you've made your selection</p>
+
 
 <form id="start">
     <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
     <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-    <h1>Regions</h1> <br>
+    <h1><br>Regions</h1> <br>
     
     <input type="checkbox" value="New South Wales" id="NSW"> New South Wales <br>
     <input type="checkbox" value="Northern Territory" id="NT"> Northern Territory <br>
@@ -50,13 +53,10 @@ include('includes/header.php');
 
 </article>
 
-<script>
-    var mapInit = true; // true = init map.
-</script>
+<script> var mapInit = true; </script> <!-- true = init map. -->
+<script src="js/leaflet.js"></script>
+<script src="js/game_ajax.js"></script>
 
 <?php
 include('includes/footer.php');
 ?>
-
-<script src="js/leaflet.js"></script>
-<script src="js/game_ajax.js"></script>
