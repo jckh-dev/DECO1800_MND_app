@@ -173,7 +173,7 @@ h3{
   align-items: center;
   justify-content: center;
   /* transition-duration: 0.5s; */
-  /* position: relative; */
+  position: relative;
   /* z-index: 2; */
   font-weight: 700;
   font-size: 10px;
@@ -181,7 +181,7 @@ h3{
 
 .footer-active{
   background-color: red;
-  color: grey;
+  color: white;
 }
 
 /* The light blue boxes that hold text information */
