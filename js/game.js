@@ -23,8 +23,23 @@ function answer(answer) {
 				$(this).show("fade");
 			});
 			$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
+
+
+			// user friendly answer insertion (correct)
+			$("#displayAnswer3").text("You answered " + answerFormat + " which is CORRECT!");
+
+			// local point update
+			var pointIncrement = 10;
+			score += pointIncrement; // score (echo 4), adds point increment for local update
+			var pointText = document.getElementsByClassName("cluepointbtn")[1]; // get 2nd class "cluepointbtn"
+			pointText.innerHTML = pointIncrement + "<br>POINTS"; // replace html, if the html inside is changed, update this to the new html.
+
+		})
+	} else { // incorrect answer
+
 		});
 	} else {
+
 		$(".hilobtn").hide("highlight", { color: 'red' });
 		$("#quizquestion").hide("highlight", {color: 'red' }, function () {
 			$(".quizanswer").toggleClass('qzwrong', function(){
@@ -32,6 +47,11 @@ function answer(answer) {
 			});
 			$("#nextButtonValue").remove(); // remove value from post
 			$("#displayAnswer2").text("Incorrect");
+
+			// user friendly answer insertion (incorrect)
+			$("#displayAnswer3").text("You answered " + answerFormat + " which is INCORRECT!");
+		})
+
 		});
 	}
 

@@ -57,7 +57,17 @@
         while(!$info[0]["statisticNum"] || $tryCount > 100) {
             $tryCount++;
             // search
-            $query = "SELECT * from \"ad5c6594-571e-4874-994c-a9f964d789df\" WHERE title LIKE '%" . $game[0] . "%' ORDER BY RANDOM() LIMIT 1";
+            if ($seperator = explode("/",$game[0])) {
+                $query = "SELECT * from \"ad5c6594-571e-4874-994c-a9f964d789df\" WHERE title LIKE '%" . $seperator[0] . "%' ";
+                $endQuery = "ORDER BY RANDOM() LIMIT 1";
+                $orLike = "";
+                for ($i = 1; $i < sizeof($seperator); $i++) {
+                    $orLike = $orLike . "OR title LIKE '%" . $seperator[$i] . "%' ";
+                }
+                $query = $query . $orLike . $endQuery;
+            } else {
+                $query = "SELECT * from \"ad5c6594-571e-4874-994c-a9f964d789df\" WHERE title LIKE '%" . $game[0] . "%' ORDER BY RANDOM() LIMIT 1";
+            }
             $search = "https://data.gov.au/data/api/3/action/datastore_search_sql?sql=" . $query;
             $data = file_get_contents($search);
             $json = json_decode($data);
@@ -99,14 +109,19 @@
         
         // rand number to compare
         if ($info[0]["statisticNum"]) {
-            $lowest = floor($info[0]["statisticNum"] / 2);
-            $highest = floor($info[0]["statisticNum"] * 2);
-            $randNum = rand($lowest, $highest);
+            $stat = $info[0]["statisticNum"];
+            $possible[0] = floor($stat / 2);
+            $possible[1] = floor($stat / 4);
+            $possible[2] = floor($stat * 4);
+            $possible[3] = floor($stat * 2);
+            $possibleKey = array_rand($possible, 1);
+            $randNum = $possible[$possibleKey];
 
             // ensure that it makes sense for some disasters
             if ($randNum == 0) {
                 $randNum = 2;
             }
+
             $info[0]["randNum"] = $randNum;
         }
 

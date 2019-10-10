@@ -9,7 +9,7 @@ include('includes/header.php');
 ?>
 
 <aside class="box txtbox">
-    <h1>WELCOME</h1><br>
+    <h1>WELCOME TO THE GUIDED TOUR</h1><br>
 </aside>
 
 </section>
@@ -17,10 +17,7 @@ include('includes/header.php');
 <section class="gridwrap2">
 
     <article class="box">
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p><br>
+        <p>Each area of the exhibit +</p><br>
         
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
