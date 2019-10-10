@@ -36,7 +36,7 @@ include('includes/header.php');
 </aside>
 
 <aside>
-<a href=""><button class="button">Look At A Map</button></a>
+<a href="map.php"><button class="button">Look At A Map</button></a>
 </aside>
 
 <aside>

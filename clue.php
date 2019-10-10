@@ -32,35 +32,31 @@ Back To Game</button>
 <script> var map = false; </script>
 <h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
 <h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
-<h1>Number to compare: <?php echo $info[0]["randNum"]; ?> </h1>
-
-<?php if ($clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
+<h1>Number to compare to: <?php echo number_format($info[0]["randNum"]); ?> </h1>
 
 <h1>Insert your code to get a clue:</h1>
 
-<form id="start" action="clue.php" method="POST">
-<input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-<input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-<input type="text" class="input" name="clueCode" placeholder="Enter clue code" required width="70" height="50">
-<button type="submit" class="idbutton">Enter Code</button>
+<form id="start">
+    <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
+    <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
 </form>
 
-
-<?php elseif ($revealDesc): // if reveal desc 123?>
 <br>
-<h1> Description Clue (numbers removed) </h1>
-<p> <?php if ($description) {echo $description;} ?> </p>
-<?php elseif ($revealMap): // if 333 (map)?>
-<script> 
-var map = true; 
-var id = <?php echo $info[0]["ID"] ?>; 
-</script>
-<article id="map"></article>
-<?php endif  // end of else if statement?>
+
+<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
+<div id="clueContent">
+
+</div>
+
 </article>
 
-<script src="js/game_ajax.js"></script>
-<script src="js/leaflet.js"></script>
+<script>
+    var ID = <?php echo $info[0]["ID"] ?>; // echo 5 (ID of current disaster)
+    var mapInit = false; // true = init map.
+</script>
+
 <?php
 include('includes/footer.php');
 ?>
+<script src="js/game_ajax.js"></script>
+<script src="js/leaflet.js"></script>
