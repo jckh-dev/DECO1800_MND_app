@@ -1,82 +1,45 @@
+// breadcrumb insert/delete james
+
 var pathname = window.location.pathname.split("/");
 var last = pathname[pathname.length - 1];
+var welcome = '<a href="index.php" class="breadcrumb-item" id="fwelcome">Welcome</a>';
+var home = '<a href="journey.php" class="breadcrumb-item" id="fhome">Home</a>';
+var tour = '<a href="guidedtour.php" class="breadcrumb-item" id="ftour">Tour</a>';
+var game = '<a href="game.php" class="breadcrumb-item" id="fgame">Game</a>';
+var map = '<a href="map.php" class="breadcrumb-item" id="fmap">Map</a>';
+var scores = '<a href="scoreboard.php" class="breadcrumb-item id="fscores">Scores</a>';
+var finish = '<a href="ending.php" class="breadcrumb-item" id="fending">Finish</a>';
+
 if (last == "journey.php") {
-  $(".pagination-container").append('<a href="index.php" class="pagination-page-number">Welcome</a>');
-  $(".pagination-container").append('<a href="" class="pagination-page-number">Home</a>');
+  $(".breadcrumb").append(welcome);
+  $(".breadcrumb").append(home);
+  $("#fhome").addClass("footer-active")
 } else if (last == "game.php") {
-  $(".pagination-container").append('<a href="index.php" class="pagination-page-number">Welcome</a>');
-  $(".pagination-container").append('<a href="journey.php" class="pagination-page-number">Home</a>');
-  $(".pagination-container").append('<a href="" class="pagination-page-number">Game</a>');
+  $(".breadcrumb").append(welcome);
+  $(".breadcrumb").append(home);
+  $(".breadcrumb").append(game);
+  $("#fgame").addClass("footer-active")
+} else if (last == "map.php") {
+  $(".breadcrumb").append(welcome);
+  $(".breadcrumb").append(home);
+  $(".breadcrumb").append(map);
+  $("#fmap").addClass("footer-active")
 } else if (last == "scoreboard.php") {
-  $(".pagination-container").append('<a href="index.php" class="pagination-page-number">Welcome</a>');
-  $(".pagination-container").append('<a href="journey.php" class="pagination-page-number">Home</a>');
-  $(".pagination-container").append('<a href="" class="pagination-page-number">Leaderboard</a>');
+  $(".breadcrumb").append(welcome);
+  $(".breadcrumb").append(home);
+  $(".breadcrumb").append(scores);
+  $("#fscores").addClass("footer-active")
 } else if (last == "ending.php") {
-  $(".pagination-container").append('<a href="index.php" class="pagination-page-number">Welcome</a>');
-  $(".pagination-container").append('<a href="journey.php" class="pagination-page-number">Home</a>');
-  $(".pagination-container").append('<a href="" class="pagination-page-number">Game</a>');
-  $(".pagination-container").append('<a href="" class="pagination-page-number">Finish</a>');
+  $(".breadcrumb").append(welcome);
+  $(".breadcrumb").append(home);
+  $(".breadcrumb").append(game);
+  $(".breadcrumb").append(finish);
+  $("#fending").addClass("footer-active")
 }
 
-
-// let paginationLeftPos = "20px";
-// let paginationOpacity = 0;
-// let checkPaginationClick = 0;
- 
-// $(".pagination-page-number").click(function () {
-//   $(".pagination-page-number").removeClass("active");
-//   $(this).addClass("active");
-//   paginationLeftPos = $(this).prop("offsetLeft") + "px";
-//   paginationOpacity = 1;
-//   checkPaginationClick = 1;
- 
-//   $(".pagination-hover-overlay").css({
-//     left: paginationLeftPos,
-//     backgroundColor: "#e60023",
-//     opacity: paginationOpacity });
- 
-//   $(this).css({
-//     color: "#fff" });
- 
-// });
- 
-// $(".pagination-page-number").hover(
-// function () {
-//   paginationOpacity = 1;
-//   $(".pagination-hover-overlay").css({
-//     backgroundColor: "#fa4949",
-//     left: $(this).prop("offsetLeft") + "px",
-//     opacity: paginationOpacity });
- 
- 
-//   $(".pagination-page-number.active").css({
-//     color: "#212121" });
- 
- 
-//   $(this).css({
-//     color: "#fff" });
- 
-// },
-// function () {
-//   if (checkPaginationClick) {
-//     paginationOpacity = 1;
-//   } else {
-//     paginationOpacity = 0;
-//   }
- 
-//   $(".pagination-hover-overlay").css({
-//     backgroundColor: "#e60023",
-//     opacity: paginationOpacity,
-//     left: paginationLeftPos });
- 
- 
-//   $(this).css({
-//     color: "#212121" });
- 
- 
-//   $(".pagination-page-number.active").css({
-//     color: "#fff" });
- 
-// });
-
-// breadcrumb insert/delete james
+$(document).ready(function(){
+  $(".tab").click(function(){
+    $(".bcwrapper").slideToggle('slow');
+    $(".fa-caret-up").toggleClass('flip');
+  });
+})
