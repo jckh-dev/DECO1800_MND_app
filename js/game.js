@@ -24,7 +24,6 @@ function answer(answer) {
 			});
 			$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
 
-
 			// user friendly answer insertion (correct)
 			$("#displayAnswer3").text("You answered " + answerFormat + " which is CORRECT!");
 
@@ -34,11 +33,10 @@ function answer(answer) {
 			var pointText = document.getElementsByClassName("cluepointbtn")[1]; // get 2nd class "cluepointbtn"
 			pointText.innerHTML = pointIncrement + "<br>POINTS"; // replace html, if the html inside is changed, update this to the new html.
 
-		})
-	} else { // incorrect answer
-
-		});
-	} else {
+			})
+	} 
+	
+	else { // incorrect answer
 
 		$(".hilobtn").hide("highlight", { color: 'red' });
 		$("#quizquestion").hide("highlight", {color: 'red' }, function () {
@@ -47,34 +45,32 @@ function answer(answer) {
 			});
 			$("#nextButtonValue").remove(); // remove value from post
 			$("#displayAnswer2").text("Incorrect");
-
 			// user friendly answer insertion (incorrect)
 			$("#displayAnswer3").text("You answered " + answerFormat + " which is INCORRECT!");
 		})
-
-		});
 	}
+}
 
 	// IDEAS FOR IMPLEMENTATION:
 					// once in 'endgame' state, make a change to the nextbutton id and then call seperate functionality to the standard next button? 
 					// When 'You have finished' is clicked, it needs to hide the current article class 'quizanswer' and show the hidden 'quizend' article class which will contain what is currently in ending.php
 
 
-	if (endGame) { // endGame (echo 3) (When game ends, changes the button to point to ending.php)
-		$(".hilobtn").hide("highlight", { color: 'lightblue' });
-		$("#nextButton").text("You Have Finished!");
-		$("#quizquestion").hide("highlight", { color: 'lightblue' }, function () {
-			$(".quizend").toggleClass('qzend', function () {
-				$(".quizend").show("fade");
-			});
+if (endGame) { // endGame (echo 3) (When game ends, changes the button to point to ending.php)
+	$(".hilobtn").hide("highlight", { color: 'lightblue' });
+	$("#nextButton").text("You Have Finished!");
+	$("#quizquestion").hide("highlight", { color: 'lightblue' }, function () {
+		$(".quizend").toggleClass('qzend', function () {
+			$(".quizend").show("fade");
 		});
+	});
 
-		// $("#nextButtonValue").remove();
-		// $("#nextButtonGame").remove();
-		// 
-		// $("#next").attr('action', 'ending.php');
+	// $("#nextButtonValue").remove();
+	// $("#nextButtonGame").remove();
+	// 
+	// $("#next").attr('action', 'ending.php');
 }
-}
+
 
 
 // <i class='fas fa-step-forward'></i> <<<<< icon for next question

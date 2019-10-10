@@ -142,7 +142,11 @@ include('includes/header.php');
             </aside>
 
             <aside class="continue">
-                <a href="journey.php"><h1>Play Game <i class="fas fa-chevron-circle-right"></i></h1>
+            <form id="start" action="game.php" method="POST">
+            <input type="hidden" name="game" value='<?php echo $tourGame; ?>'>
+            <input type="hidden" name="init" value=1> 
+            <button type="submit" class="button">Start Game <i class="fas fa-gamepad"></i></button>
+            </form>
             </a>
             </aside>
         </aside>

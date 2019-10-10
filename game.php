@@ -123,6 +123,7 @@ var endGame = '<?php echo $endGame; ?>'; // echo 3 (returns if game should end (
 var score = <?php echo $_SESSION["scoreTemp"] ?>; // echo 4 (returns score for local update)
 var ID = <?php echo $info[0]["ID"] ?>; // echo 5 (ID of current disaster)
 </script>
+
 <script src="js/game.js"></script>
 
 <?php
