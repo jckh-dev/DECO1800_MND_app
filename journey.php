@@ -20,11 +20,14 @@ include('includes/header.php');
 <section class="gridwrap2">
 
 <aside> 
-<form id="start" action="game.php" method="POST">
-      <input type="hidden" name="game" value='<?php echo $tourGame; ?>'>
-      <input type="hidden" name="init" value=1> <!-- if set, initiate game -->
-      <button type="submit" class="button">Start Guided Tour</button>
-    </form>
+<aside>
+<a href="guidedtour.php"><button class="button">Start Guided Tour</button></a>
+</aside>
+    <!-- <form id="start" action="game.php" method="POST">
+        <input type="hidden" name="game" value='<?php echo $tourGame; ?>'>
+        <input type="hidden" name="init" value=1> 
+        <button type="submit" class="button">Start Guided Tour</button>
+    </form> -->
 </aside>
 
 <aside>
@@ -36,7 +39,7 @@ include('includes/header.php');
 </aside>
 
 <aside>
-<a href=""><button class="button">Look At A Map</button></a>
+<a href="map.php"><button class="button">Look At A Map</button></a>
 </aside>
 
 <aside>
