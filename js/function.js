@@ -1,4 +1,5 @@
 // breadcrumb insert/delete james
+
 var pathname = window.location.pathname.split("/");
 var last = pathname[pathname.length - 1];
 var welcome = '<a href="index.php" class="breadcrumb-item" id="fwelcome">Welcome</a>';
