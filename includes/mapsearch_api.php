@@ -48,9 +48,7 @@ $search = "https://data.gov.au/data/api/3/action/datastore_search_sql?sql=" . $q
 $data = file_get_contents($search);
 $json = json_decode($data);
 
-
 $newJSON = array();
-$recordCount = 0;
 
 $count = 0;
 foreach($json->result->records as $recordID => $record) {

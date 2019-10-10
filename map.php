@@ -42,13 +42,17 @@ include('includes/header.php');
     <h1>Name/Type (Optional)</h1> <br> 
     Search for multiple by seperating with a comma, e.g. (Cyclone,Flood)
     <input type="text" class="input" id="DisasterName" placeholder="Enter disaster types or names" width="70" height="50">
+    <button type="button" class="idbutton" onclick="insertRecordSearch()">Search</button>
+    
 </form>
-<!-- don't put button in form, it will redirect the page when pressed -->
-<button class="idbutton" onclick="insertRecords()">Search</button>
 
 <div id="mapLocation"><article id="map"></article></div>
 
 </article>
+
+<script>
+    var mapInit = true; // true = init map.
+</script>
 
 <?php
 include('includes/footer.php');

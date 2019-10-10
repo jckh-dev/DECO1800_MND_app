@@ -1,13 +1,15 @@
-// following is from the workshop wk 5, edited.
 // Week 5 Workshop Outline. (2019). Retrieved from https://www.notion.so/Week-5-Workshop-Outline-168d2f221ced4065a5b066336e5a948c
 // Images layers-2x.png, layers.png, marker-ocon-2x.png, marker-icon.png, marker-shadow.png. leaflet.js, leaflet.css
 // Leaflet. (n.d.). Retrieved from https://leafletjs.com/
 
 
 // initialise map && get reference to map.
-var mapReference;
+var mapReference = false; // reference to map, is filled when initMap() called
+
 $( document ).ready(function() {
-    mapReference = initMap();
+	if (mapInit) { // located in page
+		initMap();
+	}
 });
 
 function iterateRecords(results) {
@@ -29,7 +31,13 @@ function iterateRecords(results) {
 	var newLayer = L.layerGroup().addTo(myMap);
 
 	// Iterate over each record and add a marker using the Latitude field (also containing longitude)
+	var keys = Object.keys(results);
+	var length = keys.length; // length records
+	var eachCount = 0; // counts
 	$.each(results, function(recordID, recordValue) {
+		eachCount++;
+		// for doClue so that it does not try to iterate over the type and create an error.
+		if (recordID == "type") {return false;}
 
 		var lat = recordValue["lat"];
 		var long = recordValue["lon"];
@@ -42,9 +50,31 @@ function iterateRecords(results) {
 		popupText = "<strong>" + recordValue["title"] + "</strong><br>";
 		marker.bindPopup(popupText).openPopup();
 
-		
+		// set view of second last then last records, (second last to accomodate doClue)
+		if (eachCount == length || eachCount == (length - 1)) {
+			myMap.setView([lat, long], 4);
+		}
 	});
 
+}
+
+function doClue(results) {
+
+	if (results.type == "description") {
+		$("#clueContent").empty();
+		$("#clueContent").append("<h1> Description Clue (numbers removed) </h1>");
+		$("#clueContent").append("<p>" + results.description + "</p>");
+	} else if (results.type == "map") {
+		$("#clueContent").empty();
+		$("#clueContent").append("<h1> Map Clue (location of disaster) </h1>");
+		$("#clueContent").append('<article id="map"></article>');
+		
+		// init map
+		initMap();
+
+		// put records in
+		iterateRecords(results);
+	}
 }
 
 function getRegions() {
@@ -78,6 +108,10 @@ function getRegions() {
 	return searchList;
 }
 
+function getClueCode() {
+	return document.getElementById("clueCode").value;
+}
+
 function getDisasterNames() {
 	var DisasterName = document.getElementById("DisasterName").value;
 
@@ -92,19 +126,17 @@ function getDisasterNames() {
 	return false;
 }
 
-function initMap () {
-	var myMap = L.map("map").setView([-21, 148], 4);
+function initMap() {
+	mapReference = L.map("map").setView([-21, 148], 4);
 
-	L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw", {
+	L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm96bmF1ZyIsImEiOiJjazFpdjNnaHMxdTV0M2ptdjB1Nm1iMzFwIn0.X3Ic_YsO8VXsyrzp7meIUA", {
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: "mapbox.streets"
-	}).addTo(myMap);
-
-	return myMap;
+	}).addTo(mapReference);
 }
 
-function insertRecords() {
+function insertRecordSearch() {
 	// must have at least 1 region, names are optional
 	if (!getRegions()) {return false;}
 	sendData = {regions : getRegions()};
@@ -112,7 +144,7 @@ function insertRecords() {
 	if (getDisasterNames()) {sendData.names = getDisasterNames();}
 	$.ajax({
 		type: "POST",
-		url: "includes/api.php",
+		url: "includes/mapsearch_api.php",
 		dataType: "json",
 		data: sendData,
 		error: function(xhr, status, error) {
@@ -120,6 +152,23 @@ function insertRecords() {
 		},
 		success: function(results) {
 			iterateRecords(results);
+		}
+	});
+}
+
+function insertRecordClue() {
+	// must have code and disaster ID
+	sendData = {clueCode : getClueCode(), disasterID : ID}; // echo 5 "ID" (ID of current disaster)
+	$.ajax({
+		type: "POST",
+		url: "includes/mapclue_api.php",
+		dataType: "json",
+		data: sendData,
+		error: function(xhr, status, error) {
+			alert(xhr.responseText);
+		},
+		success: function(results) {
+			doClue(results);
 		}
 	});
 }
