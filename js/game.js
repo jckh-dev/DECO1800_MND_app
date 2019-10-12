@@ -36,7 +36,7 @@ function answer(answer) {
 			var pointIncrement = 10;
 			score += pointIncrement; // score (echo 4), adds point increment for local update
 			var pointText = document.getElementsByClassName("cluepointbtn")[1]; // get 2nd class "cluepointbtn"
-			pointText.innerHTML = pointIncrement + "<br>POINTS"; // replace html, if the html inside is changed, update this to the new html.
+			pointText.innerHTML = score + "<br>POINTS"; // replace html, if the html inside is changed, update this to the new html.
 
 		})
 	} else { // incorrect answer

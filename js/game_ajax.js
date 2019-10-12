@@ -59,7 +59,6 @@ function iterateRecords(results) {
 }
 
 function doClue(results) {
-
 	if (results.type == "description") {
 		$("#clueContent").empty();
 		$("#clueContent").append("<h1> Description Clue (numbers removed) </h1>");
@@ -74,6 +73,50 @@ function doClue(results) {
 
 		// put records in
 		iterateRecords(results);
+	}
+}
+
+function doEnd(results) {
+	if (results.result == "found name") {
+		if (results.nameRequest) {
+			// backticks allow for multilines without newline.
+			$("#endingContent").append(`
+			<h1>Insert your score into the leaderboard!</h1>
+			<h1>You scored: ` + score + `</h1>
+			<form id="start" action="ending.php" method="POST">
+			<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
+			<button type="button" class="button" onclick="insertScore()">INSERT HIGH SCORE!</button>
+			</form>
+			`);
+		} else {
+			// if they already have a name , remove name input.
+			$("#endingContent").append(`
+			<h1>Insert your score into the leaderboard!</h1>
+			<h1>You scored: ` + score + `</h1>
+			<form id="start" action="ending.php" method="POST">
+			<button type="button" class="button" onclick="insertScore()">INSERT HIGH SCORE!</button>
+			</form>
+			`);
+		}
+	}
+	if (results.result == "inserted") {
+		$("#endingContent").empty();
+		$("#endingContent").append(`
+		<h1>CONGRATULATIONS!</h1>
+		<p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent</p>
+	
+		<aside class = "txtbox">
+			<form id="start" action="scoreboard.php" method="POST">
+			<button type="submit" class="button">Leaderboard</button>
+			</form>
+		</aside>
+	
+		<aside class = "txtbox">
+			<form id="start" action="index.php" method="POST">
+			<button type="submit" class="button">Home</button>
+			</form>
+		</aside>
+		`);
 	}
 }
 
@@ -112,6 +155,13 @@ function getClueCode() {
 	return document.getElementById("clueCode").value;
 }
 
+function getName() {
+	if (document.getElementById("newName")) {
+		return document.getElementById("newName").value;
+	}
+	return false;
+}
+
 function getDisasterNames() {
 	var DisasterName = document.getElementById("DisasterName").value;
 
@@ -138,10 +188,14 @@ function initMap() {
 
 function insertRecordSearch() {
 	// must have at least 1 region, names are optional
-	if (!getRegions()) {return false;}
+	if (!getRegions()) {
+		return false;
+	}
 	sendData = {regions : getRegions()};
 	// if not false (has something) add to object
-	if (getDisasterNames()) {sendData.names = getDisasterNames();}
+	if (getDisasterNames()) {
+		sendData.names = getDisasterNames();
+	}
 	$.ajax({
 		type: "POST",
 		url: "includes/mapsearch_api.php",
@@ -169,6 +223,46 @@ function insertRecordClue() {
 		},
 		success: function(results) {
 			doClue(results);
+		}
+	});
+}
+
+function findName() {
+	// must have code and disaster ID
+	sendData = {ID : userID, getName : 1}; // echo 6 "userID" (userID of player)
+	if (getName()) {
+		sendData.name = getName();
+	}
+	$.ajax({
+		type: "POST",
+		url: "includes/insert_api.php",
+		dataType: "json",
+		data: sendData,
+		error: function(xhr, status, error) {
+			alert(xhr.responseText);
+		},
+		success: function(results) {
+			doEnd(results);
+		}
+	});
+}
+
+function insertScore() {
+	// must have code and disaster ID
+	sendData = {ID : userID, userScore : score}; // echo 6 "userID" (userID of player), // echo 4 (returns score for local update)
+	if (getName()) {
+		sendData.name = getName();
+	}
+	$.ajax({
+		type: "POST",
+		url: "includes/insert_api.php",
+		dataType: "json",
+		data: sendData,
+		error: function(xhr, status, error) {
+			alert(xhr.responseText);
+		},
+		success: function(results) {
+			doEnd(results);
 		}
 	});
 }

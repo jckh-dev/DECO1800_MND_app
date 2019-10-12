@@ -92,8 +92,8 @@ include('includes/header.php');
 var correctAnswer = '<?php echo $info[0]["correct"]; ?>'; // echo 1 (return high/low string)
 var numberAnswer = '<?php echo number_format($info[0]["statisticNum"]); ?>'; // echo 2 (returns number of hidden disaster)
 var endGame = '<?php echo $endGame; ?>'; // echo 3 (returns if game should end (true = end))
-var score = <?php echo $_SESSION["scoreTemp"] ?>; // echo 4 (returns score for local update)
-var ID = <?php echo $info[0]["ID"] ?>; // echo 5 (ID of current disaster)
+var score = <?php echo $_SESSION["scoreTemp"] ;?>; // echo 4 (returns score for local update)
+var ID = <?php echo $info[0]["ID"]; ?>; // echo 5 (ID of current disaster)
 </script>
 <script src="js/game.js"></script>
 
