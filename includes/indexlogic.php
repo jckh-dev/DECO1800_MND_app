@@ -1,12 +1,22 @@
 <?php
-  session_start(); // start $_SESSION
-  // guided tour vars
-  $game = [
-    "Bushfire",
-    "Tornado",
-    "Flood"
-  ];
-  $game = json_encode($game);
+    session_start(); // start $_SESSION
+    // guided tour vars
+    $tourGame = [
+        "Bushfire/Urban Fire",
+        "Flood",
+        "Cyclone",
+        "Severe Storm/Hail",
+        "Environmental"
+    ];
+    $tourGame = json_encode($tourGame);
+
+    // random game vars
+    $randomGame = [
+        "Bushfire",
+        "Tornado",
+        "Flood"
+    ];
+    $randomGame = json_encode($randomGame);
 
 include("db.php"); // db connect
 

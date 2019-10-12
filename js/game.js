@@ -16,6 +16,13 @@ function answer(answer) {
 	$("<button id='nextButton' type='submit' class='nextbtn next'>NEXT QUESTION</button>").appendTo("#next");
 	$("#displayAnswer").text(numberAnswer); // numberAnswer (echo 2), displayed on id of displayAnswer etc.
 
+	// high/low higher/lower
+	if (answer == "high") {
+		var answerFormat = "HIGHER";
+	} else {
+		var answerFormat = "LOWER";
+	}	
+
 	if (answer == correctAnswer) { // correctAnswer (echo 1)
 		$(".hilobtn").hide("highlight", { color: 'green' });
 		$("#quizquestion").hide("highlight", { color: 'green' }, function(){
@@ -23,6 +30,9 @@ function answer(answer) {
 				$(this).show("fade");
 			});
 			$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
+			
+			// user friendly answer insertion (correct)
+			$("#displayAnswer3").text("You answered " + answerFormat + " which is CORRECT!");
 
 			// local point update
 			var pointIncrement = 10;
@@ -32,6 +42,7 @@ function answer(answer) {
 			findName(); // prepare end message
 		});
 	} else {
+
 		$(".hilobtn").hide("highlight", { color: 'red' });
 		$("#quizquestion").hide("highlight", {color: 'red' }, function () {
 			$(".quizanswer").toggleClass('qzwrong', function(){
@@ -39,6 +50,10 @@ function answer(answer) {
 			});
 			$("#nextButtonValue").remove(); // remove value from post
 			$("#displayAnswer2").text("Incorrect");
+			
+			// user friendly answer insertion (incorrect)
+			$("#displayAnswer3").text("You answered " + answerFormat + " which is INCORRECT!");
+
 			findName(); // prepare end message
 		});
 	}
