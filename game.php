@@ -6,11 +6,6 @@ include('includes/gamelogic.php');
 include('includes/endinglogic.php');
 ?> -->
 
-<!-- <?php
-include('includes/cluelogic.php');
-?> -->
-
-
 <?php
 include('includes/head.php');
 ?>
@@ -60,7 +55,7 @@ include('includes/header.php');
 
 </article>
 
-<article class="infobox quizanswer">
+<article class="infobox quizanswer" id="answerBox">
 <h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
 <h2>Was it higher or lower than <?php echo $info[0]["randNum"] ?> ?</h2>
 <h2>You answered "HIGHER/LOWER PHP CALL" which is "CORRECT/INCORRECT PHP CALL"</h2>
@@ -74,39 +69,33 @@ include('includes/header.php');
 </article>
 
 <article class="infobox quizend">
-    <h1>THIS IS THE END OF THE GAME</h1>
-    <h1>ALL OF ending.php NEEDS TO BE PLACED HERE AND FUNCTIONALITY UPDATED IN THE PHP LOGIC FILES AS REQUIRED</h1>
+    <!-- all ending content placed in this div -->
+    <div id="endingContent">
+    
+    </div>
 </article>
 
 <article class = "box quizclue">
+
 <h1>TIME FOR A CLUE!</h1>
 <script> var map = false; </script>
 <h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
 <h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
-<h1>Number to compare: <?php echo $info[0]["randNum"]; ?> </h1>
-
-<?php if ($clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
+<h1>Number to compare to: <?php echo number_format($info[0]["randNum"]); ?> </h1>
 
 <h1>Insert your code to get a clue:</h1>
 
-<form id="start" action="clue.php" method="POST">
-<input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-<input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-<input type="text" class="input" name="clueCode" placeholder="Enter clue code" required width="70" height="50">
-<button type="submit" class="idbutton">Enter Code</button>
+<form id="start">
+    <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
+    <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
 </form>
 
-<?php elseif ($revealDesc): // if reveal desc 123?>
 <br>
-<h1> Description Clue (numbers removed) </h1>
-<p> <?php if ($description) {echo $description;} ?> </p>
-<?php elseif ($revealMap): // if 333 (map)?>
-<script> 
-var map = true; 
-var id = <?php echo $info[0]["ID"] ?>; 
-</script>
-<article id="map"></article>
-<?php endif  // end of else if statement?>
+
+<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
+<div id="clueContent">
+
+</div>
 
 </article>
 
@@ -114,13 +103,22 @@ var id = <?php echo $info[0]["ID"] ?>;
     <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower <i class="fas fa-chevron-circle-down"></i></button>
 </aside>
 
+<!-- jquery -->
+<script src="js/jquery-3.4.1.min.js"></script>
+
 <!-- script & echoed values from server into js (james) -->
 <script>
 var correctAnswer = '<?php echo $info[0]["correct"]; ?>'; // echo 1 (return high/low string)
 var numberAnswer = '<?php echo $info[0]["statisticNum"]; ?>'; // echo 2 (returns number of hidden disaster)
-var endGame = '<?php echo $endGame; ?>' // echo 3 (returns if game should end (true = end))
+var endGame = '<?php echo $endGame; ?>'; // echo 3 (returns if game should end (true = end))
+var score = <?php echo $_SESSION["scoreTemp"] ;?>; // echo 4 (returns score for local update)
+var ID = <?php echo $info[0]["ID"] ?>; // echo 5 (ID of current disaster)
+var userID = <?php echo $_COOKIE["User"]; ?>; // echo 6 "userID" (userID of player)
+var mapInit = false; // true = init map.
 </script>
 <script src="js/game.js"></script>
+<script src="js/game_ajax.js"></script>
+<script src="js/leaflet.js"></script>
 
 <?php
 include('includes/footer.php');

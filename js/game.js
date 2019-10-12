@@ -23,6 +23,13 @@ function answer(answer) {
 				$(this).show("fade");
 			});
 			$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
+
+			// local point update
+			var pointIncrement = 10;
+			score += pointIncrement; // score (echo 4), adds point increment for local update
+			var pointText = document.getElementsByClassName("cluepointbtn")[1]; // get 2nd class "cluepointbtn"
+			pointText.innerHTML = score + "<br>POINTS"; // replace html, if the html inside is changed, update this to the new html.
+			findName(); // prepare end message
 		});
 	} else {
 		$(".hilobtn").hide("highlight", { color: 'red' });
@@ -32,6 +39,7 @@ function answer(answer) {
 			});
 			$("#nextButtonValue").remove(); // remove value from post
 			$("#displayAnswer2").text("Incorrect");
+			findName(); // prepare end message
 		});
 	}
 
@@ -41,19 +49,25 @@ function answer(answer) {
 
 
 	if (endGame) { // endGame (echo 3) (When game ends, changes the button to point to ending.php)
-		$(".hilobtn").hide("highlight", { color: 'lightblue' });
-		$("#nextButton").text("You Have Finished!");
-		$("#quizquestion").hide("highlight", { color: 'lightblue' }, function () {
-			$(".quizend").toggleClass('qzend', function () {
-				$(".quizend").show("fade");
-			});
-		});
+		
+		$("#nextButton").attr({"type":"button","onclick":"showEnd()"});
+
 
 		// $("#nextButtonValue").remove();
 		// $("#nextButtonGame").remove();
 		// 
 		// $("#next").attr('action', 'ending.php');
+	}
 }
+
+function showEnd() {
+	$("#answerBox").remove();
+	$(".hilobtn").hide("highlight", { color: 'lightblue' });
+	$("#quizquestion").hide("highlight", { color: 'lightblue' }, function () {
+		$(".quizend").toggleClass('qzend', function () {
+			$(".quizend").show("fade");
+		});
+	});
 }
 
 
