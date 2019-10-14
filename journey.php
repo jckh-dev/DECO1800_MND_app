@@ -46,13 +46,6 @@ include('includes/header.php');
 <a href="scoreboard.php"><button class="button">Leaderboard</button></a>
 </aside>
 
-<aside>
-<form id="login" action="index.php" method="POST">
-<input type="text" class="input"name="userID" placeholder="Enter ID" required>
-<button class="idbutton" type='submit'>Login</button>
-</form>
-</aside>
-
 <?php
 include('includes/footer.php');
 ?>
