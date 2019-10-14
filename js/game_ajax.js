@@ -81,40 +81,45 @@ function doEnd(results) {
 	if (results.result == "found name") {
 		if (results.nameRequest) {
 			// backticks allow for multilines without newline.
-			$("#endingContent").append(`
+			$(".quizend").append(`
 			<h1>Insert your score into the leaderboard!</h1>
 			<h1>You scored: ` + score + `</h1>
 			<form id="start" action="ending.php" method="POST">
 			<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
-			<button type="button" class="button" onclick="insertScore()">INSERT HIGH SCORE!</button>
+			<button type="button" class="button" onclick="insertScore(); showFinal();">INSERT HIGH SCORE!</button>
 			</form>
 			`);
 		} else {
 			// if they already have a name , remove name input.
-			$("#endingContent").append(`
+			$(".quizend").append(`
 			<h1>Insert your score into the leaderboard!</h1>
 			<h1>You scored: ` + score + `</h1>
 			<form id="start" action="ending.php" method="POST">
-			<button type="button" class="button" onclick="insertScore()">INSERT HIGH SCORE!</button>
+			<button type="button" class="button" onclick="insertScore(); showFinal();">INSERT HIGH SCORE!</button>
 			</form>
 			`);
 		}
 	}
 	if (results.result == "inserted") {
-		$("#endingContent").empty();
-		$("#endingContent").append(`
+		$(".quizfinal").append(`
 		<h1>CONGRATULATIONS!</h1>
 		<p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent</p>
 	
 		<aside class = "txtbox">
 			<form id="start" action="scoreboard.php" method="POST">
-			<button type="submit" class="button">Leaderboard</button>
+			<button a href="scoreboard.php" type="submit" class="button">Leaderboard</button>
 			</form>
 		</aside>
 	
 		<aside class = "txtbox">
-			<form id="start" action="index.php" method="POST">
-			<button type="submit" class="button">Home</button>
+			<form id="start" action="journey.php" method="POST">
+			<button a href="scoreboard.php" type="submit" class="button">Home</button>
+			</form>
+		</aside>
+
+		<aside class = "txtbox">
+			<form id="start" action="finish.php" method="POST">
+			<button a href="finish.php" type="submit" class="button">Finish Exhibit Tour</button>
 			</form>
 		</aside>
 		`);

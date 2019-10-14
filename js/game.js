@@ -2,6 +2,7 @@
 var cluebtn = document.querySelector(".cluebtn");
 var quizclue = document.querySelector(".quizclue");
 var nextbtn = document.querySelector("#nextButton")
+var quizpg = document.querySelector("#quizpage")
 
 cluebtn.addEventListener('click', function () {
 	$(quizclue).toggle("blind");
@@ -9,9 +10,8 @@ cluebtn.addEventListener('click', function () {
 	$(".hilobtn").toggle("fade");
 })
 
-
-
 $(document).ready(function(){
+	
 	//nothing yet
 });
 function answer(answer) {
@@ -79,12 +79,15 @@ function showQuestion() {
 
 function showEnd() {
 	$(".quizanswer").hide("highlight", { color: 'lightblue' }, function () {
-		$(".quizend").toggleClass('qzend', function () {
 			$(".quizend").show("fade");
-		});
 	});
 }
 
+function showFinal(){
+	$(".quizend").hide("highlight", { color: 'lightblue' }, function () {
+		$(".quizfinal").show("fade");
+	});
+}
 
 
 // <i class='fas fa-step-forward'></i> <<<<< icon for next question

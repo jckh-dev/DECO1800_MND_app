@@ -297,12 +297,20 @@ button{
    border: lightgrey solid;
    box-shadow: none;
  }
+ /* #quizpage{
+  opacity: 0;
+ } */
 
 .quizanswer{
   display: none;
 }
 
 .quizend{
+  display: none;
+  min-height: 42%;
+}
+
+.quizfinal{
   display: none;
   min-height: 42%;
 }
@@ -324,8 +332,5 @@ button{
   background-color: rgb(255, 220, 220);
 }
 
-.qzend{
-  background-color: #d5ebf8;
-}
 
 

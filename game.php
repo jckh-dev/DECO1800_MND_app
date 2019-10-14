@@ -2,10 +2,6 @@
 include('includes/gamelogic.php');
 ?>
 
-<!-- <?php
-include('includes/endinglogic.php');
-?> -->
-
 <?php
 include('includes/head.php');
 ?>
@@ -26,7 +22,7 @@ include('includes/header.php');
 
 </section>
 
-<section class="gridwrap2">
+<section class="gridwrap2" id="quizpage">
 
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
@@ -62,10 +58,11 @@ include('includes/header.php');
 </article>
 
 <article class="infobox quizend">
-    <!-- all ending content placed in this div -->
-    <div id="endingContent">
     
-    </div>
+</article>
+
+<article class="infobox quizfinal">
+    
 </article>
 
 <article class = "box quizclue">
