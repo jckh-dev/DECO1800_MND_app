@@ -53,6 +53,9 @@ include('includes/header.php');
 
 </article>
 
+<!-- jquery -->
+<script src="js/jquery-3.4.1.min.js"></script>
+
 <script> var mapInit = true; </script> <!-- true = init map. -->
 <script src="js/leaflet.js"></script>
 <script src="js/game_ajax.js"></script>

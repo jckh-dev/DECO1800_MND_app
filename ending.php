@@ -32,44 +32,22 @@ include('includes/header.php');
 
 <article class="infobox">
 
-    <?php if (!isset($_POST['insert'])): ?> <!-- if not pressed insert yet show this etc. -->
-    <h1>Insert your score into the leaderboard!</h1>
-    <h1>Your scored: <?php if (isset($_SESSION['scoreTemp'])) {echo $_SESSION['scoreTemp'];} ?></h1>
+    <div id="endingContent">
 
-    <form id="start" action="ending.php" method="POST">
-    <input type="hidden" name="insert" value=1>
-    <?php if ($nameRequest): ?> <!-- if account has no name-->
-    <input type="text" class="input" name="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
-    <?php endif ?>
-    <button type="submit" class="button">INSERT HIGH SCORE!</button>
-    </form> 
+    </div>
 
-    <?php else: ?> <!-- if pressed insert -->
+</article>
 
-    <h1>CONGRATULATIONS!</h1>
-    <p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent</p>
-    <?php if (isset($_COOKIE["User"])): ?>
-    <h1>If you want to try again,</h1>
-    <h3>your ID for login is:
-    <?php echo $_COOKIE["User"]; ?></h3>
-    <?php endif ?>
-
-    <aside class = "txtbox">
-        <form id="start" action="scoreboard.php" method="POST">
-        <button type="submit" class="button">Leaderboard</button>
-        </form>
-    </aside>
-
-    <aside class = "txtbox">
-        <form id="start" action="index.php" method="POST">
-        <button type="submit" class="button">Home</button>
-        </form>
-    </aside>
+<script>
+    // for inserting data
+    userID = <?php echo $_COOKIE["User"]; ?>; // echo 6 "userID" (userID of player)
+    score = <?php echo $score; ?>; // delete when place in game (serves same purpose as "score" echoed in)
+    mapInit = false;
     
-    <?php endif ?>
-
-</article> 
+</script>
     
 <?php
 include('includes/footer.php');
 ?>
+<script src="js/game_ajax.js"></script>
+<script>findName(); //find name</script>
