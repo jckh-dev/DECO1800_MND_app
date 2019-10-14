@@ -44,13 +44,6 @@ echo "<p class=''> $count. Name: \"$name\" <br>Score: \"$score\"</p>"; // this i
 } ?>
 </h2>
 
-<p>-----</p>
-
-<h1>Don't forget your ID!</h1> 
-<p>Use this number to track your progress: </p>
-<p><?php echo $_COOKIE["User"];?></p>
-</article>
-
 <?php
 include('includes/footer.php');
 ?>
