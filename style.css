@@ -11,9 +11,9 @@
   font-family: 'Raleway', sans-serif;
 }
 
-html,
 body {
-  
+  /* opacity: 0;
+  transition: opacity 1s; */
   overflow-x: hidden;
 }
 
@@ -21,19 +21,10 @@ body{
   min-height: 100vh;
   border-left: solid #08415c 13px;
   border-top: solid #08415c 13px;
-  /* border-radius: 10px; */
 }
 
 html {
   text-rendering: optimizeLegibility;
-}
-
-h1, h2{
-color: #08415c;
-}
-
-h3{
-  color: #08415c;
 }
 
 .wrapper{
@@ -67,7 +58,7 @@ h3{
 }
 
 .box {
-    /* background-color: lightgray; */
+  /* background-color: lightgray; */
   text-align: center;
   margin-left: 8%;
   margin-right: 8%;
@@ -167,7 +158,6 @@ h3{
 
 .breadcrumb-item {
   flex-grow: 1;
-  color: #212121;
   height: 25px;
   display: flex;
   align-items: center;
@@ -182,7 +172,7 @@ h3{
 }
 
 .fa-caret-up{
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .flip {
@@ -257,22 +247,13 @@ button{
  .nextbtn{
   width: 7em;
   font-size:1em;
-  color: #08415c;
  }
 
  .cluepointbtn {
   font-size: 1em;
   border: none;
-  color: #08415c;
   align-self: start;
   padding: 0px;
- }
-
- .hilobtn{
-   width: 100%;
-   height: 100%;
-   border: lightgrey solid;
-   box-shadow: none;
  }
 
  .idbutton {
@@ -303,6 +284,21 @@ button{
 }
 
 /* Quiz Answer Box CSS */
+.hilo-img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+ .hilobtn{
+   width: 100%;
+   height: 100%;
+   border: lightgrey solid;
+   box-shadow: none;
+ }
+ /* #quizpage{
+  opacity: 0;
+ } */
 
 .quizanswer{
   display: none;
@@ -313,14 +309,18 @@ button{
   min-height: 42%;
 }
 
+.quizfinal{
+  display: none;
+  min-height: 42%;
+}
+
 .quizclue{
   background-color: lightseagreen;
   display: none;
   position: absolute; 
-  /* top: 40%; */
   min-height: 65%;
   overflow-y: scroll;
-  /* z-index: 1; */
+ 
 }
 
 .qzright{
@@ -329,9 +329,6 @@ button{
 
 .qzwrong{
   background-color: rgb(255, 220, 220);
-}
-.qzend{
-  background-color: #d5ebf8;
 }
 
 /* GUIDED TOUR CSS */

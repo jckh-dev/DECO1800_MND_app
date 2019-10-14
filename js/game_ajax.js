@@ -77,6 +77,182 @@ function doClue(results) {
 	}
 }
 
+function doEnd(results) {
+	if (results.result == "found name") {
+		if (results.nameRequest) {
+			// backticks allow for multilines without newline.
+			$(".quizend").append(`
+			<h1>Insert your score into the leaderboard!</h1>
+			<h1>You scored: ` + score + `</h1>
+			<form id="start" action="ending.php" method="POST">
+			<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
+			<button type="button" class="button" onclick="insertScore(); showFinal();">INSERT HIGH SCORE!</button>
+			</form>
+			`);
+		} else {
+			// if they already have a name , remove name input.
+			$(".quizend").append(`
+			<h1>Insert your score into the leaderboard!</h1>
+			<h1>You scored: ` + score + `</h1>
+			<form id="start" action="ending.php" method="POST">
+			<button type="button" class="button" onclick="insertScore(); showFinal();">INSERT HIGH SCORE!</button>
+			</form>
+			`);
+		}
+	}
+	if (results.result == "inserted") {
+		$(".quizfinal").append(`
+		<h1>CONGRATULATIONS!</h1>
+		<p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent</p>
+	
+		<aside class = "txtbox">
+			<form id="start" action="scoreboard.php" method="POST">
+			<button a href="scoreboard.php" type="submit" class="button">Leaderboard</button>
+			</form>
+		</aside>
+	
+		<aside class = "txtbox">
+			<form id="start" action="journey.php" method="POST">
+			<button a href="scoreboard.php" type="submit" class="button">Home</button>
+			</form>
+		</aside>
+
+		<aside class = "txtbox">
+			<form id="start" action="finish.php" method="POST">
+			<button a href="finish.php" type="submit" class="button">Finish Exhibit Tour</button>
+			</form>
+		</aside>
+		`);
+	}
+}
+
+function getRegions() {
+	var searchList = [];
+
+	var NSW = document.getElementById("NSW");
+	var NT = document.getElementById("NT");
+	var QLD = document.getElementById("QLD");
+	var SA = document.getElementById("SA");
+	var TAS = document.getElementById("TAS");
+	var VIC = document.getElementById("VIC");
+	var WA = document.getElementById("WA");
+	
+
+	// queries regions
+	if (NSW.checked) {searchList[searchList.length] = NSW.value;}
+	if (NT.checked) {searchList[searchList.length] = NT.value;}
+	if (QLD.checked) {searchList[searchList.length] = QLD.value;}
+	if (SA.checked) {searchList[searchList.length] = SA.value;}
+	if (TAS.checked) {searchList[searchList.length] = TAS.value;}
+	if (VIC.checked) {searchList[searchList.length] = VIC.value;}
+	if (WA.checked) {searchList[searchList.length] = WA.value;}
+
+	// empty return false
+	if (searchList.length == 0) {
+		return false;
+	}
+
+	searchList = JSON.stringify(searchList);
+
+	return searchList;
+}
+
+function getClueCode() {
+	return document.getElementById("clueCode").value;
+}
+
+function getName() {
+	if (document.getElementById("newName")) {
+		return document.getElementById("newName").value;
+	}
+	return false;
+}
+
+function getDisasterNames() {
+	var DisasterName = document.getElementById("DisasterName").value;
+
+
+	// if empty return false
+	if (DisasterName) {
+		// seperate by comma && stringify
+		DisasterName = DisasterName.split(",");
+		DisasterName = JSON.stringify(DisasterName);
+		return DisasterName;
+	}
+	return false;
+}
+
+function initMap() {
+	mapReference = L.map("map").setView([-21, 148], 4);
+
+	L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibm96bmF1ZyIsImEiOiJjazFpdjNnaHMxdTV0M2ptdjB1Nm1iMzFwIn0.X3Ic_YsO8VXsyrzp7meIUA", {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: "mapbox.streets"
+	}).addTo(mapReference);
+}
+
+function insertRecordSearch() {
+	// must have at least 1 region, names are optional
+	if (!getRegions()) {
+		return false;
+	}
+	sendData = {regions : getRegions()};
+	// if not false (has something) add to object
+	if (getDisasterNames()) {
+		sendData.names = getDisasterNames();
+	}
+	$.ajax({
+		type: "POST",
+		url: "includes/mapsearch_api.php",
+		dataType: "json",
+		data: sendData,
+		error: function(xhr, status, error) {
+			alert(xhr.responseText);
+		},
+		success: function(results) {
+			iterateRecords(results);
+		}
+	});
+}
+
+function insertRecordClue() {
+	// must have code and disaster ID
+	sendData = {clueCode : getClueCode(), disasterID : ID}; // echo 5 "ID" (ID of current disaster)
+	$.ajax({
+		type: "POST",
+		url: "includes/mapclue_api.php",
+		dataType: "json",
+		data: sendData,
+		error: function(xhr, status, error) {
+			alert(xhr.responseText);
+		},
+		success: function(results) {
+			doClue(results);
+		}
+	});
+}
+
+function findName() {
+	// must have code and disaster ID
+	sendData = {ID : userID, getName : 1}; // echo 6 "userID" (userID of player)
+	if (getName()) {
+		sendData.name = getName();
+	}
+	$.ajax({
+		type: "POST",
+		url: "includes/insert_api.php",
+		dataType: "json",
+		data: sendData,
+		error: function(xhr, status, error) {
+			alert(xhr.responseText);
+		},
+		success: function(results) {
+			doEnd(results);
+		}
+	});
+}
+
 function getRegions() {
 	var searchList = [];
 
@@ -169,6 +345,26 @@ function insertRecordClue() {
 		},
 		success: function(results) {
 			doClue(results);
+		}
+	});
+}
+
+function insertScore() {
+	// must have code and disaster ID
+	sendData = {ID : userID, userScore : score}; // echo 6 "userID" (userID of player), // echo 4 (returns score for local update)
+	if (getName()) {
+		sendData.name = getName();
+	}
+	$.ajax({
+		type: "POST",
+		url: "includes/insert_api.php",
+		dataType: "json",
+		data: sendData,
+		error: function(xhr, status, error) {
+			alert(xhr.responseText);
+		},
+		success: function(results) {
+			doEnd(results);
 		}
 	});
 }

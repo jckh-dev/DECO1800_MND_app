@@ -2,15 +2,6 @@
 include('includes/gamelogic.php');
 ?>
 
-<!-- <?php
-include('includes/endinglogic.php');
-?> -->
-
-<!-- <?php
-include('includes/cluelogic.php');
-?> -->
-
-
 <?php
 include('includes/head.php');
 ?>
@@ -23,14 +14,6 @@ include('includes/header.php');
 
 <aside class="box points">
 
-<!-- OLD CLUE PAGE CALL : THIS IS REPLACED BY A JS DROPDOWN BOX (class= "cluebtn") NEED TO RECONFIGURE THIS CALL SO THAT EVERYTHING ON THE CLUE PAGE LOADS IN ON THE DROP DOWN BOX>>>-->
-
-<!-- <form id="start" action="clue.php" method="POST">
-    <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-    <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-    <button class="cluepointbtn" type="submit"><i class="fas fa-question"></i><br>CLUES</button>
-</form> -->
-
 <button class="cluepointbtn cluebtn"><i class="fas fa-question"></i><br>CLUES</button>
 
 <aside class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</aside>
@@ -39,7 +22,7 @@ include('includes/header.php');
 
 </section>
 
-<section class="gridwrap2">
+<section class="gridwrap2" id="quizpage">
 
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
@@ -56,12 +39,12 @@ include('includes/header.php');
 
     <h1>Name Of Disaster: <?php echo $info[0]["title"]; ?></h1>
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
-
+    <img class="hilo-img" src ="images/plchdr-bushfire-img.jpg">
     <h2>Higher or lower than: </h2> <p><?php echo $info[0]["randNum"] ?></p>
-
+    
 </article>
 
-<article class="infobox quizanswer">
+<article class="infobox quizanswer" id="answerBox">
 <h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
 <h2>Was it higher or lower than <?php echo number_format($info[0]["randNum"]) ?> ?</h2>
 <h2 id="displayAnswer3">You answered "HIGHER/LOWER" which is "CORRECT/INCORRECT"</h2>
@@ -75,39 +58,34 @@ include('includes/header.php');
 </article>
 
 <article class="infobox quizend">
-    <h1>THIS IS THE END OF THE GAME</h1>
-    <h1>ALL OF ending.php NEEDS TO BE PLACED HERE AND FUNCTIONALITY UPDATED IN THE PHP LOGIC FILES AS REQUIRED</h1>
+    
+</article>
+
+<article class="infobox quizfinal">
+    
 </article>
 
 <article class = "box quizclue">
+
 <h1>TIME FOR A CLUE!</h1>
 <script> var map = false; </script>
 <h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
 <h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
-<h1>Number to compare: <?php echo $info[0]["randNum"]; ?> </h1>
-
-<?php if ($clueCodeValid): // $clueCodeValid true if right code not entered / no code entered?> 
+<h1>Number to compare to: <?php echo number_format($info[0]["randNum"]); ?> </h1>
 
 <h1>Insert your code to get a clue:</h1>
 
-<form id="start" action="clue.php" method="POST">
-<input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-<input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-<input type="text" class="input" name="clueCode" placeholder="Enter clue code" required width="70" height="50">
-<button type="submit" class="idbutton">Enter Code</button>
+<form id="start">
+    <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
+    <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
 </form>
 
-<?php elseif ($revealDesc): // if reveal desc 123?>
 <br>
-<h1> Description Clue (numbers removed) </h1>
-<p> <?php if ($description) {echo $description;} ?> </p>
-<?php elseif ($revealMap): // if 333 (map)?>
-<script> 
-var map = true; 
-var id = <?php echo $info[0]["ID"] ?>; 
-</script>
-<article id="map"></article>
-<?php endif  // end of else if statement?>
+
+<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
+<div id="clueContent">
+
+</div>
 
 </article>
 
@@ -115,16 +93,23 @@ var id = <?php echo $info[0]["ID"] ?>;
     <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower <i class="fas fa-chevron-circle-down"></i></button>
 </aside>
 
+<!-- jquery -->
+<script src="js/jquery-3.4.1.min.js"></script>
+
 <!-- script & echoed values from server into js (james) -->
 <script>
 var correctAnswer = '<?php echo $info[0]["correct"]; ?>'; // echo 1 (return high/low string)
 var numberAnswer = '<?php echo number_format($info[0]["statisticNum"]); ?>'; // echo 2 (returns number of hidden disaster)
 var endGame = '<?php echo $endGame; ?>'; // echo 3 (returns if game should end (true = end))
-var score = <?php echo $_SESSION["scoreTemp"] ?>; // echo 4 (returns score for local update)
+var score = <?php echo $_SESSION["scoreTemp"] ;?>; // echo 4 (returns score for local update)
 var ID = <?php echo $info[0]["ID"] ?>; // echo 5 (ID of current disaster)
+var userID = <?php echo $_COOKIE["User"]; ?>; // echo 6 "userID" (userID of player)
+var mapInit = false; // true = init map.
 </script>
 
 <script src="js/game.js"></script>
+<script src="js/game_ajax.js"></script>
+<script src="js/leaflet.js"></script>
 
 <?php
 include('includes/footer.php');
