@@ -1,7 +1,7 @@
 
 var pathname = window.location.pathname.split("/");
 var last = pathname[pathname.length - 1];
-var welcome = '<a href="index.php" class="breadcrumb-item" id="fwelcome">Welcome</a>';
+var welcome = '<a href="welcomemsg.php" class="breadcrumb-item" id="fwelcome">Welcome</a>';
 var home = '<a href="journey.php" class="breadcrumb-item" id="fhome">Home</a>';
 var tour = '<a href="guidedtour.php" class="breadcrumb-item" id="ftour">Tour</a>';
 var game = '<a href="game.php" class="breadcrumb-item" id="fgame">Game</a>';

@@ -106,6 +106,7 @@ var ID = <?php echo $info[0]["ID"] ?>; // echo 5 (ID of current disaster)
 var userID = <?php echo $_COOKIE["User"]; ?>; // echo 6 "userID" (userID of player)
 var mapInit = false; // true = init map.
 </script>
+
 <script src="js/game.js"></script>
 <script src="js/game_ajax.js"></script>
 <script src="js/leaflet.js"></script>
