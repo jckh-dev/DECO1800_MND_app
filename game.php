@@ -18,14 +18,6 @@ include('includes/header.php');
 
 <aside class="box points">
 
-<!-- OLD CLUE PAGE CALL : THIS IS REPLACED BY A JS DROPDOWN BOX (class= "cluebtn") NEED TO RECONFIGURE THIS CALL SO THAT EVERYTHING ON THE CLUE PAGE LOADS IN ON THE DROP DOWN BOX>>>-->
-
-<!-- <form id="start" action="clue.php" method="POST">
-    <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-    <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-    <button class="cluepointbtn" type="submit"><i class="fas fa-question"></i><br>CLUES</button>
-</form> -->
-
 <button class="cluepointbtn cluebtn"><i class="fas fa-question"></i><br>CLUES</button>
 
 <aside class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</aside>
@@ -51,9 +43,9 @@ include('includes/header.php');
 
     <h1>Name Of Disaster: <?php echo $info[0]["title"]; ?></h1>
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
-
+    <img class="hilo-img" src ="images/plchdr-bushfire-img.jpg">
     <h2>Higher or lower than: </h2> <p><?php echo $info[0]["randNum"] ?></p>
-
+    
 </article>
 
 <article class="infobox quizanswer" id="answerBox">
