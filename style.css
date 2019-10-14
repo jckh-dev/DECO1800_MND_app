@@ -11,9 +11,9 @@
   font-family: 'Raleway', sans-serif;
 }
 
-html,
 body {
-  
+  /* opacity: 0;
+  transition: opacity 1s; */
   overflow-x: hidden;
 }
 
@@ -25,14 +25,6 @@ body{
 
 html {
   text-rendering: optimizeLegibility;
-}
-
-h1, h2{
-color: #08415c;
-}
-
-h3{
-  color: #08415c;
 }
 
 .wrapper{
@@ -166,7 +158,6 @@ h3{
 
 .breadcrumb-item {
   flex-grow: 1;
-  color: #212121;
   height: 25px;
   display: flex;
   align-items: center;
@@ -257,18 +248,14 @@ button{
  .nextbtn{
   width: 7em;
   font-size:1em;
-  color: #08415c;
  }
 
  .cluepointbtn {
   font-size: 1em;
   border: none;
-  color: #08415c;
   align-self: start;
   padding: 0px;
  }
-
-
 
  .idbutton {
   width: 230px;
@@ -309,18 +296,7 @@ button{
    height: 100%;
    border: lightgrey solid;
    box-shadow: none;
-   animation: fadein 1.2s;
  }
-
-#quizquestion{
-  animation: fadein 1.2s;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
 
 .quizanswer{
   display: none;
@@ -335,7 +311,6 @@ button{
   background-color: lightseagreen;
   display: none;
   position: absolute; 
-  /* top: 40%; */
   min-height: 65%;
   overflow-y: scroll;
  

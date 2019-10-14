@@ -73,9 +73,11 @@ function answer(answer) {
 	}
 }
 
+function showQuestion() {
+	$(".quizanswer").hide("highlight", { color: 'lightblue' })
+}
+
 function showEnd() {
-	// $("#answerBox").remove();
-	// $(".hilobtn").hide("highlight", { color: 'lightblue' });
 	$(".quizanswer").hide("highlight", { color: 'lightblue' }, function () {
 		$(".quizend").toggleClass('qzend', function () {
 			$(".quizend").show("fade");
@@ -83,9 +85,7 @@ function showEnd() {
 	});
 }
 
-function showQuestion() {
-	$(".quizanswer").hide("highlight", { color: 'lightblue' })
-}
+
 
 // <i class='fas fa-step-forward'></i> <<<<< icon for next question
 

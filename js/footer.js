@@ -1,4 +1,3 @@
-// breadcrumb insert/delete james
 
 var pathname = window.location.pathname.split("/");
 var last = pathname[pathname.length - 1];
@@ -11,35 +10,33 @@ var scores = '<a href="scoreboard.php" class="breadcrumb-item id="fscores">Score
 var finish = '<a href="ending.php" class="breadcrumb-item" id="fending">Finish</a>';
 
 if (last == "journey.php") {
-  $(".breadcrumb").append(welcome);
-  $(".breadcrumb").append(home);
-  $("#fhome").addClass("footer-active")
+    $(".breadcrumb").append(welcome);
+    $(".breadcrumb").append(home);
+    $("#fhome").addClass("footer-active")
 } else if (last == "game.php") {
-  $(".breadcrumb").append(welcome);
-  $(".breadcrumb").append(home);
-  $(".breadcrumb").append(game);
-  $("#fgame").addClass("footer-active")
+    $(".breadcrumb").append(welcome);
+    $(".breadcrumb").append(home);
+    $(".breadcrumb").append(game);
+    $("#fgame").addClass("footer-active")
 } else if (last == "map.php") {
-  $(".breadcrumb").append(welcome);
-  $(".breadcrumb").append(home);
-  $(".breadcrumb").append(map);
-  $("#fmap").addClass("footer-active")
+    $(".breadcrumb").append(welcome);
+    $(".breadcrumb").append(home);
+    $(".breadcrumb").append(map);
+    $("#fmap").addClass("footer-active")
 } else if (last == "scoreboard.php") {
-  $(".breadcrumb").append(welcome);
-  $(".breadcrumb").append(home);
-  $(".breadcrumb").append(scores);
-  $("#fscores").addClass("footer-active")
+    $(".breadcrumb").append(welcome);
+    $(".breadcrumb").append(home);
+    $(".breadcrumb").append(scores);
+    $("#fscores").addClass("footer-active")
 } else if (last == "ending.php") {
-  $(".breadcrumb").append(welcome);
-  $(".breadcrumb").append(home);
-  $(".breadcrumb").append(game);
-  $(".breadcrumb").append(finish);
-  $("#fending").addClass("footer-active")
+    $(".breadcrumb").append(welcome);
+    $(".breadcrumb").append(home);
+    $(".breadcrumb").append(game);
+    $(".breadcrumb").append(finish);
+    $("#fending").addClass("footer-active")
 }
 
-$(document).ready(function(){
-  $(".tab").click(function(){
+$(".tab").click(function () {
     $(".bcwrapper").slideToggle('slow');
     $(".fa-caret-up").toggleClass('flip');
-  });
-})
+});   
