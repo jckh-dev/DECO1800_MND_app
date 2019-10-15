@@ -2,7 +2,13 @@
 $(document).ready(function(){
 	//nothing yet
 });
+function earlyEnd() {
+	endGame = true; // make it endgame
+	answer("wrong"); // answer is wrong.
+}
+
 function answer(answer) {
+
 	//bellow is where the button is, this will be appended to #next (the form)
 	$("<button id='nextButton' type='submit' class='nextbtn next'>NEXT QUESTION</button>").appendTo("#next");
 	$("#displayAnswer").text(numberAnswer); // numberAnswer (echo 2), displayed on id of displayAnswer etc.
@@ -51,6 +57,16 @@ function answer(answer) {
 			// user friendly answer insertion (incorrect)
 			$("#displayAnswer3").text("You answered " + answerFormat + " which is INCORRECT!");
 		})
+		// if life is 1 and they lost, they lose.
+		if (life == 1) {
+			endGame = true;
+		} else if (life > 1) {
+			life--;
+		}
+	}
+	// if this game has life, then give it to the next game round
+	if (life) {
+		$('#lifeValue').val(life);
 	}
 	if (endGame) { // endGame (echo 3) (When game ends, changes the button to point to ending.php)
 		$("#nextButtonValue").remove();
@@ -60,6 +76,26 @@ function answer(answer) {
 	}
 }
 
+// insert image (api mode)
+if (imageMode) {
+	$("#imageInsert").append('<img class="disasterImage" src="' + imageUrl + '" alt="image from: ' + imageUrl + '">');
+}
+
+// insert image (no api mode)
+if (!imageMode) {
+	if (currentDisaster == "Bushfire/Urban Fire") {
+		// simply appends a html img, edit/change class as needed.
+		$("#imageInsert").append('<img class="disasterImage" src="images/bushfire.jpg" alt="image from: https://commons.wikimedia.org/wiki/File:Swifts_creek_14-12-2006_1600_-2.jpg">');
+	} else if (currentDisaster == "Flood") {
+		$("#imageInsert").append('<img class="disasterImage" src="images/flood.jpg" alt="image from: https://commons.wikimedia.org/wiki/File:Trapped_woman_on_a_car_roof_during_flash_flooding_in_Toowoomba_2.jpg">');
+	} else if (currentDisaster == "Cyclone") {
+		$("#imageInsert").append('<img class="disasterImage" src="images/cyclone.jpg" alt="image from: https://commons.wikimedia.org/wiki/File:George_08_feb_2007_0155Z.jpg">');
+	} else if (currentDisaster == "Severe Storm/Hail") {
+		$("#imageInsert").append('<img class="disasterImage" src="images/hailstorm.jpg" alt="image from: https://commons.wikimedia.org/wiki/File:Storm_Brunswick_Heads091007.jpg">');
+	} else if (currentDisaster == "Environmental") {
+		$("#imageInsert").append('<img class="disasterImage" src="images/environmental.jpg" alt="image from: https://commons.wikimedia.org/wiki/File:Lac_Hume.jpg">');
+	}
+}
 
 // <i class='fas fa-step-forward'></i> <<<<< icon for next question
 

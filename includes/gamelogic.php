@@ -7,11 +7,26 @@
         $_SESSION['scoreTemp'] = 0;
     }
 
-    // guided tour
+    if (isset($_POST['life'])) {
+        $life = $_POST['life'];
+    }
+
+    // get game disasters
+    $game = json_decode($_POST['game'], true);
+    $originalGame = $game;
+    $gameCount = sizeof($game);
+
+    // main game
     if (isset($_POST['game'])) {
 
-        // get game disasters
-        $game = json_decode($_POST['game'], true);
+        if ($game[0] == "infinite") {
+            $randomDisasters = ["Bushfire", "Urban Fire", "Flood", 
+                "Cyclone", "Severe Storm", "Hail", "Environmental"];
+            // pick random disaster from selected above
+            $game[0] = $randomDisasters[array_rand($randomDisasters, 1)];
+            // to keep it infinite (0th entry is removed, making infinite first next round)
+            $game[1] = "infinite"; 
+        }
         
         // info here
         $info = array();
@@ -156,5 +171,38 @@
     // if correct
     if (isset($_POST['answer'])) {
         $_SESSION['scoreTemp'] += 10;
+    }
+
+    // IMAGEMODE - READ
+    // IMPORTANT: TRUE FOR API IMAGE MODE, FALSE FOR PRESET IMAGES FOR 5 CHOSEN DISASTERS...
+    // DO NOT TURN IT ON UNLESS YOU NEED TO TEST IT, ONLY 1000 TRANSACTIONS PER MONTH.
+    $imageMode = false;
+    if ($imageMode) {
+        /* Reference: 
+            Quickstart: Search for images using the Bing Image Search REST API and PHP. (2019). Retrieved from
+            https://docs.microsoft.com/en-gb/azure/cognitive-services/bing-image-search/quickstarts/php
+        */
+        $url = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
+        $query = $info[0]["title"];
+        $query_end = '&count=1&offset=0&mkt=en-au&safeSearch=Strict&license=share';
+        $accessKey = '1c9a942a389f4241aac9337be633669f'; //f1c9a942a389f4241aac9337be633669f
+        $headers = "Ocp-Apim-Subscription-Key: $accessKey\r\n";
+        $options = array ( 'http' => array (
+                                'header' => $headers,
+                                'method' => 'GET' ));
+        $context = stream_context_create($options);
+        // @ = error control operator (supresses errors/warnings)
+        $result = @file_get_contents($url . "?q=" . urlencode($query) . $query_end, false, $context);
+        if ($result !== false) { // if there is a result
+            $result = json_decode($result, true);
+            if (array_key_exists("value", $result)) {
+                $imageResult = $result["value"];
+                $imageUrl = $imageResult[0]["contentUrl"];
+            } else {
+                $imageMode = false; // bad result
+            }
+        } else {
+            $imageMode = false; // bad result
+        }
     }
 ?>

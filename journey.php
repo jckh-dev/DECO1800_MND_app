@@ -30,6 +30,7 @@ include('includes/header.php');
 <aside>
 <form id="start" action="game.php" method="POST">
       <input type="hidden" name="game" value='<?php echo $randomGame; ?>'>
+      <input type="hidden" name="life" value=10> <!-- life amount -->
       <input type="hidden" name="init" value=1>
       <button type="submit" class="button">Random Play</button>
 </form>

@@ -43,8 +43,13 @@ include('includes/header.php');
     <br>
 
     <h1>Name/Type (Optional)</h1> <br> 
-    Search for multiple by seperating with a comma, e.g. (Cyclone,Flood)
-    <input type="text" class="input" id="DisasterName" placeholder="Enter disaster types or names" width="70" height="50">
+    Search for multiple by seperating with a comma, e.g. <br> (Cyclone George,Black Friday) <br>
+    <input type="text" class="input" id="DisasterName" placeholder="Enter disaster names" width="70" height="50"> <br>
+    <input type="checkbox" value="Bushfire,Urban Fire" id="fire"> Bushfire/Urban Fire <br>
+    <input type="checkbox" value="Flood" id="flood"> Flood <br>
+    <input type="checkbox" value="Cyclone" id="cyclone"> Cyclone <br>
+    <input type="checkbox" value="Severe Storm/Hail" id="storm"> Severe Storm/Hail <br>
+    <input type="checkbox" value="Environmental" id="environ"> Environmental <br>
     <button type="button" class="idbutton" onclick="insertRecordSearch()">Search</button>
     
 </form>
