@@ -15,6 +15,7 @@
     $game = json_decode($_POST['game'], true);
     $originalGame = $game;
     $gameCount = sizeof($game);
+    $randomGame;
 
     // main game
     if (isset($_POST['game'])) {
@@ -27,6 +28,7 @@
             // to keep it infinite (0th entry is removed, making infinite first next round)
             $game[1] = "infinite"; 
         }
+        $randomGame = $game[0];
         
         // info here
         $info = array();

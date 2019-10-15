@@ -14,19 +14,15 @@ include('includes/header.php');
 
 <aside class="box points">
 
-<form id="start" action="clue.php" method="POST">
-    <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-    <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-    <button class="cluepointbtn" type="submit"><i class="fas fa-question"></i><br>CLUES</button>
-</form>
+<button class="cluepointbtn cluebtn"><i class="fas fa-question"></i><br>CLUES</button>
 
-<button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
+<aside class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</aside>
 
 </aside>
 
 </section>
 
-<section class="gridwrap2">
+<section class="gridwrap2" id="quizpage">
 
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
@@ -47,18 +43,6 @@ include('includes/header.php');
 
     <h2><?php echo $oldGame[0]; ?></h2>
 
-        <!-- <h1>Next Topics:
-        <?php 
-        if (isset($_POST["game"]) || isset($_POST["oldGame"])) {
-        for ($i = 1; $i < sizeof($oldGame); $i++) {
-        echo $oldGame[$i] . ", ";    
-        } 
-        } else {
-        echo "Nothing Left.";
-        }
-        ?>
-        </h1> -->
-
     <!-- need to start working this over so it spits out something a little more user friendly, closer to the design mockups -->
 
     <h1>Name Of Disaster: <?php echo $info[0]["title"]; ?></h1>
@@ -68,14 +52,9 @@ include('includes/header.php');
 
     <button onclick="earlyEnd()">Early Exit</button>
     
-    <!-- display actual -->
-    <!-- <h2>Actual answer: </h2><p id="displayAnswer">?</p> -->
-    <!-- display correct/incorrect -->
-    <!-- <h1 id="displayAnswer2" class="text-light"></h1>  -->
-
 </article>
 
-<article class="box quizanswer">
+<article class="infobox quizanswer" id="answerBox">
 <h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
 <h2>Was it higher or lower than <?php echo number_format($info[0]["randNum"]) ?> ?</h2>
 <h2 id="displayAnswer3">You answered "HIGHER/LOWER" which is "CORRECT/INCORRECT"</h2>
@@ -87,10 +66,39 @@ include('includes/header.php');
     <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
     <?php if (isset($_POST['life'])) {echo '<input id="lifeValue" type="hidden" name="life">'; } ?> <!-- value inserted by js -->
 </form>
-
 </article>
 
+<article class="infobox quizend">
+    
+</article>
 
+<article class="infobox quizfinal">
+    
+</article>
+
+<article class = "box quizclue">
+
+<h1>TIME FOR A CLUE!</h1>
+<script> var map = false; </script>
+<h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
+<h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
+<h1>Number to compare to: <?php echo number_format($info[0]["randNum"]); ?> </h1>
+
+<h1>Insert your code to get a clue:</h1>
+
+<form id="start">
+    <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
+    <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
+</form>
+
+<br>
+
+<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
+<div id="clueContent">
+
+</div>
+
+</article>
 
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower <i class="fas fa-chevron-circle-down"></i></button>
@@ -110,11 +118,16 @@ var endGame = '<?php echo $endGame; ?>'; // echo 3 (returns if game should end (
 var score = <?php echo $_SESSION["scoreTemp"] ;?>; // echo 4 (returns score for local update)
 var ID = <?php echo $info[0]["ID"]; ?>; // echo 5 (ID of current disaster)
 var life<?php if (isset($_POST['life'])) {echo " = " . $life;}?>;
-var currentDisaster = "<?php echo $originalGame[0]; ?>";
+var currentDisaster = "<?php if (isset($_POST['life'])) {echo $randomGame;} else {echo $originalGame[0];} ?>"; // fir
 var currentTitle = "<?php echo $info[0]["title"]; ?>";
 <?php if ($imageMode) {echo "var imageUrl = '" . $imageUrl . "';";} ?> // imageUrl var from bing if imageMode is true
+var userID = <?php echo $_COOKIE["User"]; ?>; // echo 6 "userID" (userID of player)
+var mapInit = false; // true = init map.
 </script>
+
 <script src="js/game.js"></script>
+<script src="js/game_ajax.js"></script>
+<script src="js/leaflet.js"></script>
 
 <?php
 include('includes/footer.php');
