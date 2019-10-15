@@ -17,13 +17,11 @@ include('includes/header.php');
 <section class="gridwrap2">
 
     <article class="box">
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p><br>
+        <p>Welcome to the Museum Of Natural Disasters interactive exhibit application. This app is here to help guide and enrich\
+        your experience as you learn more about the ferocious and ever more frequent nature of natural disasters across the \
+        Australian continent. </p><br>
         
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p></p>
     </article>
 
     <article class="box" id="demoinfo">

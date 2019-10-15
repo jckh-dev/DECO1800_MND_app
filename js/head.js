@@ -11,11 +11,11 @@ $(document).ready(function () {
     $("body").fadeOut(1000, redirectPage);
   });
 
-  $("form").click(function (event) {
-    event.preventDefault();
-    linkLocation = this.href;
-    $("body").fadeOut(1000, redirectPage);
-  });
+  // $("form").click(function (event) {
+  //   event.preventDefault();
+  //   linkLocation = this.href;
+  //   $("body").fadeOut(1000, redirectPage);
+  // });
 
   function redirectPage() {
     window.location = linkLocation;
