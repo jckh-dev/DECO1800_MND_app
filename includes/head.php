@@ -13,6 +13,13 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/head.js"></script>
+    <noscript>
+        <style>
+        body{
+        opacity: 1;
+        }
+        </style>
+    </noscript>
 </head>
 
 <!-- <body onload="document.body.style.opacity='1'"> -->
