@@ -1,4 +1,8 @@
 <?php
+include('includes/indexlogic.php');
+?>
+
+<?php
 include('includes/head.php');
 ?>
 

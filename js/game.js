@@ -81,14 +81,13 @@ function answer(answer) {
 	if (life) {
 		$('#lifeValue').val(life);
 	}
-}
 
 	if (endGame) { // endGame (echo 3) (When game ends, changes the button to point to ending.php)
-		
+	
 		$("#nextButton").html("Finish Game")
 		$("#nextButton").attr({"type":"button","onclick":"showEnd()"});
 	}
-
+}
 
 function showQuestion() {
 	$(".quizanswer").hide("highlight", { color: 'lightblue' })

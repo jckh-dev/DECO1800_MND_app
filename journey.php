@@ -19,7 +19,7 @@ include('includes/header.php');
 <section class="gridwrap2">
 
 <aside>
-<a href="guidedtour.php"><button class="button">Start Guided Tour</button></a>
+    <a href="guidedtour.php"><button class="button">Start Guided Tour</button></a>
 </aside>
 
 <aside>
