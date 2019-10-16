@@ -12,6 +12,8 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
+<section class = "gridwraptitle">
+    
 <aside class="box txtbox">
 <h1>LOOK UP A NATURAL DISASTER</h1>
 </aside>

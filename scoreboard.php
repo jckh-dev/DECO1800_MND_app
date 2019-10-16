@@ -15,7 +15,8 @@ include('includes/head.php');
 <?php
 include('includes/header.php');
 ?>
-
+<section class = "gridwraptitle">
+    
 <aside class="box points">
 <form id="start" action="game.php" method="POST">
 <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>

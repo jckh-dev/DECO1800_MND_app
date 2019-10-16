@@ -11,7 +11,8 @@ include('includes/head.php');
 <?php
 include('includes/header.php');
 ?>
-
+<section class = "gridwraptitle">
+    
 <aside class="box points">
 
 <button class="cluepointbtn cluebtn"><i class="fas fa-question"></i><br>CLUES</button>

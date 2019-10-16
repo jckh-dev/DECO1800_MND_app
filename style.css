@@ -49,7 +49,7 @@ p {
 .wrapper{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 185px 1fr 0.1fr;
+  grid-template-rows: 125px 0.01fr 1fr 0.08fr;
   grid-gap: 0px;
   min-height: 99vh;
 }
@@ -63,15 +63,15 @@ p {
 
 .gridwrap2{
   display: grid;
+  padding: 5% 0 5% 0;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
   text-align: center;
-  align-content: inherit;
 }
 
 .gridwrap3{
   display: grid;
-  grid-template-rows: min-content;
+  /* grid-template-rows: min-content; */
   grid-template-columns: 1fr;
   align-content: end;
 }
@@ -113,6 +113,7 @@ p {
 
 .welcomebtns{
   display: flex;
+  padding-bottom: 3%;
   justify-content: space-between;
 }
 
