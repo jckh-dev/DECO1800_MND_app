@@ -9,7 +9,7 @@ include('includes/head.php');
 <div class="wrapper">
 
 <?php
-include('includes/header.php');
+include('includes/gameheader.php');
 ?>
 
 <button class="cluepointbtn cluebtn"><i class="fas fa-question"></i><br>CLUES</button>
@@ -26,19 +26,20 @@ include('includes/header.php');
     <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
 </aside>
 
+<!-- need to start working this over so it spits out something a little more user friendly, closer to the design mockups -->
+
 <article class="infobox" id="quizquestion">
     <h1>THE HIGHER OR LOWER GAME</h1>
     
-    <h1>Natural Disaster Classification:</h1>
+    <h2>Natural Disaster Type: <?php echo $oldGame[0]; ?></h2>
 
-    <h2><?php echo $oldGame[0]; ?></h2>
+    <h2>Name Of Disaster: <?php echo $info[0]["title"]; ?></h2>
 
-    <!-- need to start working this over so it spits out something a little more user friendly, closer to the design mockups -->
-
-    <h1>Name Of Disaster: <?php echo $info[0]["title"]; ?></h1>
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
+
     <img class="hilo-img" src ="images/plchdr-bushfire-img.jpg">
-    <h2>Higher or lower than: </h2> <p><?php echo $info[0]["randNum"] ?></p>
+
+    <h2>Was the value of the <?php echo $info[0]["statistic"]; ?> statistic higher or lower than <?php echo $info[0]["randNum"] ?></h2> 
     
 </article>
 

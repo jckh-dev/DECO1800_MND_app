@@ -50,8 +50,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.1fr 0.1fr 1fr 0.08fr;
-  grid-gap: 0px;
-  min-height: 99.5vh;
+  min-height: 99vh;
 }
 
 .gridwrap1{
@@ -59,29 +58,29 @@ p {
 }
 
 .gridwraptitle{
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding: 3% 0 0 0;
 }
 
 .gridwrap2{
   display: grid;
-  padding: 5% 0 5% 0;
+  padding: 3% 0 3% 0;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
-  text-align: center;
+  grid-gap: 1%;
 }
 
 .gridwrap3{
   display: grid;
-  /* grid-template-rows: min-content; */
   grid-template-columns: 1fr;
   align-content: end;
 }
 
 .box {
   text-align: center;
-  margin-left: 8%;
-  margin-right: 8%;
+  margin: 0 8% 0 8%;
 }
 
 .txtbox{
@@ -89,10 +88,18 @@ p {
   margin-bottom: 5%;
 }
 
-.titlebox{
+.gamebox{
+  display: flex;
+  justify-content: space-between;
   text-align: center;
-  margin: 0% 8% 0 8%;
-  
+  margin: 0 8% 0 8%;
+}
+
+.titlebox{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 0 8% 0 8%;
 }
 
 /* The light blue boxes that hold text information */
@@ -103,9 +110,8 @@ p {
     justify-content: space-around;
     background-color: #d5ebf8;
     border-radius: 5px;
-    text-align: center;
-    margin-left: 8%;
-    margin-right: 8%;
+    /* text-align: center; */
+    margin: 0 8% 0 8%;
     overflow-y: scroll;
 }
 
@@ -215,8 +221,6 @@ p {
 .flip {
   transform: rotate(-180deg);
 }
-
-
 
 /* Specific boxes */
 .login {

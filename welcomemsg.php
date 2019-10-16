@@ -8,7 +8,7 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-    <h1>WELCOME</h1><br>
+    <h1>WELCOME</h1>
 </aside>
 </section>
 
