@@ -17,11 +17,11 @@ include('includes/header.php');
 <section class="gridwrap2">
 
     <article class="box">
-        <p>Welcome to the Museum Of Natural Disasters interactive exhibit application. This app is here to help guide and enrich\
-        your experience as you learn more about the ferocious and ever more frequent nature of natural disasters across the \
+        <p>Welcome to the Museum Of Natural Disasters interactive exhibit application. This app is here to help guide and enrich
+        your experience as you learn more about the ferocious and ever more frequent nature of natural disasters across the
         Australian continent. </p><br>
         
-        <p></p>
+        <p>Explore the five major Australian natural disaster types through the 'Guided Tour' or jump straight to the 'Higher or Lower' game.and play the higher or lower game when your finished to gauge the destrus</p>
     </article>
 
     <article class="box" id="demoinfo">
