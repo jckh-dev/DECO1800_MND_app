@@ -3,19 +3,25 @@
     // guided tour vars
     $tourGame = [
         "Bushfire/Urban Fire",
+        "Bushfire/Urban Fire",
+        "Bushfire/Urban Fire",
+        "Flood",
+        "Flood",
         "Flood",
         "Cyclone",
+        "Cyclone",
+        "Cyclone",
         "Severe Storm/Hail",
+        "Severe Storm/Hail",
+        "Severe Storm/Hail",
+        "Environmental",
+        "Environmental",
         "Environmental"
     ];
     $tourGame = json_encode($tourGame);
 
-    // random game vars
-    $randomGame = [
-        "Bushfire",
-        "Tornado",
-        "Flood"
-    ];
+    // infinite gameplay
+    $randomGame = ["infinite"];
     $randomGame = json_encode($randomGame);
 
 include("db.php"); // db connect
@@ -30,7 +36,6 @@ if (!isset($_COOKIE["User"])) {
         $sql = "INSERT INTO users (userID) VALUES ('$largestID')";
         $result = $db->query($sql);
         setcookie("User", $largestID, time() + (60*60*1000), "/"); // 1 hour
-        echo "Created User" . $largestID . "<br>";
         $_COOKIE["User"] = $largestID;
     } else { //error or empty
         $sql = "INSERT INTO users (userID) VALUES ('1')";

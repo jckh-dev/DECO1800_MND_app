@@ -168,17 +168,41 @@ function getName() {
 }
 
 function getDisasterNames() {
-	var DisasterName = document.getElementById("DisasterName").value;
-
+	var DisasterNames = [];
 
 	// if empty return false
-	if (DisasterName) {
+	if (document.getElementById("DisasterName").value) {
+		console.log("boom");
+		DisasterNames[0] = document.getElementById("DisasterName").value;
 		// seperate by comma && stringify
-		DisasterName = DisasterName.split(",");
-		DisasterName = JSON.stringify(DisasterName);
-		return DisasterName;
+		DisasterNames = DisasterNames[0].split(",");
 	}
-	return false;
+
+	var fire = document.getElementById("fire");
+	var flood = document.getElementById("flood");
+	var cyclone = document.getElementById("cyclone");
+	var storm = document.getElementById("storm");
+	var environ = document.getElementById("environ");
+
+	// queries 5 to search.
+	if (fire.checked) {
+		DisasterNames[DisasterNames.length] = "Bushfire";
+		DisasterNames[DisasterNames.length] = "Urban Fire";
+	}
+	if (flood.checked) {DisasterNames[DisasterNames.length] = flood.value;}
+	if (cyclone.checked) {DisasterNames[DisasterNames.length] = cyclone.value;}
+	if (storm.checked) {
+		DisasterNames[DisasterNames.length] = "Severe Storm";
+		DisasterNames[DisasterNames.length] = "Hail";
+	}
+	if (environ.checked) {DisasterNames[DisasterNames.length] = environ.value;}
+
+	if (DisasterNames[0]) {
+		DisasterNames = JSON.stringify(DisasterNames);
+		return DisasterNames;
+	} else {
+		return false;
+	}
 }
 
 function initMap() {

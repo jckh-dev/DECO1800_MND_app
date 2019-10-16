@@ -34,13 +34,19 @@ if (isset($_POST['regions']) && isset($_POST['names'])) {
 
 // if only regions
 if (isset($_POST['regions']) && !isset($_POST['names'])) {
+    $names = array("Bushfire", "Urban Fire", "Flood", "Cyclone", "Severe Storm", "Hail", "Environmental");
     for ($i = 0; $i < sizeof($regions); $i++) {
         $region = $regions[$i];
-        $whereQuery = "UPPER(regions) LIKE UPPER('%" . $region . "%') OR ";
-        if ($i == sizeof($regions) - 1) {
-            $whereQuery = "UPPER(regions) LIKE UPPER('%" . $region . "%')";
+        for ($j = 0; $j < sizeof($names); $j++) {
+            $name = $names[$j];
+            $whereQuery = "UPPER(regions) LIKE UPPER('%" . $region . "%') AND ";
+            $nameQuery = "UPPER(title) LIKE UPPER('%" . $name . "%') OR ";
+            if ($j == sizeof($names) - 1) {
+                $nameQuery = "UPPER(title) LIKE UPPER('%" . $name . "%')";
+            }
+            $whereQuery .= $nameQuery;
+            $query .= $whereQuery;
         }
-        $query .= $whereQuery;
     }
 }
 

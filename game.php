@@ -29,8 +29,16 @@ include('includes/header.php');
 </aside>
 
 <article class="infobox" id="quizquestion">
+    <?php if (isset($_POST['life'])) {echo "<h1>Current Life : " . $life . "</h1>";}?>
     <h1>THE HIGHER OR LOWER GAME</h1>
-    
+    <!-- quiz left, thought it might be good -->
+    <?php 
+    if (!$endGame && json_decode($game, true)[0] == "infinite") {
+        echo "Quizes left: (Endless)"; 
+    } else {
+        echo "Quizes left: " . $gameCount; 
+    }
+    ?> 
     <h1>Natural Disaster Classification:</h1>
 
     <h2><?php echo $oldGame[0]; ?></h2>
@@ -39,8 +47,10 @@ include('includes/header.php');
 
     <h1>Name Of Disaster: <?php echo $info[0]["title"]; ?></h1>
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
-    <img class="hilo-img" src ="images/plchdr-bushfire-img.jpg">
-    <h2>Higher or lower than: </h2> <p><?php echo $info[0]["randNum"] ?></p>
+    <h2>Higher or lower than: </h2> <p><?php echo number_format($info[0]["randNum"]) ?></p>
+    <div id="imageInsert"> </div> <!-- image goes here -->
+
+    <button onclick="earlyEnd()">Early Exit</button>
     
 </article>
 
@@ -54,6 +64,7 @@ include('includes/header.php');
 <form id="next" action="game.php" method="POST">
     <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>
     <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
+    <?php if (isset($_POST['life'])) {echo '<input id="lifeValue" type="hidden" name="life">'; } ?> <!-- value inserted by js -->
 </form>
 </article>
 
@@ -98,11 +109,18 @@ include('includes/header.php');
 
 <!-- script & echoed values from server into js (james) -->
 <script>
+
+<?php echo 'var imageMode = ' . json_encode($imageMode) . ';'; ?> // imageMode (see gamelogic.php)
+
 var correctAnswer = '<?php echo $info[0]["correct"]; ?>'; // echo 1 (return high/low string)
 var numberAnswer = '<?php echo number_format($info[0]["statisticNum"]); ?>'; // echo 2 (returns number of hidden disaster)
 var endGame = '<?php echo $endGame; ?>'; // echo 3 (returns if game should end (true = end))
 var score = <?php echo $_SESSION["scoreTemp"] ;?>; // echo 4 (returns score for local update)
-var ID = <?php echo $info[0]["ID"] ?>; // echo 5 (ID of current disaster)
+var ID = <?php echo $info[0]["ID"]; ?>; // echo 5 (ID of current disaster)
+var life<?php if (isset($_POST['life'])) {echo " = " . $life;}?>;
+var currentDisaster = "<?php if (isset($_POST['life'])) {echo $randomGame;} else {echo $originalGame[0];} ?>"; // fir
+var currentTitle = "<?php echo $info[0]["title"]; ?>";
+<?php if ($imageMode) {echo "var imageUrl = '" . $imageUrl . "';";} ?> // imageUrl var from bing if imageMode is true
 var userID = <?php echo $_COOKIE["User"]; ?>; // echo 6 "userID" (userID of player)
 var mapInit = false; // true = init map.
 </script>

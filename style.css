@@ -343,6 +343,11 @@ button{
   background-color: rgb(255, 220, 220);
 }
 
+.disasterImage {
+  width: 275px;
+  height: 200px;
+}
+
 /* GUIDED TOUR CSS */
 .tourgraph{
   width: 80vw;
