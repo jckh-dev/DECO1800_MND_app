@@ -8,10 +8,8 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-<aside class="box txtbox">
-    <h1>WELCOME</h1><br>
+    <h1>WELCOME</h1>
 </aside>
-
 </section>
 
 <section class="gridwrap2">
@@ -66,9 +64,6 @@ include('includes/header.php');
     
     <button class="idbutton" id="gamedemo"><h3>Exit <i class="fas fa-mobile-alt"></i></h3></button>
     </article>
-    
-
-    
 
 </section>
 

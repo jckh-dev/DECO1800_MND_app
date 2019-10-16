@@ -8,10 +8,8 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-<aside class="box txtbox">
     <h1>Maybe a dynamic PHP call to change the title depending on which tour article ID is active?</h1><br>
 </aside>
-
 </section>
 
 <section class="gridwrap2">

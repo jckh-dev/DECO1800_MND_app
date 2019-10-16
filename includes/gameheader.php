@@ -5,4 +5,4 @@
 </section>
 
 <section class = "gridwraptitle">
-<aside class="titlebox">
+<aside class="gamebox">

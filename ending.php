@@ -12,8 +12,6 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-<aside class="box points">
-
     <form id="start" action="game.php" method="POST">
       <input type="hidden" name="game" value='<?php echo $game; ?>'>
       <input type="hidden" name="init" value=1> <!-- if set, initiate game -->

@@ -12,7 +12,6 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-    <aside class="box txtbox">
         <h1>THANK YOU FOR VISITING</h1><br>
     </aside>
 

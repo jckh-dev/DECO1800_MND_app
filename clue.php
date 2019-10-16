@@ -12,7 +12,6 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-<aside class="box points">
 <form id="start" action="game.php" method="POST">
 <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
 <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>

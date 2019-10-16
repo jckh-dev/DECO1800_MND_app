@@ -12,11 +12,10 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-<aside class="box">
 <h1>CHOOSE YOUR <br>JOURNEY</h1>
 </aside>
-
 </section>
+
 <section class="gridwrap2">
 
 <aside>

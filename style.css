@@ -49,42 +49,70 @@ p {
 .wrapper{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 185px 1fr 0.1fr;
-  grid-gap: 0px;
+  grid-template-rows: 0.1fr 0.1fr 1fr 0.08fr;
   min-height: 99vh;
 }
 
 .gridwrap1{
+  align-content: start;
+}
+
+.gridwraptitle{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  align-content: start;
+  align-items: center;
+  padding: 3% 0 0 0;
 }
 
 .gridwrap2{
   display: grid;
+  padding: 3% 0 3% 0;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
-  text-align: center;
-  align-content: inherit;
+  grid-gap: 1%;
 }
 
 .gridwrap3{
   display: grid;
-  grid-template-rows: min-content;
   grid-template-columns: 1fr;
   align-content: end;
 }
 
 .box {
   text-align: center;
-  margin-left: 8%;
-  margin-right: 8%;
+  margin: 0 8% 0 8%;
 }
 
 .txtbox{
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.gamebox{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0 8% 0 8%;
+}
+
+.titlebox{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 0 8% 0 8%;
+}
+
+/* The light blue boxes that hold text information */
+.infobox{
+    display:flex;
+    padding: 3%;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #d5ebf8;
+    border-radius: 5px;
+    /* text-align: center; */
+    margin: 0 8% 0 8%;
+    overflow-y: scroll;
 }
 
 /* Front splash page CSS */
@@ -113,6 +141,7 @@ p {
 
 .welcomebtns{
   display: flex;
+  padding-bottom: 3%;
   justify-content: space-between;
 }
 
@@ -191,20 +220,6 @@ p {
 
 .flip {
   transform: rotate(-180deg);
-}
-
-/* The light blue boxes that hold text information */
-.infobox{
-    display:flex;
-    padding: 3%;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: #d5ebf8;
-    border-radius: 5px;
-    text-align: center;
-    margin-left: 8%;
-    margin-right: 8%;
-    overflow-y: scroll;
 }
 
 /* Specific boxes */
