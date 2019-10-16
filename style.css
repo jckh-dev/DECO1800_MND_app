@@ -26,6 +26,26 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* Text Formatting */
+
+h1{
+  font-size: 1.4em;
+  text-emphasis: bold;
+}
+
+h2{
+  font-size: 1.1em;
+  padding-bottom: 0.5em;
+}
+
+p {
+  /* padding-bottom: 1em; */
+  font-size: 1em;
+  margin: 0 0 5% 0;
+  text-align: justify;
+}
+
+/* Page setup  */
 .wrapper{
   display: grid;
   grid-template-columns: 1fr;
@@ -57,7 +77,6 @@ html {
 }
 
 .box {
-  /* background-color: lightgray; */
   text-align: center;
   margin-left: 8%;
   margin-right: 8%;
@@ -67,7 +86,6 @@ html {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-
 
 /* Front splash page CSS */
 .welcomepg {
@@ -94,34 +112,31 @@ html {
 /* welcomemsg page CSS */
 
 .welcomebtns{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .continue{
-  margin: 0;
-  width: 150px;
+  cursor: pointer;
   text-align: right;
 }
 
 .demo{
-  margin: 0;
-  width: 150px;
-  text-align: left;
   cursor: pointer;
+  text-align: left;
 }
 
 #demoinfo{
   display: none;
-  position: absolute;
-  top: 15%;
-  overflow-y: scroll;
-  z-index: 1;
-  padding: 3%;
-  background: #6ec9dd;
-  margin: 4%;
+  background: #b6f2ff;
+}
+
+#demoinfo > button {
+  margin: 0 0 5% 0;
+}
+
+#demogif{
+  display: none;
 }
 
 /* header CSS */
@@ -181,6 +196,7 @@ html {
 /* The light blue boxes that hold text information */
 .infobox{
     display:flex;
+    padding: 3%;
     flex-direction: column;
     justify-content: space-around;
     background-color: #d5ebf8;
@@ -188,6 +204,7 @@ html {
     text-align: center;
     margin-left: 8%;
     margin-right: 8%;
+    overflow-y: scroll;
 }
 
 /* Specific boxes */
@@ -234,7 +251,6 @@ button{
   font-size: 1.2em;
   font-weight: bolder;
   border:#6ec9dd solid;
-  /* box-shadow: 2px 3px darkgray; */
 }
 
 .button {
@@ -295,9 +311,6 @@ button{
    border: lightgrey solid;
    box-shadow: none;
  }
- /* #quizpage{
-  opacity: 0;
- } */
 
 .quizanswer{
   display: none;
