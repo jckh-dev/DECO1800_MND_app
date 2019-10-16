@@ -49,16 +49,18 @@ p {
 .wrapper{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 125px 0.01fr 1fr 0.08fr;
+  grid-template-rows: 0.1fr 0.1fr 1fr 0.08fr;
   grid-gap: 0px;
-  min-height: 99vh;
+  min-height: 99.5vh;
 }
 
 .gridwrap1{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
   align-content: start;
+}
+
+.gridwraptitle{
+  display: flex;
+  justify-content: space-around;
 }
 
 .gridwrap2{
@@ -85,6 +87,26 @@ p {
 .txtbox{
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.titlebox{
+  text-align: center;
+  margin: 0% 8% 0 8%;
+  
+}
+
+/* The light blue boxes that hold text information */
+.infobox{
+    display:flex;
+    padding: 3%;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #d5ebf8;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 8%;
+    margin-right: 8%;
+    overflow-y: scroll;
 }
 
 /* Front splash page CSS */
@@ -194,19 +216,7 @@ p {
   transform: rotate(-180deg);
 }
 
-/* The light blue boxes that hold text information */
-.infobox{
-    display:flex;
-    padding: 3%;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: #d5ebf8;
-    border-radius: 5px;
-    text-align: center;
-    margin-left: 8%;
-    margin-right: 8%;
-    overflow-y: scroll;
-}
+
 
 /* Specific boxes */
 .login {

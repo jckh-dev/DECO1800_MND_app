@@ -8,12 +8,8 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-<section class = "gridwraptitle">
-    
-<aside class="box txtbox">
     <h1>WELCOME</h1><br>
 </aside>
-
 </section>
 
 <section class="gridwrap2">

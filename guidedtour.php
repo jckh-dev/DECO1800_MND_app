@@ -7,8 +7,7 @@ include('includes/head.php');
 <?php
 include('includes/header.php');
 ?>
-<section class = "gridwraptitle">
-<aside class="box txtbox">
+
     <h1>Maybe a dynamic PHP call to change the title depending on which tour article ID is active?</h1><br>
 </aside>
 </section>
