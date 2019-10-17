@@ -69,11 +69,11 @@ include('includes/gameheader.php');
 </article>
 
 <article class="infobox quizanswer" id="answerBox">
-  <h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
+  <!-- <h1 id="displayAnswer2" class="text-light"></h1> display correct/incorrect -->
   <h2>Was it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> ?</h2>
   <h2 id="displayAnswer3">You answered "HIGHER/LOWER" which is "CORRECT/INCORRECT"</h2>
-  <h2>Actual answer: </h2>
-  <p id="displayAnswer">?</p> <!-- display actual -->
+  <h2>The statistics real figure is  </h2>
+  <p id="displayAnswer">?</p><!-- display actual -->
 <!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
 <form id="next" action="game.php" method="POST">
     <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>

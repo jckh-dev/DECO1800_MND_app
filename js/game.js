@@ -20,6 +20,7 @@ $(document).ready(function(){
 	
 	//nothing yet
 });
+
 function earlyEnd() {
 	endGame = true; // make it endgame
 	answer("wrong"); // answer is wrong.
@@ -42,8 +43,8 @@ function answer(answer) {
 	if (answer == correctAnswer) { // correctAnswer (echo 1)
 		$(cluebtn).hide("fade");
 		$(".quizfinish").hide("fade");
-		$(".hilobtn").hide("highlight", { color: 'green' });
-		$("#quizquestion").hide("highlight", { color: 'green' }, function(){
+		$(".hilobtn").hide("highlight", { color: '#dcffdc' });
+		$("#quizquestion").hide("highlight", { color: '#dcffdc' }, function(){
 			$(".quizanswer").toggleClass('qzright', function () {
 				$(this).show("fade");
 			});
@@ -60,18 +61,15 @@ function answer(answer) {
 	} else {
 		$(cluebtn).hide("fade");
 		$(".quizfinish").hide("fade");
-		$(".hilobtn").hide("highlight", { color: 'red' });
-		$(".quizfinish").hide("highlight", { color: 'red' });
-		$("#quizquestion").hide("highlight", {color: 'red' }, function () {
+		$(".hilobtn").hide("highlight", { color: '#ffdcdc' });
+		$("#quizquestion").hide("highlight", { color: '#ffdcdc' }, function () {
 			$(".quizanswer").toggleClass('qzwrong', function(){
 				$(this).show("fade");
 			});
 			$("#nextButtonValue").remove(); // remove value from post
 			$("#displayAnswer2").text("Incorrect");
-			
 			// user friendly answer insertion (incorrect)
 			$("#displayAnswer3").text("You answered " + answerFormat + " which is INCORRECT!");
-
 			findName(); // prepare end message
 		})
 		// if life is 1 and they lost, they lose.

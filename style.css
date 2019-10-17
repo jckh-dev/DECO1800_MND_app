@@ -280,7 +280,8 @@ button{
  }
 
  .nextbtn{
-  width: 7em;
+  width: 230px;
+  height: 75px;
   font-size:1em;
  }
 
@@ -319,7 +320,9 @@ button{
 }
 
 /* Quiz Answer Box CSS */
-
+#displayAnswer{
+  text-align: center;
+}
 .hilobtn{
    width: 100%;
    height: 100%;
@@ -327,18 +330,25 @@ button{
    box-shadow: none;
  }
 
+ .earlyfinishbtn{
+   padding: 1%;
+ }
+
 .quizanswer{
   display: none;
+  align-self: center;
 }
 
 .quizend{
   display: none;
-  min-height: 42%;
+  /* min-height: 42%; */
+  align-self: center;
 }
 
 .quizfinal{
   display: none;
-  min-height: 42%;
+  /* min-height: 42%; */
+  align-self: center;
 }
 
 .quizfinish{
@@ -355,11 +365,11 @@ button{
 }
 
 .qzright{
-  background-color: rgb(220, 255, 220);
+  background-color: #dcffdc;
 }
 
 .qzwrong{
-  background-color: rgb(255, 220, 220);
+  background-color: #ffdcdc;
 }
 
 .disasterImage {
