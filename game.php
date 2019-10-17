@@ -13,7 +13,7 @@ include('includes/gameheader.php');
 ?>
 
 <button class="cluepointbtn cluebtn"><i class="fas fa-question"></i><br>CLUES</button>
-
+<aside class="lifebtn"><i class="far fa-heart"></i><br><?php if (isset($_POST['life'])) {echo $life . " LIVES";}?></aside>
 <aside class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</aside>
 
 </aside>
@@ -29,29 +29,25 @@ include('includes/gameheader.php');
 <!-- need to start working this over so it spits out something a little more user friendly, closer to the design mockups -->
 
 <article class="infobox" id="quizquestion">
-    <?php if (isset($_POST['life'])) {echo "<h1>Current Life : " . $life . "</h1>";}?>
-    <h1>THE HIGHER OR LOWER GAME</h1>
-
-    <!-- quiz left, thought it might be good -->
-    <?php 
-    if (!$endGame && json_decode($game, true)[0] == "infinite") {
-        echo "Quizes left: (Endless)"; 
-    } else {
-        echo "Quizes left: " . $gameCount; 
-    }
-    ?> 
-    <h1>Natural Disaster Classification:</h1>
-
-    <h2><?php echo $oldGame[0]; ?></h2>
+    
+    <h1>HIGHER OR LOWER?</h1>
 
     <h2>Name Of Disaster: <?php echo $info[0]["title"]; ?></h2>
 
+    <p>Was the value of the <?php echo $info[0]["statistic"]; ?> from this disaster higher or lower than <?php echo $info[0]["randNum"] ?></p>
+        
+    <!-- <h2>Type of Natural Disaster</h2>
+
+    <p><?php echo $oldGame[0]; ?></p> -->
+
+    
+
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
 
-    <h2>Was the value of the <?php echo $info[0]["statistic"]; ?> statistic higher or lower than <?php echo $info[0]["randNum"] ?></h2> 
+     
     <div id="imageInsert"> </div> <!-- image goes here -->
 
-    <button onclick="earlyEnd()">Early Exit</button>
+    
     
 </article>
 
@@ -77,7 +73,7 @@ include('includes/gameheader.php');
     
 </article>
 
-<article class = "box quizclue">
+<article class = "infobox quizclue">
 
 <h1>TIME FOR A CLUE!</h1>
 <script> var map = false; </script>
@@ -104,6 +100,18 @@ include('includes/gameheader.php');
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower <i class="fas fa-chevron-circle-down"></i></button>
 </aside>
+
+<aside class="quizfinish">
+    <button onclick="earlyEnd()">Finish Now</button>
+    <?php 
+    if (!$endGame && json_decode($game, true)[0] == "infinite") {
+        echo "Quizes left: (Endless)"; 
+    } else {
+        echo "Quizes left: " . $gameCount; 
+    }
+    ?> 
+</aside>
+
 
 <!-- jquery -->
 <script src="js/jquery-3.4.1.min.js"></script>

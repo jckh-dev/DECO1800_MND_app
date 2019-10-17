@@ -3,11 +3,17 @@ var cluebtn = document.querySelector(".cluebtn");
 var quizclue = document.querySelector(".quizclue");
 var nextbtn = document.querySelector("#nextButton")
 var quizpg = document.querySelector("#quizpage")
+var quizquest = document.querySelector("#quizquestion")
 
 cluebtn.addEventListener('click', function () {
-	$(quizclue).toggle("blind");
-	// if .hilobtn css === display: none: <<Implement this logic
 	$(".hilobtn").toggle("fade");
+	$(quizquest).toggle("blind", function(){
+		$(quizclue).toggle("blind");
+	});
+	
+	
+	// if .hilobtn css === display: none: <<Implement this logic
+	
 })
 
 $(document).ready(function(){
