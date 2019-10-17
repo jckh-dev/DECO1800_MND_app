@@ -48,7 +48,7 @@ include('includes/gameheader.php');
 
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
 
-    <h2>Was the value of the <?php echo $info[0]["statistic"]; ?> statistic higher or lower than <?php echo $info[0]["randNum"] ?></h2> 
+    <h2>Was the value of the <?php echo $info[0]["statistic"]; ?> statistic higher or lower than <?php echo number_format($info[0]["randNum"]); ?></h2> 
     <div id="imageInsert"> </div> <!-- image goes here -->
 
     <button onclick="earlyEnd()">Early Exit</button>
@@ -57,7 +57,7 @@ include('includes/gameheader.php');
 
 <article class="infobox quizanswer" id="answerBox">
   <h1 id="displayAnswer2" class="text-light"></h1> <!-- display correct/incorrect -->
-  <h2>Was it higher or lower than <?php echo number_format($info[0]["randNum"]) ?> ?</h2>
+  <h2>Was it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> ?</h2>
   <h2 id="displayAnswer3">You answered "HIGHER/LOWER" which is "CORRECT/INCORRECT"</h2>
   <h2>Actual answer: </h2>
   <p id="displayAnswer">?</p> <!-- display actual -->
