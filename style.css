@@ -101,8 +101,6 @@ p {
 }
 
 .titlebox{
-  display: flex;
-  justify-content: space-around;
   text-align: center;
   margin: 0 8% 0 8%;
 }
@@ -241,10 +239,7 @@ p {
     padding-top: 10px;
 }
 
-.highlowbox{
-    height: 2.4em;
-    align-self: center;
-}
+
 
 /* formating for input fields */
 .input {
@@ -334,6 +329,11 @@ button{
    padding: 1%;
  }
 
+ .highlowbox{
+    height: 2.4em;
+    align-self: center;
+}
+
 .quizanswer{
   display: none;
   align-self: center;
@@ -379,6 +379,12 @@ button{
 }
 
 /* GUIDED TOUR CSS */
+.tourbtns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .tourgraph{
   width: 80vw;
   height: 40vh;

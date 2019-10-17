@@ -13,15 +13,8 @@ include('includes/head.php');
 <?php endif ?>
 
 <?php
-include('includes/header.php');
+include('includes/gameheader.php');
 ?>
-
-<form id="start" action="game.php" method="POST">
-<input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-<input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>
-<button type="submit" class="cluepointbtn"><i class="fas fa-gamepad"></i><br>
-GAME</button>
-</form>
 <a href="journey.php"><button class="cluepointbtn"><i class="fas fa-home"></i><br>HOME</button></a>
 <button class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</button>
 </aside>

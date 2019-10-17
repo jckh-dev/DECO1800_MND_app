@@ -12,7 +12,7 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-    <h1>Maybe a dynamic PHP call to change the title depending on which tour article ID is active?</h1><br>
+<h1>Guided Tour</h1><br>
 </aside>
 </section>
 
@@ -20,23 +20,35 @@ include('includes/header.php');
 
     <article class="infobox" id="tourwelcome">
             
-        <h1>WELCOME WELCOME WELCOME</h1>
-            <p>"THIS IS A PLACEHOLDER FOR WEEEEEELCOMING Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        <h1>Welcome to the Guided Tour</h1>
+            <p>Welcome to the guided tour companion.</p>
+            <p>This tour will take you through each of the five major natural disaster types most commonly impacting the Australian continent. At the end of the tour you will have the chance to play the Higher or Lower game.</p>
+            <p>For participating in the exhbit and learning about Australia's natural disasters, the Natural Disaster Musuem will donate a dollar figure to the Climate Education Foundation based on the score you get on the Higher or Lower game.</p>
+            <p>Good luck!</p>
+
+    </article>
+
+    <article class="infobox" id="bushfires">
+        
+        <img class="tourgraph" src="images\examplegraph.png" alt="Major Environmental Events Over Time">    
+    
+        <h1>BUSHFIRES</h1>
+            <p>"THIS IS A PLACEHOLDER FOR BUSHFIIIARS Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
             aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
             occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p><br>
-        
-        <aside class="box welcomebtns">
-            <aside class="demo">
-                <a href=""><h1><i class="fas fa-chevron-circle-left"></i> Home</h1></a>
-            </aside>
 
-            <aside class="continue">
-                <a href=""><h1>Continue <i class="fas fa-chevron-circle-right"></i></h1></a>
-            </aside>
+    <aside class="tourbtns">
+        <aside class="demo">
+            <h1><i class="fas fa-chevron-circle-left"></i> Home</h1>
         </aside>
 
-    </article>
+        <aside class="continue">
+            <a href=""><h1>Continue <i class="fas fa-chevron-circle-right"></i></h1></a>
+        </aside>
+    </aside>
+
+    
     
     <article class="infobox" id="bushfires">
         
