@@ -33,6 +33,10 @@ h1{
   text-emphasis: bold;
 }
 
+.infobox > h1{
+  padding: 3% 0 3% 0;
+}
+
 h2{
   font-size: 1.1em;
   padding-bottom: 0.5em;
@@ -60,7 +64,7 @@ p {
 .gridwraptitle{
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
+  /* align-items: center; */
   padding: 3% 0 0 0;
 }
 
@@ -315,9 +319,6 @@ button{
 }
 
 /* Quiz Answer Box CSS */
-#quizquestion > h1{
-  padding: 3% 0 3% 0;
-}
 
 .hilobtn{
    width: 100%;
@@ -342,18 +343,15 @@ button{
 
 .quizfinish{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-
+  margin: 0 8% 0 8%;
 }
 
 .quizclue{
   background-color: lightseagreen;
   display: none;
-  /* position: absolute;  */
-  min-height: 65%;
-  /* overflow-y: scroll; */
- 
+  min-height: 65%; 
 }
 
 .qzright{

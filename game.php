@@ -22,17 +22,41 @@ include('includes/gameheader.php');
 
 <section class="gridwrap2" id="quizpage">
 
+
+
+<article class = "infobox quizclue">
+
+<h1>TIME FOR A CLUE!</h1>
+<script> var map = false; </script>
+<h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
+<h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
+<h1>Is it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> </h1>
+
+<h1>Insert your code to get a clue:</h1>
+
+<form id="start">
+    <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
+    <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
+</form>
+
+<br>
+
+<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
+<div id="clueContent">
+
+</div>
+
+</article>
+
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
 </aside>
-
-<!-- need to start working this over so it spits out something a little more user friendly, closer to the design mockups -->
 
 <article class="infobox" id="quizquestion">
     
     <h1>HIGHER OR LOWER?</h1>
 
-    <h2>Name Of Disaster: <?php echo $info[0]["title"]; ?></h2>
+    <h2>Name and Type of Disaster: <?php echo $info[0]["title"]; ?></h2>
 
     <p>Was the value of the <?php echo $info[0]["statistic"]; ?> from this disaster higher or lower than <?php echo $info[0]["randNum"] ?></p>
         
@@ -40,15 +64,10 @@ include('includes/gameheader.php');
 
     <p><?php echo $oldGame[0]; ?></p> -->
 
-    
-
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
 
-     
     <div id="imageInsert"> </div> <!-- image goes here -->
 
-    
-    
 </article>
 
 <article class="infobox quizanswer" id="answerBox">
@@ -71,30 +90,6 @@ include('includes/gameheader.php');
 
 <article class="infobox quizfinal">
     
-</article>
-
-<article class = "infobox quizclue">
-
-<h1>TIME FOR A CLUE!</h1>
-<script> var map = false; </script>
-<h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
-<h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
-<h1>Number to compare to: <?php echo number_format($info[0]["randNum"]); ?> </h1>
-
-<h1>Insert your code to get a clue:</h1>
-
-<form id="start">
-    <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
-    <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
-</form>
-
-<br>
-
-<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
-<div id="clueContent">
-
-</div>
-
 </article>
 
 <aside class="box highlowbox">

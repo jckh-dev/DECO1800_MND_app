@@ -4,16 +4,15 @@ var quizclue = document.querySelector(".quizclue");
 var nextbtn = document.querySelector("#nextButton")
 var quizpg = document.querySelector("#quizpage")
 var quizquest = document.querySelector("#quizquestion")
+var quizans = document.querySelector(".quizanswer")
+var quizend = document.querySelector(".quizend")
+var quizfinal = document.querySelector(".quizfinal")
 
 cluebtn.addEventListener('click', function () {
 	$(".hilobtn").toggle("fade");
-	$(quizquest).toggle("blind", function(){
+	$(quizquest).toggle("blind", function () {
 		$(quizclue).toggle("blind");
 	});
-	
-	
-	// if .hilobtn css === display: none: <<Implement this logic
-	
 })
 
 $(document).ready(function(){
@@ -41,6 +40,7 @@ function answer(answer) {
 
 	if (answer == correctAnswer) { // correctAnswer (echo 1)
 		$(".hilobtn").hide("highlight", { color: 'green' });
+		$(".quizfinish").hide("highlight", { color: 'green' });
 		$("#quizquestion").hide("highlight", { color: 'green' }, function(){
 			$(".quizanswer").toggleClass('qzright', function () {
 				$(this).show("fade");
@@ -64,6 +64,7 @@ function answer(answer) {
 	} else {
 
 		$(".hilobtn").hide("highlight", { color: 'red' });
+		$(".quizfinish").hide("highlight", { color: 'red' });
 		$("#quizquestion").hide("highlight", {color: 'red' }, function () {
 			$(".quizanswer").toggleClass('qzwrong', function(){
 				$(this).show("fade");
@@ -89,14 +90,11 @@ function answer(answer) {
 	}
 
 	if (endGame) { // endGame (echo 3) (When game ends, changes the button to point to ending.php)
-	
+		$(".hilobtn").hide("highlight", { color: 'lightseagreen' });
+		$(".quizfinish").hide("highlight", { color: 'lightseagreen' });
 		$("#nextButton").html("Finish Game")
 		$("#nextButton").attr({"type":"button","onclick":"showEnd()"});
 	}
-}
-
-function showQuestion() {
-	$(".quizanswer").hide("highlight", { color: 'lightblue' })
 }
 
 // insert image (api mode)
@@ -118,6 +116,10 @@ if (!imageMode) {
 	} else if (currentDisaster == "Environmental") {
 		$("#imageInsert").append('<img class="disasterImage" src="images/environmental.jpg" alt="image from: https://commons.wikimedia.org/wiki/File:Lac_Hume.jpg">');
 	}
+}
+
+function showQuestion() {
+	$(".quizanswer").hide("highlight", { color: 'lightblue' })
 }
 
 function showEnd() {
