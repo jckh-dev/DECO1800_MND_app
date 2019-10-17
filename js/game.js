@@ -8,6 +8,7 @@ var quizans = document.querySelector(".quizanswer")
 var quizend = document.querySelector(".quizend")
 var quizfinal = document.querySelector(".quizfinal")
 
+
 cluebtn.addEventListener('click', function () {
 	$(".hilobtn").toggle("fade");
 	$(quizquest).toggle("blind", function () {
@@ -25,7 +26,7 @@ function earlyEnd() {
 }
 
 function answer(answer) {
-
+	
 	//bellow is where the button is, this will be appended to #next (the form)
 	$("<button id='nextButton' type='submit' class='nextbtn next'>NEXT QUESTION</button>").appendTo("#next");
 	$("#nextButton").attr({"onclick": "showQuestion()"});
@@ -39,20 +40,16 @@ function answer(answer) {
 	}	
 
 	if (answer == correctAnswer) { // correctAnswer (echo 1)
+		$(cluebtn).hide("fade");
+		$(".quizfinish").hide("fade");
 		$(".hilobtn").hide("highlight", { color: 'green' });
-		$(".quizfinish").hide("highlight", { color: 'green' });
 		$("#quizquestion").hide("highlight", { color: 'green' }, function(){
 			$(".quizanswer").toggleClass('qzright', function () {
 				$(this).show("fade");
 			});
 			$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
-			
 			// user friendly answer insertion (correct)
 			$("#displayAnswer3").text("You answered " + answerFormat + " which is CORRECT!");
-			cluebtn.addEventListener('click', function () {
-				$(quizclue).toggle("blind");
-				// if .hilobtn css === display: none: <<Implement this logic
-				$(".hilobtn").toggle("fade");
 			})
 			// local point update
 			var pointIncrement = 10;
@@ -60,9 +57,9 @@ function answer(answer) {
 			var pointText = document.getElementsByClassName("cluepointbtn")[1]; // get 2nd class "cluepointbtn"
 			pointText.innerHTML = score + "<br>POINTS"; // replace html, if the html inside is changed, update this to the new html.
 			findName(); // prepare end message
-		});
 	} else {
-
+		$(cluebtn).hide("fade");
+		$(".quizfinish").hide("fade");
 		$(".hilobtn").hide("highlight", { color: 'red' });
 		$(".quizfinish").hide("highlight", { color: 'red' });
 		$("#quizquestion").hide("highlight", {color: 'red' }, function () {

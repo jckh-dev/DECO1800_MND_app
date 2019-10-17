@@ -12,8 +12,8 @@ include('includes/head.php');
 include('includes/gameheader.php');
 ?>
 
-<button class="cluepointbtn cluebtn"><i class="fas fa-question"></i><br>CLUES</button>
 <aside class="lifebtn"><i class="far fa-heart"></i><br><?php if (isset($_POST['life'])) {echo $life . " LIVES";}?></aside>
+<button class="cluepointbtn cluebtn"><i class="fas fa-question"></i><br>CLUES</button>
 <aside class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</aside>
 
 </aside>
@@ -21,8 +21,6 @@ include('includes/gameheader.php');
 </section>
 
 <section class="gridwrap2" id="quizpage">
-
-
 
 <article class = "infobox quizclue">
 
@@ -58,7 +56,7 @@ include('includes/gameheader.php');
 
     <h2>Name and Type of Disaster: <?php echo $info[0]["title"]; ?></h2>
 
-    <p>Was the value of the <?php echo $info[0]["statistic"]; ?> from this disaster higher or lower than <?php echo $info[0]["randNum"] ?></p>
+    <h2>Was the value of the <?php echo $info[0]["statistic"]; ?> statistic higher or lower than <?php echo number_format($info[0]["randNum"]); ?></h2> 
         
     <!-- <h2>Type of Natural Disaster</h2>
 
@@ -66,7 +64,6 @@ include('includes/gameheader.php');
 
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
 
-    <h2>Was the value of the <?php echo $info[0]["statistic"]; ?> statistic higher or lower than <?php echo number_format($info[0]["randNum"]); ?></h2> 
     <div id="imageInsert"> </div> <!-- image goes here -->
 
 </article>
@@ -98,7 +95,7 @@ include('includes/gameheader.php');
 </aside>
 
 <aside class="quizfinish">
-    <button onclick="earlyEnd()">Finish Now</button>
+    <button class="earlyfinishbtn" onclick="earlyEnd()">Finish Now</button>
     <?php 
     if (!$endGame && json_decode($game, true)[0] == "infinite") {
         echo "Quizes left: (Endless)"; 
