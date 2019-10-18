@@ -1,3 +1,5 @@
+// Source: adapted from 2019-S1 DECO1400 Website Assignment, "The Little Rover That Could", Josh Hill
+
 let tourPages = document.querySelectorAll(".tourpage");
 let current = 0;
 let prevBtn = document.querySelector(".prev")

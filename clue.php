@@ -24,7 +24,7 @@ Back To Game</button>
 
 </section>
 
-<section class="gridwrap2">
+<main class="gridwrap2">
 
 <article class="infobox">
 <h1>TIME FOR A CLUE!</h1>

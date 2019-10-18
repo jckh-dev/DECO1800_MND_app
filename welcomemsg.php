@@ -12,7 +12,7 @@ include('includes/header.php');
 </aside>
 </section>
 
-<section class="gridwrap2">
+<main class="gridwrap2">
 
 <article class="box" id="welcomeinfo">
         <p>Welcome to the Museum Of Natural Disasters interactive exhibit 
@@ -63,9 +63,9 @@ include('includes/header.php');
     <a href="https://gyazo.com/c9d3d2dbb16e9ba343f8c0ee99239d7b"><img src="https://i.gyazo.com/c9d3d2dbb16e9ba343f8c0ee99239d7b.gif" alt="Clue Demo" width="250"/></a>
     
     <button class="idbutton" id="gamedemo"><h3>Exit <i class="fas fa-mobile-alt"></i></h3></button>
-    </article>
+</article>
 
-</section>
+</main>
 
 <section class="gridwrapper3">
 

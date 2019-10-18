@@ -16,7 +16,7 @@ include('includes/header.php');
 </aside>
 </section>
 
-<section class="gridwrap2">
+<main class="gridwrap2 journey">
 
 <aside>
     <a href="guidedtour.php"><button class="button">Start Guided Tour</button></a>

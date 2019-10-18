@@ -21,20 +21,21 @@ include('includes/gameheader.php');
 
 </section>
 
-<section class="gridwrap2">
+<main class="gridwrap2">
 
 <article class="infobox">
 
-<h1>Leaderboard</h1>
+<h1 class="leaderbd">Leaderboard</h1>
 <!-- 10 scores max can be changed in the sql query above -->
-<h2>
+
 <?php while($row = $result->fetch_assoc()) {
 $score = $row['score'];
 $name = $row['name'];
 $count++;
-echo "<p class=''> $count. Name: \"$name\" <br>Score: \"$score\"</p>"; // this is what it repeats, change the <p> to whatever etc.
+
+echo "<h2 class='$count'> <b>$count</b>. Name: \"$name\" <br>Score: \"$score\"</h2>"; // this is what it repeats, change the <p> to whatever etc.
 } ?>
-</h2>
+
 
 <?php
 include('includes/footer.php');

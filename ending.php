@@ -26,7 +26,7 @@ include('includes/header.php');
 
 </section>
 
-<section class="gridwrap2">
+<main class="gridwrap2">
 
 <article class="infobox">
 

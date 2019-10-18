@@ -1,11 +1,9 @@
-</section>
+</main>
 
 <footer class="gridwrap3">
 
-<button class="tab">
-  <i class="fas fa-caret-up"></i>
-</button>
-
+<button class="tab"><i class="fas fa-caret-up"></i></button>
+  
 <div class = "bcwrapper">
 <section class="breadcrumb">
   <!-- breadcrumb will append here -->

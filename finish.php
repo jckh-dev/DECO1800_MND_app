@@ -17,7 +17,7 @@ include('includes/header.php');
 
 </section>
 
-    <section class="gridwrap2">
+    <main class="gridwrap2">
 
         <article class="box">
             <h1>Total Score Earned (All): <?php echo $totalScore; ?></h1>

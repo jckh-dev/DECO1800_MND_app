@@ -182,11 +182,12 @@ p {
 /* Footer CSS */
 .tab{
   display: flex;
-  font-size: 0.8em;
+  font-size: 1.2em;
   border-radius: 0;
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: lightgrey;
+  z-index: 99;
 }
 
 .bcwrapper {
@@ -313,6 +314,11 @@ button{
 	background-color: white;
 	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
 }
+/* menu CSS (journey.php) */
+.journey{
+  align-content: space-around;
+}
+
 
 /* Quiz Answer Box CSS */
 #displayAnswer{
@@ -405,3 +411,8 @@ button{
   align-content: center;
 }
 
+/* Leaderboard CSS */
+
+.leaderbd{
+  font-weight: bold;
+}

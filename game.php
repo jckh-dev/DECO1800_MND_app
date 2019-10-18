@@ -20,31 +20,9 @@ include('includes/gameheader.php');
 
 </section>
 
-<section class="gridwrap2" id="quizpage">
+<main class="gridwrap2" id="quizpage">
 
-<article class = "infobox quizclue">
 
-<h1>TIME FOR A CLUE!</h1>
-<script> var map = false; </script>
-<h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
-<h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
-<h1>Is it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> </h1>
-
-<h1>Insert your code to get a clue:</h1>
-
-<form id="start">
-    <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
-    <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
-</form>
-
-<br>
-
-<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
-<div id="clueContent">
-
-</div>
-
-</article>
 
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
@@ -83,11 +61,33 @@ include('includes/gameheader.php');
 </article>
 
 <article class="infobox quizend">
-    
+    <!-- ending phase messages generate in here -->
 </article>
 
 <article class="infobox quizfinal">
-    
+    <!-- final quiz message generate in here -->
+</article>
+
+<article class = "infobox quizclue">
+
+<h1>TIME FOR A CLUE!</h1>
+<script> var map = false; </script>
+<h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
+<h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
+<h1>Is it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> </h1>
+
+<h1>Insert your code to get a clue:</h1>
+
+<form id="start">
+    <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
+    <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
+</form>
+
+<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
+<div id="clueContent">
+
+</div>
+
 </article>
 
 <aside class="box highlowbox">
