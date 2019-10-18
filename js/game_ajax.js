@@ -60,10 +60,12 @@ function iterateRecords(results) {
 
 function doClue(results) {
 	if (results.type == "description") {
+		$(".cluebox").show("blind")
 		$("#clueContent").empty();
 		$("#clueContent").append("<h1> Description Clue (numbers removed) </h1>");
 		$("#clueContent").append("<p>" + results.description + "</p>");
 	} else if (results.type == "map") {
+		$(".cluebox").show("blind")
 		$("#clueContent").empty();
 		$("#clueContent").append("<h1> Map Clue (location of disaster) </h1>");
 		$("#clueContent").append('<article id="map"></article>');

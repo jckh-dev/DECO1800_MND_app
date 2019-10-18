@@ -79,6 +79,7 @@ function answer(answer) {
 			life--;
 		}
 	}
+	
 	// if this game has life, then give it to the next game round
 	if (life) {
 		$('#lifeValue').val(life);

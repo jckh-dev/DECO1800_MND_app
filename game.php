@@ -72,23 +72,27 @@ include('includes/gameheader.php');
 
 <h1>TIME FOR A CLUE!</h1>
 <script> var map = false; </script>
-<h1>Disaster: <?php echo $info[0]["title"]; ?> </h1>
-<h1>Statistic: <?php echo $info[0]["statistic"]; ?> </h1>
-<h1>Is it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> </h1>
+<h2>Disaster: <?php echo $info[0]["title"]; ?> </h2>
+<h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
+<h2>Is it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> </h2>
 
-<h1>Insert your code to get a clue:</h1>
+<h2>Insert your code to get a clue:</h2>
 
 <form id="start">
     <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
     <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
 </form>
 
-<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
-<div id="clueContent">
+<button type="button" class="idbutton">Exit Clue</button>
 
-</div>
+<!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
+
 
 </article>
+
+<div class="infobox cluebox" id="clueContent">
+
+</div>
 
 <aside class="box highlowbox">
     <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower <i class="fas fa-chevron-circle-down"></i></button>
