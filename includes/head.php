@@ -13,6 +13,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/head.js"></script>
+    <script src="js/tour.js"></script>
     <noscript>
         <style>
         body{
@@ -22,5 +23,4 @@
     </noscript>
 </head>
 
-<!-- <body onload="document.body.style.opacity='1'"> -->
 <body>
