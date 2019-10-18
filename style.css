@@ -53,8 +53,9 @@ p {
 .wrapper{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 0.1fr 1fr 0.05fr;
-  min-height: 99vh;
+  grid-template-rows: 0.1fr 0.05fr 1fr 0.05fr;
+  min-height: 100vh;
+  overflow: scroll;
 }
 
 .gridwrap1{
@@ -113,7 +114,6 @@ p {
     justify-content: space-around;
     background-color: #d5ebf8;
     border-radius: 5px;
-    /* text-align: center; */
     margin: 0 8% 0 8%;
     overflow-y: scroll;
 }
@@ -341,13 +341,11 @@ button{
 
 .quizend{
   display: none;
-  /* min-height: 42%; */
   align-self: center;
 }
 
 .quizfinal{
   display: none;
-  /* min-height: 42%; */
   align-self: center;
 }
 
@@ -381,42 +379,29 @@ button{
 /* GUIDED TOUR CSS */
 .tourbtns{
   display: flex;
+  margin: 5% 8% 0 8%;
   justify-content: space-between;
   align-items: center;
   align-self: end;
 }
 
+.tournavbtn{
+  border: none;
+  background: none;
+  font-size: 1em;
+}
+
+.gamestart{
+  text-align: center;
+}
+
 .tourgraph{
-  width: 80vw;
-  height: 40vh;
-  margin-top: 5%;
-  margin-bottom:5%;
+  width: 75vw;
+  height: 30vh;
+  margin: 5% 0 5% 0;
 }
 
-#bushfires{
-  display: none;
+.tourpages{
+  align-content: center;
 }
-
-#floods{
-  display: none;
-}
-
-#cyclones{
-  display: none;
-}
-
-#storms{
-  display: none;
-}
-
-#majorevents{
-  display: none;
-}
-
-#tourfinish{
-  display: none;
-}
-
-
-
 
