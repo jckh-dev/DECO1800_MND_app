@@ -79,6 +79,17 @@ function doClue(results) {
 }
 
 function doEnd(results) {
+	if (results.result == "empty") {
+		$(".quizend").html(`
+		<h1>Insert your score into the leaderboard!</h1>
+		<h1>You scored: ` + score + `</h1>
+		<h1>Please enter a name first!</h1>
+		<form id="start" action="ending.php" method="POST">
+		<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
+		<button type="button" class="button" onclick="insertScore();">INSERT HIGH SCORE!</button>
+		</form>
+		`);
+	}
 	if (results.result == "found name") {
 		if (results.nameRequest) {
 			// backticks allow for multilines without newline.
@@ -87,7 +98,7 @@ function doEnd(results) {
 			<h1>You scored: ` + score + `</h1>
 			<form id="start" action="ending.php" method="POST">
 			<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
-			<button type="button" class="button" onclick="insertScore(); showFinal();">INSERT HIGH SCORE!</button>
+			<button type="button" class="button" onclick="insertScore();">INSERT HIGH SCORE!</button>
 			</form>
 			`);
 		} else {
@@ -96,7 +107,7 @@ function doEnd(results) {
 			<h1>Insert your score into the leaderboard!</h1>
 			<h1>You scored: ` + score + `</h1>
 			<form id="start" action="ending.php" method="POST">
-			<button type="button" class="button" onclick="insertScore(); showFinal();">INSERT HIGH SCORE!</button>
+			<button type="button" class="button" onclick="insertScore();">INSERT HIGH SCORE!</button>
 			</form>
 			`);
 		}
@@ -280,6 +291,16 @@ function findName() {
 
 function insertScore() {
 	// must have code and disaster ID
+	var newNameElement = document.getElementById("newName");
+	if (newNameElement && newNameElement.value == "") {
+		console.log("wtffff");
+		var results = {
+			result: "empty"
+		};
+		doEnd(results);
+		return;
+	}
+	showFinal(); // show final put here instead
 	sendData = {ID : userID, userScore : score}; // echo 6 "userID" (userID of player), // echo 4 (returns score for local update)
 	if (getName()) {
 		sendData.name = getName();

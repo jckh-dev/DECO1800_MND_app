@@ -1,3 +1,7 @@
+<?php
+include('includes/indexlogic.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
