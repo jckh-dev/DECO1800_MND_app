@@ -8,7 +8,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Muli', sans-serif;
 }
 
 body {
@@ -214,7 +214,7 @@ p {
 }
 
 .footer-active{
-  background-color: red;
+  background-color: #e89371;
   color: white;
 }
 
@@ -263,16 +263,18 @@ button{
   cursor: pointer;
   text-align: center;
   background-color:white;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   font-size: 1.2em;
   font-weight: bolder;
   border:#6ec9dd solid;
+  
 }
 
 .button {
   width: 230px;
   height: 75px;
   color: black;
+  box-shadow: #e89371 3px 5px;
  }
 
  .nextbtn{
@@ -293,6 +295,7 @@ button{
   height: 50px;
   cursor: pointer;
   color: black;
+  margin: 3% 0 0 0;
 }
 
 .beginbtn{
@@ -316,7 +319,7 @@ button{
 }
 /* menu CSS (journey.php) */
 .journey{
-  align-content: space-around;
+  align-content: space-evenly;
 }
 
 

@@ -49,13 +49,10 @@ include('includes/indexlogic.php');
                 <section class="tourpage tourstart">
                     <article class="infobox">
                         <h1>Welcome to the Tour</h1>
+                        <img class="tourgraph" src="images\temprising.gif" alt="Major Bushfire Events Over Time">
                         <p>Welcome to the guided tour companion.</p>
-                        <p>This tour will take you through each of the five major natural disaster types most commonly
-                            impacting the Australian continent. At the end of the tour you will have the chance to play
-                            the Higher or Lower game.</p>
-                        <p>For participating in the exhbit and learning about Australia's natural disasters, the Natural
-                            Disaster Musuem will donate a dollar figure to the Climate Education Foundation based on the
-                            score you get on the Higher or Lower game.</p>
+                        <p>This tour will take you through each of the five major natural disaster      types most commonly impacting the Australian continent seen in the context of rising average local and global temperatures. At the end of   the tour you will have the chance to play the Higher or Lower game.</p>
+                        <p>For participating in the exhbit and learning about Australia's natural disasters, the Natural Disaster Musuem will donate a dollar figure to the Climate Education Foundation based on the score you get on the Higher or Lower game.</p>
                         <p>Good luck!</p>
                     </article>
                 </section>

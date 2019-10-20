@@ -62,7 +62,8 @@ function doClue(results) {
 	if (results.type == "description") {
 		$(".cluebox").show("blind")
 		$("#clueContent").empty();
-		$("#clueContent").append("<h1> Description Clue (numbers removed) </h1>");
+		$("#clueContent").append("<h1> Description Clue</h1>");
+		$("#clueContent").append("<h2> This is the recorded description of the disaster in question with all numbers removed:</h2>");
 		$("#clueContent").append("<p>" + results.description + "</p>");
 	} else if (results.type == "map") {
 		$(".cluebox").show("blind")

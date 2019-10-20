@@ -50,7 +50,7 @@ include('includes/gameheader.php');
   <!-- <h1 id="displayAnswer2" class="text-light"></h1> display correct/incorrect -->
   <h2>Was it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> ?</h2>
   <h2 id="displayAnswer3">You answered "HIGHER/LOWER" which is "CORRECT/INCORRECT"</h2>
-  <h2>The statistics real figure is  </h2>
+  <h2>The statistic's real figure is  </h2>
   <p id="displayAnswer">?</p><!-- display actual -->
 <!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
 <form id="next" action="game.php" method="POST">
@@ -83,7 +83,7 @@ include('includes/gameheader.php');
     <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
 </form>
 
-<button type="button" class="idbutton">Exit Clue</button>
+<button type="button" class="idbutton">Back To Game</button>
 
 <!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
 
