@@ -6,4 +6,7 @@
     $sql = "SELECT SUM(score) AS scoreSum FROM scores";
     $result = $db->query($sql);
     $totalScore = $result->fetch_assoc()["scoreSum"];
+
+    $moneyDivisor = 50; // every 50 points is $1.
+    $totalMoney = $totalScore / $moneyDivisor;
 ?>
