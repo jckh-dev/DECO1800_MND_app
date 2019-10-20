@@ -1,19 +1,26 @@
 // creates 'next' button(prevents it from appearing when loaded), depending on answer makes appropriate POST
 var cluebtn = document.querySelector(".cluebtn");
 var quizclue = document.querySelector(".quizclue");
-var nextbtn = document.querySelector("#nextButton")
-var quizpg = document.querySelector("#quizpage")
-var quizquest = document.querySelector("#quizquestion")
-var quizans = document.querySelector(".quizanswer")
-var quizend = document.querySelector(".quizend")
-var quizfinal = document.querySelector(".quizfinal")
-
+var nextbtn = document.querySelector("#nextButton");
+var quizpg = document.querySelector("#quizpage");
+var quizquest = document.querySelector("#quizquestion");
+var quizans = document.querySelector(".quizanswer");
+var quizend = document.querySelector(".quizend");
+var quizfinal = document.querySelector(".quizfinal");
+var clueExit = document.querySelector(".clueexit");
 
 cluebtn.addEventListener('click', function () {
 	$(".hilobtn").toggle("fade");
 	$(quizquest).toggle("blind", function () {
 		$(quizclue).toggle("blind");
 	});
+})
+
+clueExit.addEventListener('click', function(){
+	$(".hilobtn").show("fade");
+	$(quizquest).show("blind", function() {
+		$(quizclue).hide("blind");
+	})
 })
 
 $(document).ready(function(){

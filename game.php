@@ -83,7 +83,7 @@ include('includes/gameheader.php');
     <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
 </form>
 
-<button type="button" class="idbutton">Back To Game</button>
+<button type="button" class="idbutton clueexit">Back To Game</button>
 
 <!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
 
