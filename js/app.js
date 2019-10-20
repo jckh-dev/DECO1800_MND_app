@@ -1,9 +1,9 @@
-var title = document.querySelector(".txtbox");
+var title = document.querySelector(".titlebox");
 var demo = document.querySelector(".demo");
-var demoinfo = document.querySelector("#demoinfo");
-var democlose = document.querySelector("#democlose");
-var welinfo = document.querySelector("#welcomeinfo");
-var welbtns = document.querySelector(".gridwrapper3");
+var demoinfo = document.querySelector(".demoinfo");
+var democlose = document.querySelector(".democlose");
+var welcinfo = document.querySelector(".welcomeinfo");
+var welcbtns = document.querySelector(".gridwrapper3");
 var gamedemo = document.querySelector("#gamedemo");
 var demogif = document.querySelector("#demogif");
 
@@ -12,24 +12,22 @@ demo.addEventListener('click', function () {
         $(title).html("<h1>GAME HELP</h1>");
         $(title).show("fade");
     })
-    $(welbtns).hide("fade", function(){
-        $(".wrapper").css("grid-template-rows", "185px 1fr 0.03fr")
+    $(welcbtns).hide("fade")
+    $(welcinfo).hide("blind", function(){
+        $(demoinfo).show("blind", function(){
+            $(demoinfo).css({ "display": "flex" });
+        });     
     });
-    $(welinfo).hide("blind", function(){
-        $(demoinfo).show("blind");
-    });
-})
+});
 
 democlose.addEventListener('click', function () {
     $(title).hide("fade", function(){
         $(title).html("<h1>WELCOME</h1>");
         $(title).show("fade");
-    })
-    $(welbtns).show("fade", function(){
-        $(".wrapper").css("grid-template-rows", "185px 1fr 0.1fr")
     });
     $(demoinfo).hide("blind", function(){
-        $(welinfo).show("blind");
+        $(welcinfo).show("blind");
+        $(welcbtns).show("blind");
     });
 })
 

@@ -22,11 +22,7 @@ include('includes/gameheader.php');
 
 <main class="gridwrap2" id="quizpage">
 
-
-
-<aside class="box highlowbox">
-    <button class="hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')" >Higher <i class="fas fa-chevron-circle-up"></i></button>
-</aside>
+<span class="box highbtn" id="answerButtonHigh" type="submit" onclick="answer('high')">HIGHER</span>
 
 <article class="infobox" id="quizquestion">
     
@@ -42,7 +38,7 @@ include('includes/gameheader.php');
 
     <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
 
-    <div id="imageInsert"> </div> <!-- image goes here -->
+    <!-- <div id="imageInsert"> </div>  -->
 
 </article>
 
@@ -94,9 +90,8 @@ include('includes/gameheader.php');
 
 </div>
 
-<aside class="box highlowbox">
-    <button class="hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower <i class="fas fa-chevron-circle-down"></i></button>
-</aside>
+<button class="box lowbtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower</button>
+
 
 <aside class="quizfinish">
     <button class="earlyfinishbtn" onclick="earlyEnd()">Finish Now</button>

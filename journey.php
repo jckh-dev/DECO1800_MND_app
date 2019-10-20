@@ -18,26 +18,19 @@ include('includes/header.php');
 
 <main class="gridwrap2 journey">
 
-<aside>
-    <a href="guidedtour.php"><button class="button">Start Guided Tour</button></a>
-</aside>
+<a class ="largebtn" href="guidedtour.php">Start Guided Tour</a>
 
-<aside>
 <form id="start" action="game.php" method="POST">
       <input type="hidden" name="game" value='<?php echo $randomGame; ?>'>
       <input type="hidden" name="life" value=10> <!-- life amount -->
       <input type="hidden" name="init" value=1>
-      <button type="submit" class="button">Random Play</button>
+      <button type="submit" class="largebtn">Random Play</button>
 </form>
-</aside>
 
-<aside>
-<a href="map.php"><button class="button">Look At A Map</button></a>
-</aside>
+<a class="largebtn"href="map.php">Look At A Map</a>
 
-<aside>
-<a href="scoreboard.php"><button class="button">Leaderboard</button></a>
-</aside>
+<a class="largebtn" href="scoreboard.php">Leaderboard</a>
+
 
 <?php
 include('includes/footer.php');

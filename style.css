@@ -105,6 +105,84 @@ p {
   margin: 0 8% 0 8%;
 }
 
+.btnwrap{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* all the various buttons CSS */
+a,
+a:hover {
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.largebtn {
+  width: 230px;
+  height: 75px;
+  font-size: 25px;
+  border-radius: 5px;
+  border:#e89371 solid;
+  box-shadow: inset 0 0 10px #e89371;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+ }
+
+ .smallbtn{
+   width: 130px;
+   height: 50px;
+   font-size: 18px;
+   border-radius: 5px;
+   border: #e89371 solid;
+   background-color: #e89371;
+   color: white;
+   /* box-shadow: inset 0 0 10px #e89371; */
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+ }
+
+ .nextbtn{
+  width: 230px;
+  height: 75px;
+  font-size:1em;
+ }
+
+ .cluepointbtn {
+  font-size: 1em;
+  border: none;
+  align-self: start;
+  padding: 0px;
+ }
+
+ .idbutton {
+  width: 230px;
+  height: 50px;
+  cursor: pointer;
+  color: black;
+  margin: 3% 0 0 0;
+}
+
+.beginbtn{
+  width: 400px;
+  border: none;
+  box-shadow: none;
+}
+
+.ftrbtn{
+  border: none;
+}
+.fas{
+  color: white;
+}
+
 /* The light blue boxes that hold text information */
 .infobox{
     display:flex;
@@ -114,67 +192,7 @@ p {
     background-color: #d5ebf8;
     border-radius: 5px;
     margin: 0 8% 0 8%;
-}
-
-/* Front splash page CSS */
-.welcomepg {
-  min-height: 98.5vh;
-  position: relative;
-  background: url("images/frontpage.png") no-repeat top;
-  background-size: cover;
-}
-
-.logo{
-  position: absolute;
-  right: 10%;
-  bottom: 15%;
-}
-
-.begin{
-  position: absolute;
-  width: 241px;
-  right: 10%;
-  bottom:10%;
-  text-align: right;
-}
-
-/* welcomemsg page CSS */
-
-.welcomebtns{
-  display: flex;
-  padding-bottom: 3%;
-  justify-content: space-between;
-}
-
-.continue{
-  cursor: pointer;
-  text-align: right;
-}
-
-.demo{
-  cursor: pointer;
-  text-align: left;
-}
-
-#demoinfo{
-  display: none;
-  background: #b6f2ff;
-}
-
-#demoinfo > button {
-  margin: 0 0 5% 0;
-}
-
-#demogif{
-  display: none;
-}
-
-/* header CSS */
-.header{
-    align-self: start;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    border-bottom: #08415c solid 0.3em;
+    overflow: hidden;
 }
 
 /* Footer CSS */
@@ -225,6 +243,114 @@ p {
   transform: rotate(-180deg);
 }
 
+/* Custom check box inputs */
+.chbxcontainer{
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.chbxcontainer input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.mapcustchkbx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border: #e89371 solid;
+  
+}
+
+.chbxcontainer:hover input ~ .mapcustchkbx {
+  background-color: #ccc;
+
+}
+
+.chbxcontainer input:checked ~ .mapcustchkbx {
+  background-color: #2196F3;
+}
+
+.mapcustchkbx:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.chbxcontainer .mapcustchkbx:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.chbxcontainer input:checked ~ .mapcustchkbx:after {
+  display: block;
+}
+
+/* header CSS */
+.header{
+    align-self: start;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-bottom: #e89371 solid 0.3em;
+}
+
+/* Front splash page CSS */
+.welcomepg {
+  min-height: 98.5vh;
+  position: relative;
+  background: url("images/frontpage.png") no-repeat top;
+  background-size: cover;
+}
+
+.logo{
+  position: absolute;
+  right: 10%;
+  bottom: 15%;
+}
+
+.begin{
+  position: absolute;
+  width: 241px;
+  right: 10%;
+  bottom:10%;
+  text-align: right;
+}
+
+/* welcomemsg page CSS */
+.continue{
+  text-align: right;
+}
+
+.demoinfo{
+  display: none;
+}
+
+#demogif{
+  display: none;
+}
+
+
 /* Specific boxes */
 .login {
   display: flex;
@@ -239,8 +365,6 @@ p {
     padding-top: 10px;
 }
 
-
-
 /* formating for input fields */
 .input {
   border:#3891a6 solid;
@@ -251,83 +375,21 @@ p {
   height: 40px;
 }
 
-/* all the various buttons CSS */
-
-a,
-a:hover {
-  text-decoration: none;
-}
-
-button{
-  cursor: pointer;
-  text-align: center;
-  background-color:white;
-  border-radius: 5px;
-  font-size: 1.2em;
-  font-weight: bolder;
-  border:#e89371 solid;
-  
-}
-
-.button {
-  width: 230px;
-  height: 75px;
-  color: black;
-  box-shadow: inset 0 0 10px #e89371;
- }
-
- .nextbtn{
-  width: 230px;
-  height: 75px;
-  font-size:1em;
- }
-
- .cluepointbtn {
-  font-size: 1em;
-  border: none;
-  align-self: start;
-  padding: 0px;
- }
-
- .idbutton {
-  width: 230px;
-  height: 50px;
-  cursor: pointer;
-  color: black;
-  margin: 3% 0 0 0;
-}
-
-.beginbtn{
-  width: 400px;
-  border: none;
-  box-shadow: none;
-}
-
-.ftrbtn{
-  border: none;
-}
-
 /*Map CSS*/
 #map {
-	width: 90vw;
+	width: 95vw;
   height: 60vh;
-  margin-top: 5%;
-  margin-bottom:5%;
 	background-color: white;
   box-shadow: #e89371 0 3px 5px;
-  display: none;
 }
 
 .mapexit{
   display: none;
 }
-
-#maplocation{
-  margin: auto;
-}
-
+ 
 /* menu CSS (journey.php) */
 .journey{
+  justify-items: center;
   align-content: space-evenly;
 }
 
@@ -336,22 +398,33 @@ button{
   text-align: center;
 }
 
-.hilobtn{
-   width: 100%;
-   height: 100%;
-   border: lightgrey solid;
-   box-shadow: #e89371 3px 5px;
+.highbtn{
+  border-color: #e89371 transparent;
+	border-style: solid;
+  border-width: 0 40vw 25vw 40vw;
+  color: white;
+  font-size: 2em;
+  height: 0px;
+  width: 0px;
+  align-self: end;
+ }
+
+ .lowbtn{
+  border-color: #e89371 transparent;
+	border-style: solid;
+  border-width: 25vw 40vw 0vw 40vw;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  height: 0px;
+  width: 0px;
+  justify-items: flex-end;
  }
 
  .earlyfinishbtn{
    padding: 1%;
    box-shadow: #e89371 3px 5px;
  }
-
- .highlowbox{
-    height: 2.4em;
-    align-self: center;
-}
 
 .cluebox{
   display: none;
@@ -411,7 +484,7 @@ button{
 .tournavbtn{
   border: none;
   background: none;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .gamestart{

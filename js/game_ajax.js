@@ -14,9 +14,7 @@ mapSearch.addEventListener('click', function(){
 
 mapExit.addEventListener('click', function () {
 	$(mapExit).hide("fade");
-	$("#map").hide("fade", function (){
 	$(".infobox").show("fade");
-});
 });
 
 // initialise map && get reference to map.

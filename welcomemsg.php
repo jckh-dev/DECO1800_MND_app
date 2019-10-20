@@ -7,14 +7,13 @@ include('includes/head.php');
 <?php
 include('includes/header.php');
 ?>
-
     <h1>WELCOME</h1>
 </aside>
 </section>
 
 <main class="gridwrap2">
 
-<article class="box" id="welcomeinfo">
+<article class="box welcomeinfo">
         <p>Welcome to the Museum Of Natural Disasters interactive exhibit 
         application.</p>
         
@@ -29,7 +28,7 @@ include('includes/header.php');
         <p>Hit the Game Help button below for tips on the playing the Game.</p>
 </article>
 
-<article class="infobox" id="demoinfo">
+<article class="infobox demoinfo">
         <h2>HIGHER OR LOWER</h2>
 
         <p>The Higher or Lower game is a simple game where you guess if the 
@@ -54,14 +53,16 @@ include('includes/header.php');
 
         <p>Click this button to see a simple demo:</p>
 
-        <button class="idbutton" id="gamedemo"><h3>Game Demo <i class="fas fa-mobile-alt"></i></h3></button>
+        <aside class="btnwrap">
+            <button class="smallbtn" id="gamedemo">Game Demo <i class="fas fa-mobile-alt"></i></</button>
 
-        <button id="democlose" class="idbutton">Close</button>
+            <button class="smallbtn democlose">Close</button>
+        </aside>
     </article>
 
     <article class="infobox" id="demogif">
-    <a href="https://gyazo.com/c9d3d2dbb16e9ba343f8c0ee99239d7b"><img src="https://i.gyazo.com/c9d3d2dbb16e9ba343f8c0ee99239d7b.gif" alt="Clue Demo" width="250"/></a>
-    
+    <img src="https://i.gyazo.com/c9d3d2dbb16e9ba343f8c0ee99239d7b.gif" alt="Clue Demo" width="250"/>
+
     <button class="idbutton" id="gamedemo"><h3>Exit <i class="fas fa-mobile-alt"></i></h3></button>
 </article>
 
@@ -69,15 +70,12 @@ include('includes/header.php');
 
 <section class="gridwrapper3">
 
-<aside class="box welcomebtns">
-<aside class="demo">
-        <h2><i class="fas fa-mobile-alt"></i> Game Help </h2>
-</aside>
+<aside class="box txtbox btnwrap">
+<button class="smallbtn demo"><i class="fas fa-mobile-alt"></i> Game Help</button>
 
-<aside class="continue">
-    <a href="journey.php"><h3>Continue <i class="fas fa-chevron-circle-right"></i></h3>
+<a class = "smallbtn" href="journey.php">Continue <i class="fas fa-chevron-circle-right"></i>
     </a>
-</aside>
+
 </aside>
 </section>
 </div>
