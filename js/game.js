@@ -50,6 +50,7 @@ function answer(answer) {
 	if (answer == correctAnswer) { // correctAnswer (echo 1)
 		$(cluebtn).hide("fade");
 		$(".quizfinish").hide("fade");
+		$(".cluebox").hide("highlight", { color: '#dcffdc' });
 		$(".hilobtn").hide("highlight", { color: '#dcffdc' });
 		$("#quizquestion").hide("highlight", { color: '#dcffdc' }, function(){
 			$(".quizanswer").toggleClass('qzright', function () {
@@ -68,6 +69,7 @@ function answer(answer) {
 	} else {
 		$(cluebtn).hide("fade");
 		$(".quizfinish").hide("fade");
+		$(".cluebox").hide("highlight", { color: '#ffdcdc' });
 		$(".hilobtn").hide("highlight", { color: '#ffdcdc' });
 		$("#quizquestion").hide("highlight", { color: '#ffdcdc' }, function () {
 			$(".quizanswer").toggleClass('qzwrong', function(){

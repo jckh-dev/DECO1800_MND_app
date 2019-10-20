@@ -2,6 +2,22 @@
 // Images layers-2x.png, layers.png, marker-ocon-2x.png, marker-icon.png, marker-shadow.png. leaflet.js, leaflet.css
 // Leaflet. (n.d.). Retrieved from https://leafletjs.com/
 
+var mapSearch = document.querySelector(".mapsearch");
+var mapExit = document.querySelector(".mapexit");
+
+mapSearch.addEventListener('click', function(){
+	$(".infobox").hide("fade", function(){
+	$("#map").show("fade");
+	$(mapExit).show("fade");
+});
+});
+
+mapExit.addEventListener('click', function () {
+	$(mapExit).hide("fade");
+	$("#map").hide("fade", function (){
+	$(".infobox").show("fade");
+});
+});
 
 // initialise map && get reference to map.
 var mapReference = false; // reference to map, is filled when initMap() called
@@ -62,14 +78,14 @@ function doClue(results) {
 	if (results.type == "description") {
 		$(".cluebox").show("blind")
 		$("#clueContent").empty();
-		$("#clueContent").append("<h1> Description Clue</h1>");
-		$("#clueContent").append("<h2> This is the recorded description of the disaster in question with all numbers removed:</h2>");
+		$("#clueContent").append("<h1>Disaster Description Clue</h1>");
+		$("#clueContent").append("<h2> This is the recorded description of the disaster in question with all numbers redacted:</h2>");
 		$("#clueContent").append("<p>" + results.description + "</p>");
 	} else if (results.type == "map") {
 		$(".cluebox").show("blind")
 		$("#clueContent").empty();
 		$("#clueContent").append("<h1> Map Clue (location of disaster) </h1>");
-		$("#clueContent").append('<article id="map"></article>');
+		$("#clueContent").append("<h2>use the surrounding geography to guage whether factors like regional vs metro location,	the type of surrounds(forest, desert, coast etc) and closeness to residential centers may point to the question being higher or lower.</h2>");$("#clueContent").append('<article id="map"></article>');
 		
 		// init map
 		initMap();
@@ -82,7 +98,7 @@ function doClue(results) {
 function doEnd(results) {
 	if (results.result == "empty") {
 		$(".quizend").html(`
-		<h1>Insert your score into the leaderboard!</h1>
+		<h1>Insert your score into the leaderboard and find out if you've made it in the top 10!</h1>
 		<h1>You scored: ` + score + `</h1>
 		<h1>Please enter a name first!</h1>
 		<form id="start" action="ending.php" method="POST">
@@ -95,7 +111,8 @@ function doEnd(results) {
 		if (results.nameRequest) {
 			// backticks allow for multilines without newline.
 			$(".quizend").append(`
-			<h1>Insert your score into the leaderboard!</h1>
+			 
+			<h1>Insert your score into the leaderboard and find out if you've made it in the top 10!</h1>
 			<h1>You scored: ` + score + `</h1>
 			<form id="start" action="ending.php" method="POST">
 			<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
@@ -105,18 +122,19 @@ function doEnd(results) {
 		} else {
 			// if they already have a name , remove name input.
 			$(".quizend").append(`
-			<h1>Insert your score into the leaderboard!</h1>
-			<h1>You scored: ` + score + `</h1>
+			<h1>Thanks for playing again, <INSERT NAME></h1>
+			<p>Insert your new score into the leaderboard and find out if you've made it in the top 10!</p>
+			<p>You scored: ` + score + `</p>
 			<form id="start" action="ending.php" method="POST">
-			<button type="button" class="button" onclick="insertScore();">INSERT HIGH SCORE!</button>
+			<button type="button" class="button" onclick="insertScore();">SUBMIT SCORE!</button>
 			</form>
 			`);
 		}
 	}
 	if (results.result == "inserted") {
 		$(".quizfinal").append(`
-		<h1>CONGRATULATIONS!</h1>
-		<p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent</p>
+		<h1>THANKS FOR PLAYING!</h1>
+		<p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent and the consequences of the increasing frequency of these events </p>
 	
 		<aside class = "txtbox">
 			<form id="start" action="scoreboard.php" method="POST">
@@ -319,3 +337,4 @@ function insertScore() {
 		}
 	});
 }
+

@@ -18,8 +18,8 @@ body {
 
 body{
   min-height: 100vh;
-  border-left: solid #08415c 13px;
-  border-top: solid #08415c 13px;
+  border-left: solid #08415c 20px;
+  border-top: solid #08415c 20px;
 }
 
 html {
@@ -29,8 +29,7 @@ html {
 /* Text Formatting */
 
 h1{
-  font-size: 1.4em;
-  text-emphasis: bold;
+  font-size: 1.5em;
 }
 
 .infobox > h1{
@@ -38,7 +37,7 @@ h1{
 }
 
 h2{
-  font-size: 1.1em;
+  font-size: 1.2em;
   padding-bottom: 0.5em;
 }
 
@@ -59,7 +58,7 @@ p {
 }
 
 .gridwrap1{
-  align-content: start;+
+  align-content: start;
 }
 
 .gridwraptitle{
@@ -115,7 +114,6 @@ p {
     background-color: #d5ebf8;
     border-radius: 5px;
     margin: 0 8% 0 8%;
-    overflow-y: scroll;
 }
 
 /* Front splash page CSS */
@@ -220,6 +218,7 @@ p {
 
 .fa-caret-up{
   transition: 0.5s;
+  color: #e89371;
 }
 
 .flip {
@@ -263,10 +262,10 @@ button{
   cursor: pointer;
   text-align: center;
   background-color:white;
-  /* border-radius: 5px; */
+  border-radius: 5px;
   font-size: 1.2em;
   font-weight: bolder;
-  border:#6ec9dd solid;
+  border:#e89371 solid;
   
 }
 
@@ -274,7 +273,7 @@ button{
   width: 230px;
   height: 75px;
   color: black;
-  box-shadow: #e89371 3px 5px;
+  box-shadow: inset 0 0 10px #e89371;
  }
 
  .nextbtn{
@@ -308,20 +307,29 @@ button{
   border: none;
 }
 
-/*James' Edits*/
+/*Map CSS*/
 #map {
-	width: 80vw;
-  height: 40vh;
+	width: 90vw;
+  height: 60vh;
   margin-top: 5%;
   margin-bottom:5%;
 	background-color: white;
-	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
+  box-shadow: #e89371 0 3px 5px;
+  display: none;
 }
+
+.mapexit{
+  display: none;
+}
+
+#maplocation{
+  margin: auto;
+}
+
 /* menu CSS (journey.php) */
 .journey{
   align-content: space-evenly;
 }
-
 
 /* Quiz Answer Box CSS */
 #displayAnswer{
@@ -332,11 +340,12 @@ button{
    width: 100%;
    height: 100%;
    border: lightgrey solid;
-   box-shadow: none;
+   box-shadow: #e89371 3px 5px;
  }
 
  .earlyfinishbtn{
    padding: 1%;
+   box-shadow: #e89371 3px 5px;
  }
 
  .highlowbox{
@@ -423,4 +432,38 @@ button{
 
 .leaderbd{
   font-weight: bold;
+}
+
+.hidden{
+  opacity: 0;
+}
+
+/* contribution bar graphic */
+
+#Goal_board{
+align-items: center;
+text-align: center;
+
+}    
+#moneyProgress {
+  width: 200px;
+  height:50vh;
+  background-image:url('images/thermo-removebg-preview (6).png');
+  background-size: cover;
+  transform: rotate(180deg);
+  position: absolute;
+  right: 40%;
+}
+
+#moneyBar {
+  width: 20px;
+  height: 10%;
+  background-color: rgb(252, 0, 0);
+  position: absolute;
+  right: 20%;
+}
+
+#bar{
+    position: absolute;
+    bottom:5%;
 }
