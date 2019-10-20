@@ -89,14 +89,17 @@ include('includes/header.php');
 
     <h2>Or search via name of disaster:</h2>
 
-    <input type="text" class="input" id="DisasterName" placeholder="Enter Disaster Name" width="70" height="50"> <br>
-    <button type="button" class="idbutton mapsearch" onclick="insertRecordSearch()">Search</button>
-</form>
+    <section class="box">
+    <input type="text" class="input" id="DisasterName" placeholder="Enter Disaster Name" width="70" height="50">
+    <button type="button" class="largebtn mapsearch" onclick="insertRecordSearch()">Search</button>
+    </section>
+    </form>
+    
 </article>
 
 <div id="mapLocation">
     <article id="map"></article>
-    <button type="button" class="idbutton mapexit">Back to Search</button>
+    <button type="button" class="largebtn mapexit">Back to Search</button>
 </div>
 
 <!-- jquery -->

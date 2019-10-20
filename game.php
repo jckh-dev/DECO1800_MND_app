@@ -12,8 +12,9 @@ include('includes/head.php');
 include('includes/gameheader.php');
 ?>
 
-<aside class="lifebtn"><i class="far fa-heart"></i><br><?php if (isset($_POST['life'])) {echo $life . " LIVES";}?></aside>
-<button class="cluepointbtn cluebtn"><i class="fas fa-question"></i><br>CLUES</button>
+
+<a class="cluepointbtn" href="journey.php"><i class="fas fa-home"></i><br>HOME</a>
+<label class="lifebtn"><i class="far fa-heart"></i><br><?php if (isset($_POST['life'])) {echo $life . " LIVES";}?></label>
 <aside class="cluepointbtn"><?php echo $_SESSION['scoreTemp'];?><br>POINTS</aside>
 
 </aside>
@@ -22,38 +23,32 @@ include('includes/gameheader.php');
 
 <main class="gridwrap2" id="quizpage">
 
-<span class="box highbtn" id="answerButtonHigh" type="submit" onclick="answer('high')">HIGHER</span>
+<button class="box highbtn hilobtn" id="answerButtonHigh" type="submit" onclick="answer('high')">HIGHER</button>
 
 <article class="infobox" id="quizquestion">
+    <h2>Was the value of the <?php echo $info[0]["statistic"]; ?> statistic for the disaster:</h2> 
+    <h2>"<?php echo $info[0]["title"]; ?>"</h2>
+    <h2>higher or lower than </h2> 
     
-    <h1>HIGHER OR LOWER?</h1>
+    <div class="randomNum"><?php echo number_format($info[0]["randNum"]); ?></div>
+    <div id="imageInsert"> </div> 
 
-    <h2>Name and Type of Disaster: <?php echo $info[0]["title"]; ?></h2>
-
-    <h2>Was the value of the <?php echo $info[0]["statistic"]; ?> statistic higher or lower than <?php echo number_format($info[0]["randNum"]); ?></h2> 
-        
-    <!-- <h2>Type of Natural Disaster</h2>
-
-    <p><?php echo $oldGame[0]; ?></p> -->
-
-    <h2>Statistic: <?php echo $info[0]["statistic"]; ?> </h2>
-
-    <!-- <div id="imageInsert"> </div>  -->
-
+    <!-- <p><?php echo $oldGame[0]; ?></p> -->
 </article>
 
 <article class="infobox quizanswer" id="answerBox">
-  <!-- <h1 id="displayAnswer2" class="text-light"></h1> display correct/incorrect -->
   <h2>Was it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> ?</h2>
   <h2 id="displayAnswer3">You answered "HIGHER/LOWER" which is "CORRECT/INCORRECT"</h2>
   <h2>The statistic's real figure is  </h2>
   <p id="displayAnswer">?</p><!-- display actual -->
+
 <!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
 <form id="next" action="game.php" method="POST">
     <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>
     <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
     <?php if (isset($_POST['life'])) {echo '<input id="lifeValue" type="hidden" name="life">'; } ?> <!-- value inserted by js -->
 </form>
+
 </article>
 
 <article class="infobox quizend">
@@ -76,13 +71,13 @@ include('includes/gameheader.php');
 
 <form id="start">
     <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
-    <button type="button" class="idbutton" onclick="insertRecordClue()">Enter Code</button>
+    <section class="btnwrap">
+    <button type="button" class="smallbtn" onclick="insertRecordClue()">Enter Code</button>
 </form>
 
-<button type="button" class="idbutton clueexit">Back To Game</button>
-
+<button type="button" class="smallbtn clueexit">Back To Game</button>
+</section>
 <!-- content is inserted and deleted here, change it in function doClue in game_ajax.js -->
-
 
 </article>
 
@@ -90,23 +85,12 @@ include('includes/gameheader.php');
 
 </div>
 
-<button class="box lowbtn" id="answerButtonLow" type="submit" onclick="answer('low')">Lower</button>
+<button class="box lowbtn hilobtn" id="answerButtonLow" type="submit" onclick="answer('low')">LOWER</button>
 
-
-<aside class="quizfinish">
-    <button class="earlyfinishbtn" onclick="earlyEnd()">Finish Now</button>
-    <?php 
-    if (!$endGame && json_decode($game, true)[0] == "infinite") {
-        echo "Quizes left: (Endless)"; 
-    } else {
-        echo "Quizes left: " . $gameCount; 
-    }
-    ?> 
+<aside class="box btnwrap">
+    <button class="smallbtn earlyfinishbtn" onclick="earlyEnd()">Finish Now</button>
+    <button class="smallbtn cluebtn">Get A Clue</button>
 </aside>
-
-
-<!-- jquery -->
-<script src="js/jquery-3.4.1.min.js"></script>
 
 <!-- script & echoed values from server into js (james) -->
 <script>
@@ -133,3 +117,12 @@ var mapInit = false; // true = init map.
 <?php
 include('includes/footer.php');
 ?>
+
+<!-- code for number of games -->
+<!-- <?php 
+    if (!$endGame && json_decode($game, true)[0] == "infinite") {
+        echo "Quizes left: (Endless)"; 
+    } else {
+        echo "Quizes left: " . $gameCount; 
+    }
+    ?>  -->

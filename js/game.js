@@ -8,20 +8,29 @@ var quizans = document.querySelector(".quizanswer");
 var quizend = document.querySelector(".quizend");
 var quizfinal = document.querySelector(".quizfinal");
 var clueExit = document.querySelector(".clueexit");
+var earlyFinish = document.querySelector(".earlyfinishbtn")
+
 
 cluebtn.addEventListener('click', function () {
 	$(".hilobtn").toggle("fade");
+	$(earlyFinish).toggle("fade");
+	$(cluebtn).toggle("fade");
 	$(quizquest).toggle("blind", function () {
-		$(quizclue).toggle("blind");
+		$(quizclue).toggle("fade", function(){
+			$(quizclue).css({ "display": "flex" });
+		});
 	});
-})
+});
 
 clueExit.addEventListener('click', function(){
-	$(".hilobtn").show("fade");
-	$(quizquest).show("blind", function() {
-		$(quizclue).hide("blind");
-	})
-})
+	$(quizclue).hide("fade", function(){
+		$(quizquest).show("blind", function(){
+			$(".hilobtn").toggle("fade");
+			$(earlyFinish).toggle("fade");
+			$(cluebtn).toggle("fade");
+		});
+	});
+});
 
 $(document).ready(function(){
 	
@@ -36,7 +45,7 @@ function earlyEnd() {
 function answer(answer) {
 	
 	//bellow is where the button is, this will be appended to #next (the form)
-	$("<button id='nextButton' type='submit' class='nextbtn next'>NEXT QUESTION</button>").appendTo("#next");
+	$("<button id='nextButton' type='submit' class='largebtn next'>NEXT QUESTION</button>").appendTo("#next");
 	$("#nextButton").attr({"onclick": "showQuestion()"});
 	$("#displayAnswer").text(numberAnswer); // numberAnswer (echo 2), displayed on id of displayAnswer etc.
 
@@ -49,13 +58,15 @@ function answer(answer) {
 
 	if (answer == correctAnswer) { // correctAnswer (echo 1)
 		$(cluebtn).hide("fade");
-		$(".quizfinish").hide("fade");
+		$(earlyFinish).hide("fade");
 		$(".cluebox").hide("highlight", { color: '#dcffdc' });
 		$(".hilobtn").hide("highlight", { color: '#dcffdc' });
-		$("#quizquestion").hide("highlight", { color: '#dcffdc' }, function(){
+		$(quizquest).hide("highlight", { color: '#dcffdc' }, function(){
 			$(".quizanswer").toggleClass('qzright', function () {
-				$(this).show("fade");
+				$(this).show("fade", function () {
+					$(this).css({ "display": "flex" });
 			});
+		});
 			$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
 			// user friendly answer insertion (correct)
 			$("#displayAnswer3").text("You answered " + answerFormat + " which is CORRECT!");
@@ -68,12 +79,14 @@ function answer(answer) {
 			findName(); // prepare end message
 	} else {
 		$(cluebtn).hide("fade");
-		$(".quizfinish").hide("fade");
+		$(earlyFinish).hide("fade");
 		$(".cluebox").hide("highlight", { color: '#ffdcdc' });
 		$(".hilobtn").hide("highlight", { color: '#ffdcdc' });
-		$("#quizquestion").hide("highlight", { color: '#ffdcdc' }, function () {
+		$(quizquest).hide("highlight", { color: '#ffdcdc' }, function () {
 			$(".quizanswer").toggleClass('qzwrong', function(){
-				$(this).show("fade");
+				$(this).show("fade", function(){
+					$(this).css({ "display": "flex" });
+				});
 			});
 			$("#nextButtonValue").remove(); // remove value from post
 			$("#displayAnswer2").text("Incorrect");
@@ -95,8 +108,8 @@ function answer(answer) {
 	}
 
 	if (endGame) { // endGame (echo 3) (When game ends, changes the button to point to ending.php)
-		$(".hilobtn").hide("highlight", { color: 'lightseagreen' });
-		$(".quizfinish").hide("highlight", { color: 'lightseagreen' });
+		$(".hilobtn").hide("highlight", { color: '#e89371' });
+		$(".quizfinish").hide("highlight", { color: '#e89371' });
 		$("#nextButton").html("Finish Game")
 		$("#nextButton").attr({"type":"button","onclick":"showEnd()"});
 	}
@@ -129,14 +142,16 @@ function showQuestion() {
 
 function showEnd() {
 	$(".quizanswer").hide("highlight", { color: 'lightblue' }, function () {
-			$(".quizend").show("fade");
+			$(".quizend").show("fade", function(){
+				$(this).css({ "display": "flex" });
+			});
 	});
 }
 
 function showFinal(){
 	$(".quizend").hide("highlight", { color: 'lightblue' }, function () {
-		$(".quizfinal").show("fade");
+		$(".quizfinal").show("fade", function(){
+			$(this).css({ "display": "flex" });
+		});
 	});
 }
-
-// <i class='fas fa-step-forward'></i> <<<<< icon for next question

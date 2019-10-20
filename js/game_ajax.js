@@ -69,7 +69,6 @@ function iterateRecords(results) {
 			myMap.setView([lat, long], 4);
 		}
 	});
-
 }
 
 function doClue(results) {
@@ -101,7 +100,7 @@ function doEnd(results) {
 		<h1>Please enter a name first!</h1>
 		<form id="start" action="ending.php" method="POST">
 		<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
-		<button type="button" class="button" onclick="insertScore();">INSERT HIGH SCORE!</button>
+		<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
 		</form>
 		`);
 	}
@@ -109,23 +108,24 @@ function doEnd(results) {
 		if (results.nameRequest) {
 			// backticks allow for multilines without newline.
 			$(".quizend").append(`
-			 
 			<h1>Insert your score into the leaderboard and find out if you've made it in the top 10!</h1>
 			<h1>You scored: ` + score + `</h1>
 			<form id="start" action="ending.php" method="POST">
 			<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
-			<button type="button" class="button" onclick="insertScore();">INSERT HIGH SCORE!</button>
+			<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
 			</form>
 			`);
 		} else {
 			// if they already have a name , remove name input.
 			$(".quizend").append(`
-			<h1>Thanks for playing again, <INSERT NAME></h1>
+			<h1>Thanks for playing again, **INSERT NAME**></h1>
 			<p>Insert your new score into the leaderboard and find out if you've made it in the top 10!</p>
 			<p>You scored: ` + score + `</p>
+			<aside class="btnwrap">
 			<form id="start" action="ending.php" method="POST">
-			<button type="button" class="button" onclick="insertScore();">SUBMIT SCORE!</button>
+			<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
 			</form>
+			</aside>
 			`);
 		}
 	}
@@ -136,19 +136,19 @@ function doEnd(results) {
 	
 		<aside class = "txtbox">
 			<form id="start" action="scoreboard.php" method="POST">
-			<button a href="scoreboard.php" type="submit" class="button">Leaderboard</button>
+			<button a href="scoreboard.php" type="submit" class="largebtn">Leaderboard</button>
 			</form>
 		</aside>
 	
 		<aside class = "txtbox">
 			<form id="start" action="journey.php" method="POST">
-			<button a href="scoreboard.php" type="submit" class="button">Home</button>
+			<button a href="scoreboard.php" type="submit" class="largebtn">Home</button>
 			</form>
 		</aside>
 
 		<aside class = "txtbox">
 			<form id="start" action="finish.php" method="POST">
-			<button a href="finish.php" type="submit" class="button">Finish Exhibit Tour</button>
+			<button a href="finish.php" type="submit" class="largebtn">Finish Exhibit Tour</button>
 			</form>
 		</aside>
 		`);

@@ -131,7 +131,6 @@ button{
   border:#e89371 solid;
   background-color: #e89371;
   color: white;
-  /* box-shadow: inset 0 0 10px #e89371; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -145,17 +144,16 @@ button{
    border: #e89371 solid;
    background-color: #e89371;
    color: white;
-   /* box-shadow: inset 0 0 10px #e89371; */
    display: flex;
    align-items: center;
    justify-content: space-evenly;
  }
-
+/* 
  .nextbtn{
   width: 230px;
   height: 75px;
   font-size:1em;
- }
+ } */
 
  .cluepointbtn {
   font-size: 1em;
@@ -181,9 +179,9 @@ button{
 .ftrbtn{
   border: none;
 }
-.fas{
+/* .fas{
   color: white;
-}
+} */
 
 /* The light blue boxes that hold text information */
 .infobox{
@@ -276,7 +274,7 @@ button{
   width: 20px;
   background-color: white;
   border: #e89371 solid;
-  box-shadow: inset 0 0 10px #e89371;
+  /* box-shadow: inset 0 0 10px #e89371; */
 }
 
 .chbxcontainer:hover input ~ .mapcustchkbx {
@@ -319,7 +317,7 @@ button{
 
 /* Front splash page CSS */
 .welcomepg {
-  min-height: 98.5vh;
+  min-height: 99vh;
   position: relative;
   background: url("images/frontpage.png") no-repeat top;
   background-size: cover;
@@ -369,10 +367,10 @@ button{
 
 /* formating for input fields */
 .input {
-  border:#3891a6 solid;
+  border:#08415c solid;
   border-radius: 5px;
   text-align: center;
-  margin-bottom: 1%;
+  margin-bottom: 3%;
   width: 230px;
   height: 40px;
 }
@@ -409,6 +407,10 @@ button{
   height: 0px;
   width: 0px;
   align-self: end;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;  
+  line-height: 120px;
  }
 
  .lowbtn{
@@ -420,12 +422,10 @@ button{
   font-size: 2em;
   height: 0px;
   width: 0px;
-  justify-items: flex-end;
- }
-
- .earlyfinishbtn{
-   padding: 1%;
-   box-shadow: #e89371 3px 5px;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center; 
+  line-height: 120px;
  }
 
 .cluebox{
@@ -435,16 +435,19 @@ button{
 .quizanswer{
   display: none;
   align-self: center;
+  align-items: center;
 }
 
 .quizend{
   display: none;
   align-self: center;
+  align-items: center;
 }
 
 .quizfinal{
   display: none;
   align-self: center;
+  align-items: center;
 }
 
 .quizfinish{
@@ -455,7 +458,7 @@ button{
 }
 
 .quizclue{
-  background-color: lightseagreen;
+  background-color: #d5ebf8;
   display: none;
   min-height: 65%; 
 }
@@ -469,9 +472,9 @@ button{
 }
 
 .disasterImage {
-  width: 275px;
+  width: 200px;
   height: 200px;
-  border-radius: 25%;
+  border-radius: 50%;
 }
 
 /* GUIDED TOUR CSS */
