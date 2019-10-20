@@ -16,7 +16,7 @@ $disasterID = json_decode($_POST['disasterID']);
 // apply or reject clueCode
 if (isset($_POST['clueCode']) && isset($_POST['disasterID'])) {
     // desc clue with no nums
-    if ($clueCode == 123) {
+    if ($clueCode == 529) {
         $newJSON["type"] = "description";
         $query = "SELECT * from \"ad5c6594-571e-4874-994c-a9f964d789df\" WHERE id = $disasterID";
         $search = "https://data.gov.au/data/api/3/action/datastore_search_sql?sql=" . $query;
@@ -27,7 +27,7 @@ if (isset($_POST['clueCode']) && isset($_POST['disasterID'])) {
             $description = preg_replace('/\d/', '', $description); // regex replace 0-9 (\d) with nothing.
             $newJSON["description"] = $description;
         }
-    } elseif ($clueCode == 456) {
+    } elseif ($clueCode == 734) {
         $newJSON["type"] = "map";
         $query = "SELECT * from \"ad5c6594-571e-4874-994c-a9f964d789df\" WHERE id = $disasterID";
         $search = "https://data.gov.au/data/api/3/action/datastore_search_sql?sql=" . $query;
