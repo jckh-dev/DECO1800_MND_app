@@ -21,13 +21,9 @@ include('includes/header.php');
     
 <article class="infobox">
 
-<!-- <p>Use the map to explore the history of natural disaster events that have occured in Australia.</p> -->
-
-<p>Use the categories below to filter your search:</p>
-
 <form id="start">
 
-    <h2>Regions</h2>
+    <p>Regions:</p>
 
     <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
     <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'> 
@@ -67,7 +63,7 @@ include('includes/header.php');
         <span class="mapcustchkbx"></span>
     </label>
 
-    <h2>Add type of disaster here or leave blank for all:</h2>
+    <p>Select Type or Leave Blank For All:</p>
 
     <label class="chbxcontainer">Bushfire/Urban Fire 
         <input type="checkbox" value="Bushfire,Urban Fire" id="fire"> 

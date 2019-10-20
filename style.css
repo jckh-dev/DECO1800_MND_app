@@ -129,7 +129,9 @@ button{
   font-size: 25px;
   border-radius: 5px;
   border:#e89371 solid;
-  box-shadow: inset 0 0 10px #e89371;
+  background-color: #e89371;
+  color: white;
+  /* box-shadow: inset 0 0 10px #e89371; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -245,16 +247,17 @@ button{
 
 /* Custom check box inputs */
 .chbxcontainer{
-  display: block;
+  display: flex;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 1.2em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  justify-items: left;
+  padding-left: 10%;
+  padding-bottom: 3%;
 }
 
 .chbxcontainer input{
@@ -269,20 +272,19 @@ button{
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   background-color: white;
   border: #e89371 solid;
-  
+  box-shadow: inset 0 0 10px #e89371;
 }
 
 .chbxcontainer:hover input ~ .mapcustchkbx {
   background-color: #ccc;
-
 }
 
 .chbxcontainer input:checked ~ .mapcustchkbx {
-  background-color: #2196F3;
+  background-color: #e89371;
 }
 
 .mapcustchkbx:after {
@@ -292,8 +294,8 @@ button{
 }
 
 .chbxcontainer .mapcustchkbx:after {
-  left: 9px;
-  top: 5px;
+  left: 3px;
+  top: 0px;
   width: 5px;
   height: 10px;
   border: solid white;
