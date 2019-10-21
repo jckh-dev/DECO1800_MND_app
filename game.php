@@ -111,6 +111,7 @@ var currentTitle = "<?php echo $info[0]["title"]; ?>";
 <?php if ($imageMode) {echo "var imageUrl = '" . $imageUrl . "';";} ?> // imageUrl var from bing if imageMode is true
 var userID = <?php echo $_COOKIE["User"]; ?>; // echo 6 "userID" (userID of player)
 var mapInit = false; // true = init map.
+var userName = "<?php echo $name ?>"; // NO_NAME if there is no name is associated with ID.
 </script>
 
 <script src="js/game.js"></script>
