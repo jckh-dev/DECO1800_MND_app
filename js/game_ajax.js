@@ -4,6 +4,7 @@
 
 var mapSearch = document.querySelector(".mapsearch");
 var mapExit = document.querySelector(".mapexit");
+// var closeClue = document.querySelector(".closeclue");
 
 mapSearch.addEventListener('click', function(){
 	$(".infobox").hide("fade", function(){
@@ -73,22 +74,31 @@ function iterateRecords(results) {
 
 function doClue(results) {
 	if (results.type == "description") {
-		$(".cluebox").show("blind")
-		$("#clueContent").empty();
-		$("#clueContent").append("<h1>Disaster Description Clue</h1>");
-		$("#clueContent").append("<h2> This is the recorded description of the disaster in question with all numbers redacted:</h2>");
-		$("#clueContent").append("<p>" + results.description + "</p>");
+			$(".quizclue").hide("blind", function(){
+				$(".quizclue").show("fade");
+				$("#clueContent").empty();
+				$("#clueContent").append("<h1>Disaster Description Clue</h1>");
+				$("#clueContent").append("<h2> This is the recorded description of the disaster in question with all numbers redacted:</h2>");
+				$("#clueContent").append("<p>" + results.description + "</p>");
+				$(".cluebox").show("fade", 1000)
+			})
+			
 	} else if (results.type == "map") {
-		$(".cluebox").show("blind")
-		$("#clueContent").empty();
-		$("#clueContent").append("<h1> Map Clue (location of disaster) </h1>");
-		$("#clueContent").append("<h2>use the surrounding geography to guage whether factors like regional vs metro location,	the type of surrounds(forest, desert, coast etc) and closeness to residential centers may point to the question being higher or lower.</h2>");$("#clueContent").append('<article id="map"></article>');
-		
-		// init map
-		initMap();
+			$(".quizclue").hide("blind", function(){
+				$(".quizclue").show("fade");
+				$("#clueContent").empty();
+				$("#clueContent").append("<h1> Map Clue</h1>");
+				$("#clueContent").append("<p>Use the surrounding geography to gauge whether factors like regional vs metro location,	the type of surrounds(forest, desert, coast etc) and closeness to residential centers may point to the question being higher or lower.</p>");
+				$(".cluebox").show("fade", 1000)
+			
+				$("#clueContent").append('<article id="map"></article>');
+			
+				// init map
+				initMap();
 
-		// put records in
-		iterateRecords(results);
+				// put records in
+				iterateRecords(results);
+		})	
 	}
 }
 
@@ -100,8 +110,10 @@ function doEnd(results) {
 		<h1>Please enter a name first!</h1>
 		<form id="start" action="ending.php" method="POST">
 		<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
+		<aside class="cntrbtnwrap>
 		<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
 		</form>
+		</aside>
 		`);
 	}
 	if (results.result == "found name") {
@@ -112,7 +124,9 @@ function doEnd(results) {
 			<h1>You scored: ` + score + `</h1>
 			<form id="start" action="ending.php" method="POST">
 			<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
+			<aside class="cntrbtnwrap>
 			<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
+			</aside>
 			</form>
 			`);
 		} else {
@@ -123,7 +137,9 @@ function doEnd(results) {
 			<p>You scored: ` + score + `</p>
 			<aside class="btnwrap">
 			<form id="start" action="ending.php" method="POST">
+			<aside class="cntrbtnwrap>
 			<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
+			</aside>
 			</form>
 			</aside>
 			`);

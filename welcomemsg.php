@@ -54,16 +54,16 @@ include('includes/header.php');
         <p>Click this button to see a simple demo:</p>
 
         <aside class="btnwrap">
-            <button class="smallbtn" id="gamedemo">Game Demo <i class="fas fa-mobile-alt"></i></</button>
+            <button class="smallbtn" id="gamedemo"><i class="fas fa-mobile-alt"></i> Game Demo</button>
 
             <button class="smallbtn democlose">Close</button>
         </aside>
     </article>
 
     <article class="infobox" id="demogif">
-    <img src="https://i.gyazo.com/c9d3d2dbb16e9ba343f8c0ee99239d7b.gif" alt="Clue Demo" width="250"/>
+    <img class="demogifimg" src="https://i.gyazo.com/c9d3d2dbb16e9ba343f8c0ee99239d7b.gif" alt="Clue Demo" width="250">
 
-    <button class="idbutton" id="gamedemo"><h3>Exit <i class="fas fa-mobile-alt"></i></h3></button>
+    <button class="smallbtn" id="gamedemo">Back  <i class="white far fa-times-circle"></i></button>
 </article>
 
 </main>
@@ -73,7 +73,7 @@ include('includes/header.php');
 <aside class="box txtbox btnwrap">
 <button class="smallbtn demo"><i class="fas fa-mobile-alt"></i> Game Help</button>
 
-<a class = "smallbtn" href="journey.php">Continue <i class="fas fa-chevron-circle-right"></i>
+<a class = "smallbtn" href="journey.php">Continue <i class="white fas fa-chevron-circle-right"></i>
     </a>
 
 </aside>

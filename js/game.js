@@ -9,7 +9,7 @@ var quizend = document.querySelector(".quizend");
 var quizfinal = document.querySelector(".quizfinal");
 var clueExit = document.querySelector(".clueexit");
 var earlyFinish = document.querySelector(".earlyfinishbtn")
-
+var closeClue = document.querySelector(".closeclue");
 
 cluebtn.addEventListener('click', function () {
 	$(".hilobtn").toggle("fade");
@@ -23,6 +23,7 @@ cluebtn.addEventListener('click', function () {
 });
 
 clueExit.addEventListener('click', function(){
+	$(".cluebox").hide("fade");
 	$(quizclue).hide("fade", function(){
 		$(quizquest).show("blind", function(){
 			$(".hilobtn").toggle("fade");
@@ -63,9 +64,7 @@ function answer(answer) {
 		$(".hilobtn").hide("highlight", { color: '#dcffdc' });
 		$(quizquest).hide("highlight", { color: '#dcffdc' }, function(){
 			$(".quizanswer").toggleClass('qzright', function () {
-				$(this).show("fade", function () {
-					$(this).css({ "display": "flex" });
-			});
+				$(this).show("fade");
 		});
 			$("#displayAnswer2").text("Correct"); // correct answer displayed on id of displayAnswer2
 			// user friendly answer insertion (correct)
@@ -84,9 +83,7 @@ function answer(answer) {
 		$(".hilobtn").hide("highlight", { color: '#ffdcdc' });
 		$(quizquest).hide("highlight", { color: '#ffdcdc' }, function () {
 			$(".quizanswer").toggleClass('qzwrong', function(){
-				$(this).show("fade", function(){
-					$(this).css({ "display": "flex" });
-				});
+				$(this).show("fade");
 			});
 			$("#nextButtonValue").remove(); // remove value from post
 			$("#displayAnswer2").text("Incorrect");

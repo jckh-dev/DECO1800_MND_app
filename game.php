@@ -28,26 +28,29 @@ include('includes/gameheader.php');
 <article class="infobox" id="quizquestion">
     <h2>Was the value of the <?php echo $info[0]["statistic"]; ?> statistic for the disaster:</h2> 
     <h2>"<?php echo $info[0]["title"]; ?>"</h2>
-    <h2>higher or lower than </h2> 
-    
-    <div class="randomNum"><?php echo number_format($info[0]["randNum"]); ?></div>
-    <div id="imageInsert"> </div> 
-
+    <h2>higher or lower than:</h2> 
+    <aside class="btnwrap">
+        <div id="imageInsert"> </div>
+        <div class="numCircle"><?php echo number_format($info[0]["randNum"]); ?></div>
+    </aside>
     <!-- <p><?php echo $oldGame[0]; ?></p> -->
 </article>
 
 <article class="infobox quizanswer" id="answerBox">
-  <h2>Was it higher or lower than <?php echo number_format($info[0]["randNum"]); ?> ?</h2>
+  <h2>Was it higher or lower than <?php echo number_format($info[0]["randNum"]); ?>?</h2>
   <h2 id="displayAnswer3">You answered "HIGHER/LOWER" which is "CORRECT/INCORRECT"</h2>
   <h2>The statistic's real figure is  </h2>
-  <p id="displayAnswer">?</p><!-- display actual -->
-
+  <aside class="cntrbtnwrap">
+  <p class="numCircle" id="displayAnswer">?</p><!-- display actual -->
+  </aside>
+<aside class="cntrbtnwrap">
 <!-- NEXT BUTTON is formed here in NEXT, see game.js in the js folder.-->
 <form id="next" action="game.php" method="POST">
     <input id="nextButtonGame" type="hidden" name="game" value='<?php echo $game; ?>'>
     <input id="nextButtonValue" type="hidden" name="answer" value=1> <!-- if set, give points -->
     <?php if (isset($_POST['life'])) {echo '<input id="lifeValue" type="hidden" name="life">'; } ?> <!-- value inserted by js -->
 </form>
+</aside>
 
 </article>
 

@@ -48,6 +48,16 @@ p {
   text-align: justify;
 }
 
+/* fontawesome icon formatting */
+.fa-mobile-alt{
+  color: white;
+}
+
+.white{
+  color: white;
+}
+
+
 /* Page setup  */
 .wrapper{
   display: grid;
@@ -109,6 +119,10 @@ p {
   display: flex;
   justify-content: space-between;
 }
+.cntrbtnwrap{
+  display: flex;
+  justify-content: center;
+}
 
 /* all the various buttons CSS */
 a,
@@ -120,7 +134,6 @@ button{
   cursor: pointer;
   text-align: center;
   background-color: transparent;
-  border-radius: 5px;
 }
 
 .largebtn {
@@ -139,21 +152,15 @@ button{
  .smallbtn{
    width: 130px;
    height: 50px;
+   color: white;
    font-size: 18px;
    border-radius: 5px;
    border: #e89371 solid;
    background-color: #e89371;
-   color: white;
    display: flex;
    align-items: center;
    justify-content: space-evenly;
  }
-/* 
- .nextbtn{
-  width: 230px;
-  height: 75px;
-  font-size:1em;
- } */
 
  .cluepointbtn {
   font-size: 1em;
@@ -350,6 +357,9 @@ button{
   display: none;
 }
 
+.demogifimg{
+  padding-bottom: 3%;
+}
 
 /* Specific boxes */
 .login {
@@ -377,10 +387,11 @@ button{
 
 /*Map CSS*/
 #map {
-	width: 95vw;
+	/* width: 95vw; */
   height: 60vh;
 	background-color: white;
   box-shadow: #e89371 0 3px 5px;
+  margin: 3% 0 5% 0
 }
 
 .mapexit{
@@ -396,6 +407,10 @@ button{
 /* Quiz Answer Box CSS */
 #displayAnswer{
   text-align: center;
+}
+
+#quizpage{
+  align-content: center;
 }
 
 .highbtn{
@@ -430,6 +445,10 @@ button{
 
 .cluebox{
   display: none;
+}
+
+.cluebox > p{
+  padding: 0 3% 0 3%
 }
 
 .quizanswer{
@@ -471,9 +490,23 @@ button{
   background-color: #ffdcdc;
 }
 
+.numCircle{
+  background-color: #08415c;
+  color: white;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 1px 1px #e89371;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
 .disasterImage {
-  width: 200px;
-  height: 200px;
+  width: 125px;
+  height: 125px;
   border-radius: 50%;
 }
 
