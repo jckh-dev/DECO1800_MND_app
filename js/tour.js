@@ -20,6 +20,8 @@ nextBtn.addEventListener('click', function () {
     if (current === tourPages.length - 1) {
         current = -1;
     }
+    nextBtn.hide("fade");
+    prevBtn.hide("fade");
     slideRight();
 })
 
@@ -32,17 +34,25 @@ function reset() {
 
 function startpage() {
     reset();
+    nextBtn.show("fade");
+    prevBtn.show("fade");
     $(tourPages[0]).show("fade")
+    
 }
 // move slide left and right with slow transition time and using the fade effect from jQueryUI
 function slideLeft() {
     reset();
+    nextBtn.show("fade");
+    prevBtn.show("fade");
     $(tourPages[current - 1]).show("fade", 2000);
     current--;
+
 }
 
 function slideRight() {
     reset();
+    nextBtn.show("fade");
+    prevBtn.show("fade");
     $(tourPages[current + 1]).show("fade", 2000)
     current++;
 }

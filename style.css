@@ -42,7 +42,6 @@ h2{
 }
 
 p {
-  /* padding-bottom: 1em; */
   font-size: 1em;
   margin: 0 0 5% 0;
   text-align: justify;
@@ -74,7 +73,6 @@ p {
 .gridwraptitle{
   display: grid;
   grid-template-columns: 1fr;
-  /* align-items: center; */
   padding: 3% 0 0 0;
 }
 
@@ -118,6 +116,11 @@ p {
 .btnwrap{
   display: flex;
   justify-content: space-between;
+}
+
+.altbtnwrap{
+  display: flex;
+  justify-content: space-evenly;
 }
 .cntrbtnwrap{
   display: flex;
@@ -525,6 +528,10 @@ button{
   width: 125px;
   height: 125px;
   border-radius: 50%;
+}
+
+.finalbox > h1{
+  text-align: left;
 }
 
 /* GUIDED TOUR CSS */

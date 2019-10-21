@@ -152,25 +152,25 @@ function doEnd(results) {
 	if (results.result == "inserted") {
 		$(".quizfinal").append(`
 		<h1>THANKS FOR PLAYING!</h1>
-		<p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent and the consequences of the increasing frequency of these events </p>
-		<aside class = vertbtnwrap>
-		<aside class = "txtbox">
-			<form id="start" action="scoreboard.php" method="POST">
-			<button a href="scoreboard.php" type="submit" class="largebtn">Leaderboard</button>
-			</form>
-		</aside>
-	
-		<aside class = "txtbox">
-			<form id="start" action="journey.php" method="POST">
-			<button a href="scoreboard.php" type="submit" class="largebtn">Home</button>
-			</form>
-		</aside>
 
-		<aside class = "txtbox">
-			<form id="start" action="finish.php" method="POST">
-			<button a href="finish.php" type="submit" class="largebtn">Finish Exhibit Tour</button>
-			</form>
-		</aside>
+		<div class="altbtnwrap">
+		<div class="finalbox">
+			<h1>Your final</h1>
+			<h1>score was...</h1>
+		</div>	
+			<p class="smlNumCircle"> 80</p>
+		</div>
+
+		<p>By playing this game, you have shown your support to the Climate Education Foundation which aims to raise awareness about climate change and proper education of the science behind it.</p>
+
+		<img src="images/climate-logo.png" alt="Climate Education Foundation width="125" height= "125">
+
+		<aside class = btnwrap>
+		
+			<a class="smallbtn" a href="scoreboard.php">SCOREBOARD</a>
+
+			<a class="smallbtn" href="journey.php">HOME</a>
+		
 		</aside>
 		`);
 	}

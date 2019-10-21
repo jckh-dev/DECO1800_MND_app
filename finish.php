@@ -28,7 +28,7 @@ include('includes/header.php');
             <p>Climate change gives rise not just to threats from global warming but also an ever increasing rate of catastrophic weather events</p>
             
             <p>By playing this game, you have shown your support to the Climate Education Foundation which aims to raise awareness about climate change and proper education of the science behind it.</p>
-            
+
         </article>
 
         
@@ -44,5 +44,11 @@ include('includes/footer.php');
 
 
 <!-- Score calling code -->
- <!-- <h1>Total Score Earned (All): <?php echo $totalScore; ?></h1>
+ <!--       <h1>Total Score Earned (All): <?php echo $totalScore; ?></h1>
             <h1>Total Score Earned (You): <?php echo $totalScoreUser; ?></h1> -->
+
+
+            <form id="start" action="finish.php" method="POST">
+            <button class="smallbtn" a href="finish.php" type="submit" >Finish Exhibit Tour</button>
+            
+            <p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent and the consequences of the increasing frequency of these events </p>
