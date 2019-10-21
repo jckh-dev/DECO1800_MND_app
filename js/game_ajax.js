@@ -136,8 +136,8 @@ function doEnd(results) {
 			// if they already have a name , remove name input.
 			$(".quizend").append(`
 			<h1>Thanks for playing again, ` + userName + `</h1>
-			<p>Insert your new score into the leaderboard and see if you've made it in the top 10!</p>
-			<p>You scored:</p>
+			<h2>Insert your new score into the leaderboard and see if you've made it in the top 10!</h2>
+			<h2>You scored:</h2>
 			<aside class="vertbtnwrap">
 			<p class="smlNumCircle">` + score + `</p>
 			<aside class="btnwrap">
