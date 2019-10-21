@@ -105,12 +105,13 @@ function doClue(results) {
 function doEnd(results) {
 	if (results.result == "empty") {
 		$(".quizend").html(`
-		<h1>Insert your score into the leaderboard and find out if you've made it in the top 10!</h1>
-		<h1>You scored: ` + score + `</h1>
+		<h1>Submit your score to the leaderboard and see if you've made it in the top 10!</h1>
+		<h1>You scored:</h1>
+		<aside class="vertbtnwrap">
+		<p class="smlNumCircle">` + score + `</p>"
 		<h1>Please enter a name first!</h1>
 		<form id="start" action="ending.php" method="POST">
 		<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
-		<aside class="cntrbtnwrap>
 		<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
 		</form>
 		</aside>
@@ -120,11 +121,13 @@ function doEnd(results) {
 		if (results.nameRequest) {
 			// backticks allow for multilines without newline.
 			$(".quizend").append(`
-			<h1>Insert your score into the leaderboard and find out if you've made it in the top 10!</h1>
-			<h1>You scored: ` + score + `</h1>
+			<h1>Insert your score into the leaderboard and see if you've made it in the top 10!</h1>
+			<h1>You scored:</h1>
+			<aside class="vertbtnwrap">
+			<p class="smlNumCircle">` + score + `</p>
 			<form id="start" action="ending.php" method="POST">
 			<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
-			<aside class="cntrbtnwrap>
+			
 			<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
 			</aside>
 			</form>
@@ -133,11 +136,12 @@ function doEnd(results) {
 			// if they already have a name , remove name input.
 			$(".quizend").append(`
 			<h1>Thanks for playing again, **INSERT NAME**></h1>
-			<p>Insert your new score into the leaderboard and find out if you've made it in the top 10!</p>
-			<p>You scored: ` + score + `</p>
+			<p>Insert your new score into the leaderboard and see if you've made it in the top 10!</p>
+			<p>You scored:</p>
+			<aside class="vertbtnwrap">
+			<p class="smlNumCircle">` + score + `</p>
 			<aside class="btnwrap">
 			<form id="start" action="ending.php" method="POST">
-			<aside class="cntrbtnwrap>
 			<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
 			</aside>
 			</form>
@@ -149,7 +153,7 @@ function doEnd(results) {
 		$(".quizfinal").append(`
 		<h1>THANKS FOR PLAYING!</h1>
 		<p>We hope you learnt something new and gained a better appreciation of the destructive power of mother nature on the Australian continent and the consequences of the increasing frequency of these events </p>
-	
+		<aside class = vertbtnwrap>
 		<aside class = "txtbox">
 			<form id="start" action="scoreboard.php" method="POST">
 			<button a href="scoreboard.php" type="submit" class="largebtn">Leaderboard</button>
@@ -166,6 +170,7 @@ function doEnd(results) {
 			<form id="start" action="finish.php" method="POST">
 			<button a href="finish.php" type="submit" class="largebtn">Finish Exhibit Tour</button>
 			</form>
+		</aside>
 		</aside>
 		`);
 	}

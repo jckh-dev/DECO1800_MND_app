@@ -134,21 +134,17 @@ if (!imageMode) {
 }
 
 function showQuestion() {
-	$(".quizanswer").hide("highlight", { color: 'lightblue' })
+	$(".quizanswer").hide("highlight", { color: 'lightblue' });
 }
 
 function showEnd() {
 	$(".quizanswer").hide("highlight", { color: 'lightblue' }, function () {
-			$(".quizend").show("fade", function(){
-				$(this).css({ "display": "flex" });
-			});
+			$(".quizend").show("fade");
 	});
 }
 
 function showFinal(){
 	$(".quizend").hide("highlight", { color: 'lightblue' }, function () {
-		$(".quizfinal").show("fade", function(){
-			$(this).css({ "display": "flex" });
-		});
+		$(".quizfinal").show("fade");
 	});
 }
