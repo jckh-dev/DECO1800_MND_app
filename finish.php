@@ -20,23 +20,20 @@ include('includes/header.php');
     <main class="gridwrap2">
 
         <article class="infobox">
-            <h1>Total Score Earned (All): <?php echo $totalScore; ?></h1>
+            <div class="btnwrap">
+                <h1>Your final score was...</h1>
+                <p class="numCircle"> <?php echo $totalScore; ?></p>
+            </div>
 
-            <p>Climate change gives rise not just to threats from global warming but also an ever increasing rate of catastrophic weather events</p><br>
+            <p>Climate change gives rise not just to threats from global warming but also an ever increasing rate of catastrophic weather events</p>
             
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>By playing this game, you have shown your support to the Climate Education Foundation which aims to raise awareness about climate change and proper education of the science behind it.</p>
         </article>
 
-        <aside class="box welcomebtns">
-            <aside class="demo">
-                <h1>Demo <i class="fas fa-mobile-alt"></i></h1>
-            </aside>
+        <!-- <h1>Total Score Earned (All): <?php echo $totalScore; ?></h1> -->
 
-            <aside class="continue">
-                <a href="journey.php"><h1>Continue <i class="fas fa-chevron-circle-right"></i></h1>
-                </a>
-            </aside>
+        <aside class="cntrbtnwrap">
+            <button class="largebtn">HOME</button>
         </aside>
     </section>
 
