@@ -163,7 +163,7 @@ function doEnd(results) {
 
 		<p>By playing this game, you have shown your support to the Climate Education Foundation which aims to raise awareness about climate change and proper education of the science behind it.</p>
 
-		<img src="images/climate-logo.png" alt="Climate Education Foundation width="125" height= "125">
+		<img class="climateEd" src="images/climate-logo.png" alt="Climate Education Foundation width="125" height= "125">
 
 		<aside class = btnwrap>
 		

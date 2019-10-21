@@ -61,16 +61,14 @@ include('includes/indexlogic.php');
                     <article class="infobox">
                         <h1>BUSHFIRES</h1>
 
-                        <img class="tourgraph" src="images\bushfiregraph.png" alt="Major Bushfire Events Over Time">
+                        <img class="tourgraph" src="images\bushfiregraph.PNG" alt="Major Bushfire Events Over Time">
 
-                        <p>"THIS IS A PLACEHOLDER FOR BUSHFIIIARS Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum."</p>
+                        <p>Peak bushfire season varies across Australia depending on season."</p>
+                        <p>Weather plays a significant role in the behaviour of bushfires</p>
+                        <p>Climate change influences the severity of bushfires across Australia</p>
+                        <p>Results already demonstrate that in southern and eastern Australia, bushfire season commences earlier
+                        </p>
+
                     </article>
                 </section>
 
@@ -80,14 +78,11 @@ include('includes/indexlogic.php');
 
                         <img class="tourgraph" src="images\floodgraph.png" alt="Major Environmental Events Over Time">
 
-                        <p>"THIS IS A PLACEHOLDER FOR FLOOOODS Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum."</p>
+                        <p>Floods in Australia are mainly caused by heavy rainfall</p>
+                        <p>Catchment, rainfall and moisture are the main contributors to river flooding</p>
+                        <p>The risk of disruptions to pacific rainfall have been increased as a result of global warming
+                        </p>
+
                     </article>
                 </section>
 
@@ -97,14 +92,10 @@ include('includes/indexlogic.php');
 
                         <img class="tourgraph" src="images\cyclonegraph.png" alt="Major Environmental Events Over Time">
 
-                        <p>"THIS IS A PLACEHOLDER FOR CYCLOOOONES Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum."</p>
+                        <p>Cyclones are low pressure systems forming over tropical waters</p>
+                        <p>The moisture from the ocean acts as fuel</p>
+                        <p>Cyclonic weather can also bring about heavy storms and increase sea-levels</p>
+
                     </article>
                 </section>
 
@@ -114,14 +105,12 @@ include('includes/indexlogic.php');
 
                         <img class="tourgraph" src="images\stormgraph.png" alt="Major Environmental Events Over Time">
 
-                        <p>"THIS IS A PLACEHOLDER FOR STOOOORMS Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum."</p><br>
+                        <p>Severe storms can be accompanied by strong winds, hail and rainfall</p>
+                        <p>t is predicted that there will be an increase in high-intensity storms and heavier rainfall</p>
+                        <p>Thunderstorms occur most frequently in northern parts of Australia</p>
+                        <p>Thunderstorms are most likely to occur in the warmer parts of the year throughout the majority of Australia
+                        </P>
+
                     </article>
                 </section>
 
@@ -131,14 +120,10 @@ include('includes/indexlogic.php');
 
                         <img class="tourgraph" src="images\envirograph.png" alt="Major Environmental Events Over Time">
 
-                        <p>"THIS IS A PLACEHOLDER FOR MAJOR EVEEEENTS Lorem ipsum dolor sit amet,       consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum."</p>
+                        <p>Three or more days of high maximums and minimums is considered a heatwave
+                        </p>
+                        <p>Heatwaves can lead to serious health problems</p>
+                        <p>Research indicates that there will be an expected increase in the number of extreme heat events</p>
                     </article>
                 </section>
 
