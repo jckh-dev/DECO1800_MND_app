@@ -72,7 +72,7 @@ include('includes/gameheader.php');
 
 <h2>Insert your code to get a clue:</h2>
 
-<form id="start">
+<form id="start" onsubmit="return false;">
     <input type="text" class="input" id="clueCode" placeholder="Enter clue code" required width="70" height="50">
     <section class="btnwrap">
     <button type="button" class="smallbtn" onclick="insertRecordClue()">Enter Code</button>

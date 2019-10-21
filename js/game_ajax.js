@@ -110,7 +110,7 @@ function doEnd(results) {
 		<aside class="vertbtnwrap">
 		<p class="smlNumCircle">` + score + `</p>"
 		<h1>Please enter a name first!</h1>
-		<form id="start" action="ending.php" method="POST">
+		<form id="start" action="ending.php" method="POST" onsubmit="return false;">
 		<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
 		<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
 		</form>
@@ -125,7 +125,7 @@ function doEnd(results) {
 			<h1>You scored:</h1>
 			<aside class="vertbtnwrap">
 			<p class="smlNumCircle">` + score + `</p>
-			<form id="start" action="ending.php" method="POST">
+			<form id="start" action="ending.php" method="POST" onsubmit="return false;">
 			<input type="text" class="input" id="newName" placeholder="Enter Your Name" width="100px" height="50px" required>
 			
 			<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
@@ -141,7 +141,7 @@ function doEnd(results) {
 			<aside class="vertbtnwrap">
 			<p class="smlNumCircle">` + score + `</p>
 			<aside class="btnwrap">
-			<form id="start" action="ending.php" method="POST">
+			<form id="start" action="ending.php" method="POST" onsubmit="return false;">
 			<button type="button" class="largebtn" onclick="insertScore();">SUBMIT YOUR SCORE!</button>
 			</aside>
 			</form>

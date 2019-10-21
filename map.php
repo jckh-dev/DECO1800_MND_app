@@ -21,7 +21,7 @@ include('includes/header.php');
     
 <article class="infobox">
 
-<form id="start">
+<form id="start" onsubmit="return false;">
 
     <p>Regions:</p>
 
