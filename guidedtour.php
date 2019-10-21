@@ -33,7 +33,7 @@ include('includes/indexlogic.php');
 
         <section class="gridwrap1">
             <header class="box header">
-                <a href="journey.php"><img src="images/logo.png" alt="Go Back Home" class="homelogo" height="80" width="130" /></a>
+                <a href="journey.php"><img src="images/mndlogo.png" alt="Go Back Home" class="homelogo" height="80" width="130" /></a>
             </header>
         </section>
 
@@ -49,7 +49,7 @@ include('includes/indexlogic.php');
                 <section class="tourpage tourstart">
                     <article class="infobox">
                         <h1>Welcome to the Tour</h1>
-                        <img class="tourgraph" src="images\temprising.gif" alt="Major Bushfire Events Over Time">
+                        <img class="tourgraph" src="images\temprising.gif" alt="Global Temperature Rise Over Time">
                         <p>Welcome to the guided tour companion.</p>
                         <p>This tour will take you through each of the five major natural disaster      types most commonly impacting the Australian continent seen in the context of rising average local and global temperatures. At the end of   the tour you will have the chance to play the Higher or Lower game.</p>
                         <p>For participating in the exhbit and learning about Australia's natural disasters, the Natural Disaster Musuem will donate a dollar figure to the Climate Education Foundation based on the score you get on the Higher or Lower game.</p>
@@ -152,11 +152,11 @@ include('includes/indexlogic.php');
 
                         <p>Remember, the more points you score the more donations $$ you will generate for the Climate Education Foundation!</p>
                
-                        <aside class="gamestart">
+                        <aside class="cntrbtnwrap gamestart">
                             <form id="start" action="game.php" method="POST">
                             <input type="hidden" name="game" value='<?php echo $tourGame; ?>'>
                             <input type="hidden" name="init" value=1> 
-                            <button type="submit" class="button">Start Game <i class="fas fa-gamepad"></i></button>
+                            <button type="submit" class="largebtn">Start Game <i class="white fas fa-gamepad"></i></button>
                             </form>
                         </aside>
                     </article>
@@ -164,10 +164,10 @@ include('includes/indexlogic.php');
 
             </div> <!-- slider wrapper end-->
 
-            <aside class="tourbtns">
-                <button class="tournavbtn prev"><i class="fas fa-chevron-circle-left"></i> Previous</button>
+            <aside class="box btnwrap">
+                <button class="smallbtn prev"><i class="white fas fa-chevron-circle-left"></i></button>
 
-                <button class="tournavbtn next">Continue <i class="fas fa-chevron-circle-right"></i></button>
+                <button class="smallbtn next"><i class="white fas fa-chevron-circle-right"></i></button>
             </aside>
 
         </main>

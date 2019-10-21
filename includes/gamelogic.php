@@ -1,5 +1,22 @@
 <?php
+    include("db.php"); // db connect
     session_start(); // start $_SESSION
+
+    // get name
+    $name;
+    if (isset($_COOKIE['User'])) {
+        $userID = $_COOKIE['User'];
+        $sql = "SELECT name FROM users WHERE userID = '$userID'";
+        $result = $db->query($sql);
+        if ($result) {
+            $row = $result->fetch_assoc();
+            $name = $row["name"];
+            if ($name == "") { // empty?
+                $name = "NO_NAME";
+            }
+        }
+    }
+    mysqli_close($db); // close db
 
     // initiate stuff when init POST exists (start of game)
     if (isset($_POST['init'])) {

@@ -21,42 +21,85 @@ include('includes/header.php');
     
 <article class="infobox">
 
-<!-- <p>Use the map to explore the history of natural disaster events that have occured in Australia.</p> -->
-
-<p>Use the categories below to filter your search:</p>
-
 <form id="start">
 
-    <h2>Regions</h2>
+    <p>Regions:</p>
 
     <input type="hidden" name="oldGame" value='<?php echo $oldGameJson; ?>'>
-    <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'>    
-    <p><input type="checkbox" value="New South Wales" id="NSW"> New South Wales </p>
-    <p><input type="checkbox" value="Northern Territory" id="NT"> Northern Territory </p>
-    <p><input type="checkbox" value="Queensland" id="QLD"> Queensland </p>
-    <p><input type="checkbox" value="South Australia" id="SA"> South Australia </p>
-    <p><input type="checkbox" value="Tasmania" id="TAS"> Tasmania </p>
-    <p><input type="checkbox" value="Victoria" id="VIC"> Victoria </p>
-    <p><input type="checkbox" value="Western Australia" id="WA"> Western Australia 
+    <input type="hidden" name="info" value='<?php echo $jsonInfo; ?>'> 
 
-    <h2>Add type of disaster here or leave blank for all:</h2>
+    <label class="chbxcontainer">New South Wales
+        <input type="checkbox" value="New South Wales" id="NSW">  
+        <span class="mapcustchkbx"></span> 
+    </label>
 
-    <p><input type="checkbox" value="Bushfire,Urban Fire" id="fire"> Bushfire/Urban Fire </p>
-    <p><input type="checkbox" value="Flood" id="flood"> Flood </p>
-    <p><input type="checkbox" value="Cyclone" id="cyclone"> Cyclone </p>
-    <p><input type="checkbox" value="Severe Storm/Hail" id="storm"> Severe Storm/Hail </p>
-    <p><input type="checkbox" value="Environmental" id="environ"> Environmental </p>
+    <label class="chbxcontainer">Northern Territory
+        <input type="checkbox" value="Northern Territory" id="NT">  
+        <span class="mapcustchkbx"></span>
+    </label>
+
+    <label class="chbxcontainer">Queensland 
+        <input type="checkbox" value="Queensland" id="QLD"> 
+        <span class="mapcustchkbx"></span>
+    </label>
+
+    <label class="chbxcontainer">South Australia
+        <input type="checkbox" value="South Australia" id="SA">  
+        <span class="mapcustchkbx"></span>
+    </label>
+
+    <label class="chbxcontainer">Tasmania
+        <input type="checkbox" value="Tasmania" id="TAS">  
+        <span class="mapcustchkbx"></span>
+    </label>
+
+    <label class="chbxcontainer">Victoria
+        <input type="checkbox" value="Victoria" id="VIC">  
+        <span class="mapcustchkbx"></span>
+    </label>
+
+    <label class="chbxcontainer">Western Australia 
+        <input type="checkbox" value="Western Australia" id="WA"> 
+        <span class="mapcustchkbx"></span>
+    </label>
+
+    <p>Select Type or Leave Blank For All:</p>
+
+    <label class="chbxcontainer">Bushfire/Urban Fire 
+        <input type="checkbox" value="Bushfire,Urban Fire" id="fire"> 
+        <span class="mapcustchkbx"></span>
+    </label>
+
+    <label class="chbxcontainer">Flood
+        <input type="checkbox" value="Flood" id="flood">  
+        <span class="mapcustchkbx"></span>
+    </label>
+    <label class="chbxcontainer">Cyclone
+        <input type="checkbox" value="Cyclone" id="cyclone">  
+        <span class="mapcustchkbx"></span>
+    </label>
+    <label class="chbxcontainer">Severe Storm/Hail
+        <input type="checkbox" value="Severe Storm/Hail" id="storm">  
+        <span class="mapcustchkbx"></span>
+    </label>
+    <label class="chbxcontainer">Environmental
+        <input type="checkbox" value="Environmental" id="environ">  
+        <span class="mapcustchkbx"></span>
+    </label>
 
     <h2>Or search via name of disaster:</h2>
 
-    <input type="text" class="input" id="DisasterName" placeholder="Enter Disaster Name" width="70" height="50"> <br>
-    <button type="button" class="idbutton mapsearch" onclick="insertRecordSearch()">Search</button>
-</form>
+    <section class="box">
+    <input type="text" class="input" id="DisasterName" placeholder="Enter Disaster Name" width="70" height="50">
+    <button type="button" class="largebtn mapsearch" onclick="insertRecordSearch()">Search</button>
+    </section>
+    </form>
+    
 </article>
 
 <div id="mapLocation">
     <article id="map"></article>
-    <button type="button" class="idbutton mapexit">Back to Search</button>
+    <button type="button" class="largebtn mapexit">Back to Search</button>
 </div>
 
 <!-- jquery -->

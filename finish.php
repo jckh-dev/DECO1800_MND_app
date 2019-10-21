@@ -12,7 +12,7 @@ include('includes/head.php');
 include('includes/header.php');
 ?>
 
-        <h1>THANK YOU FOR VISITING</h1><br>
+        <h1>THANK YOU FOR VISITING</h1>
     </aside>
 
 </section>
