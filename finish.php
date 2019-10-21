@@ -21,6 +21,7 @@ include('includes/header.php');
 
         <article class="infobox">
             <h1>Total Score Earned (All): <?php echo $totalScore; ?></h1>
+            <h1>Total Score Earned (You): <?php echo $totalScoreUser; ?></h1>
 
             <p>Climate change gives rise not just to threats from global warming but also an ever increasing rate of catastrophic weather events</p><br>
             
